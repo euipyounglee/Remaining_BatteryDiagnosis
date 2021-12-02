@@ -1,0 +1,32 @@
+<html lang="ko">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1000"/>
+    <title>베터리 PACK 성능 평가 시스템</title>
+    <style>
+        body {
+          display:flex; flex-direction:column; 
+          min-height:0vh;
+        }
+    </style>
+<script type=”text/javascript” src=”http://jsgetip.appspot.com"></script>
+<script>
+    function testCallApp(){
+        alert('자바스크립트 테스트');
+       // window.external.SetAValue('12.0');
+    }
+</script>
+<body >
+<pre>
+    <form action="\post" method="post" class="input-form"></form>
+    	<h1>베터리 PACK 성능 평가 시스템</h1>
+    	<h2>HTML 버튼을 클릭을 해주세요.</h2>
+
+        <input type="button" value="HTML 버튼" onclick='testCallApp()'>
+        <img src="{{url_for('static', filename='/image/sequence.png')}}" />
+
+        <textarea type="text" name='id_name' value="tmp tmp tmp" class="input-text"></textarea>
+        <input type="submit" value="submit" class="input-btn">
+    </form>
+    </pre>
+</body>
+</html>

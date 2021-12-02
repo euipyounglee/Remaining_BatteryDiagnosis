@@ -1,0 +1,14 @@
+{
+    "port" : 8015,
+    "webSocketServer":{
+        "ip" : "127.0.0.1",
+        "port" : 8005,
+        "path":"/"
+    },
+    "menu" : [ {
+        "setting":"menu\\settingform.py"
+     }],
+
+    "webserver" : "battery_diagnosisSrv.exe",
+    "CreateConsle":false
+}

@@ -1,0 +1,38 @@
+<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script>
+			function SendMessage(){
+				var msg = '자바스크립트에서 C# 함수 호출';
+				window.external.InvokeMe(msg);
+			}
+			
+			function ReceiveMessage(val){
+				alert(val);
+			}
+
+            function show(){
+                alert('222222');
+            }
+
+            function hide(){
+                alert('2222221');
+            }
+ 
+		</script>
+	</head>
+	<body>
+        <textarea ></textarea>
+		<div class="container">
+			<h2>함수 호출 테스트</h2>
+			<button class="btn" id="test1" onclick="SendMessage();">htm5 -> C# 호출</button>
+			<button class="btn btn-success" id="test2" onclick="ReceiveMessage('자바스크립트 함수 직접 호출');">테스트2</button>
+			<button class="btn btn-success" id="test2" onclick="ReceiveMessage('C#->자바스크립트 함수 호출');">테스트2</button>
+		</div>
+		<p>이미지 : <img src="sequence.png"></p>
+	</body>
+</html>

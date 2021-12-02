@@ -1,0 +1,6 @@
+{
+    "port" : 5001,
+    "preview":true,
+    "webbrowser":"BPDiagnosis.exe",
+    "webserver" : "battery_diagnosisSrv.exe"
+}

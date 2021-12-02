@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalConfigVM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>2020.05.10.0437</Version>
+  <BatteryTestType>MODULE</BatteryTestType>
+  <DatabaseConfig>
+    <Server>localhost</Server>
+    <Database>btry_eval</Database>
+    <UserId>root</UserId>
+    <Password>1234:</Password>
+  </DatabaseConfig>
+  <RestApiConfig />
+  <EngineConfig />
+  <Channel1>
+    <MultimeterHostInfo>
+      <Host>192.168.0.110</Host>
+      <Port>5025</Port>
+    </MultimeterHostInfo>
+    <ST5520ComPort>COM10</ST5520ComPort>
+    <RelayControllerComPort>COM11</RelayControllerComPort>
+    <BarcodeScannerComPort>COM12</BarcodeScannerComPort>
+    <BIBoxComPort>COM13</BIBoxComPort>
+    <ACIRHostInfo>
+      <Host>192.168.0.239</Host>
+      <Port>23</Port>
+    </ACIRHostInfo>
+  </Channel1>
+  <Channel2>
+    <MultimeterHostInfo>
+      <Host>192.168.0.110</Host>
+      <Port>5025</Port>
+    </MultimeterHostInfo>
+    <ST5520ComPort>COM10</ST5520ComPort>
+    <RelayControllerComPort>COM11</RelayControllerComPort>
+    <BarcodeScannerComPort>COM12</BarcodeScannerComPort>
+    <BIBoxComPort>COM13</BIBoxComPort>
+    <ACIRHostInfo>
+      <Host>192.168.0.239</Host>
+      <Port>23</Port>
+    </ACIRHostInfo>
+  </Channel2>
+</LocalConfigVM>

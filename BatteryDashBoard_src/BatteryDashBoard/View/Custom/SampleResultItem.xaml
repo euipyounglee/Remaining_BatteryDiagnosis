@@ -1,0 +1,132 @@
+﻿<UserControl 
+	x:Class="gbtp2020.View.Custom.SampleResultItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:gbtp2020.View.Custom"
+	xmlns:cvt="clr-namespace:gbtp2020.Data.Converter"
+    mc:Ignorable="d" 
+    d:DesignWidth="800" Height="Auto">
+
+	<UserControl.Resources>
+		<cvt:GetRowIndexOfSampleBConverter x:Key="GetRowIndexOfSampleBConverter"/>
+
+		<Style x:Key="T1" TargetType="{x:Type TextBlock}">
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+		</Style>
+	</UserControl.Resources>
+	
+	<Border>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="30"/>
+				</Grid.ColumnDefinitions>
+
+				<CheckBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+				<TextBlock Grid.Column="2">
+					<TextBlock.Text>
+						<MultiBinding Converter="{StaticResource GetRowIndexOfSampleBConverter}">
+							<Binding Path="."/>
+							<Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type ItemsControl}}" Path="ItemsSource"/>
+						</MultiBinding>
+					</TextBlock.Text>
+				</TextBlock>
+				<TextBlock Grid.Column="3" Text="{Binding Path=Model}"/>
+				<TextBlock Grid.Column="5" Text="{Binding Path=Channel}"/>
+				<TextBlock Grid.Column="7" Text="{Binding Path=InspectionType}"/>
+				<TextBlock Grid.Column="9" Text="진단결과 A"/>
+				<Polygon Grid.Column="11" Width="20" Height="20" Fill="Black">
+					<Polygon.Style>
+						<Style TargetType="{x:Type Polygon}">
+							<Setter Property="Points" Value="0,4 20,4 10,16"/>
+							<Style.Triggers>
+								<DataTrigger Binding="{Binding Path=IsExpanded}" Value="True">
+									<Setter Property="Points" Value="10,4 20,16 0,16"/>
+								</DataTrigger>
+							</Style.Triggers>
+						</Style>
+					</Polygon.Style>
+					<Polygon.InputBindings>
+						<MouseBinding MouseAction="LeftClick" Command="{Binding Path=ToggleExpandCommand}"/>
+					</Polygon.InputBindings>
+				</Polygon>
+			</Grid>
+
+			<Grid Grid.Row="1">
+				<Grid.Style>
+					<Style TargetType="{x:Type Grid}">
+						<Style.Triggers>
+							<DataTrigger Binding="{Binding Path=IsExpanded}" Value="False">
+								<Setter Property="Visibility" Value="Collapsed"/>
+							</DataTrigger>
+						</Style.Triggers>
+					</Style>
+				</Grid.Style>
+				
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="40"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="5"/>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="5"/>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="5"/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="30"/>
+					<RowDefinition Height="5"/>
+					<RowDefinition Height="30"/>
+					<RowDefinition Height="5"/>
+					<RowDefinition Height="30"/>
+					<RowDefinition Height="5"/>
+					<RowDefinition Height="30"/>
+				</Grid.RowDefinitions>
+
+				<TextBlock Grid.Column="1" Style="{StaticResource T1}" Text="배터리코드"/>
+				<TextBlock Grid.Column="3" Style="{StaticResource T1}" Text="{Binding Path=BatteryCode}"/>
+
+				<TextBlock Grid.Column="5" Style="{StaticResource T1}" Text="시작시각"/>
+				<TextBlock Grid.Column="7" Style="{StaticResource T1}" Text="{Binding Path=StartTime}"/>
+				<TextBlock Grid.Column="5" Grid.Row="2" Style="{StaticResource T1}" Text="종료시각"/>
+				<TextBlock Grid.Column="7" Grid.Row="2" Style="{StaticResource T1}" Text="{Binding Path=EndTime}"/>
+				<TextBlock Grid.Column="5" Grid.Row="4" Style="{StaticResource T1}" Text="소요시간"/>
+				<TextBlock Grid.Column="7" Grid.Row="4" Style="{StaticResource T1}" Text="{Binding Path=RunningTime}"/>
+
+				<TextBlock Grid.Column="9" Style="{StaticResource T1}" Text="SOC"/>
+				<TextBlock Grid.Column="11" Style="{StaticResource T1}" Text="{Binding Path=SOC}"/>
+				<TextBlock Grid.Column="9" Grid.Row="2" Style="{StaticResource T1}" Text="SOH"/>
+				<TextBlock Grid.Column="11" Grid.Row="2" Style="{StaticResource T1}" Text="{Binding Path=SOH}"/>
+				<TextBlock Grid.Column="9" Grid.Row="4" Style="{StaticResource T1}" Text="SOP"/>
+				<TextBlock Grid.Column="11" Grid.Row="4" Style="{StaticResource T1}" Text="{Binding Path=SOP}"/>
+				<TextBlock Grid.Column="9" Grid.Row="6" Style="{StaticResource T1}" Text="SOB"/>
+				<TextBlock Grid.Column="11" Grid.Row="6" Style="{StaticResource T1}" Text="{Binding Path=SOB}"/>
+
+			</Grid>
+		</Grid>
+	</Border>
+	
+</UserControl>

@@ -1,0 +1,24 @@
+﻿<UserControl 
+	x:Class="BatteryDashBoard.View.WorkspaceView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:BatteryDashBoard.View"
+	xmlns:view="clr-namespace:BatteryDashBoard.View"
+    mc:Ignorable="d" 
+	Background="#ededed"
+    d:DesignHeight="1024" d:DesignWidth="1280">
+
+	<Grid Margin="20,0,20,20">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="25"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+        <view:ChannelView                  DataContext="{Binding Path=Channels[0]}"/>
+		<view:ChannelView2 Grid.Column="2" DataContext="{Binding Path=Channels[1]}"/>
+	</Grid>
+	
+</UserControl>
