@@ -1,0 +1,13 @@
+{
+    "port" : 8003,
+    "webSocketServer":{
+        "port" : 8005,
+        "ip":"127.0.0.1",
+        "path":"/"
+    },
+    "preview":true,
+    "webbrowser":"BPDiagnosis.exe",
+    "webserver" : "battery_diagnosisSrv.exe",
+    "daemon" :"BatteryDaemon.exe",
+    "CreateConsle":true
+}
