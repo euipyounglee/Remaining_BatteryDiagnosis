@@ -206,7 +206,9 @@ namespace BatteryDaemon
 
             }
 
-            int count = 8;
+
+
+            int count = 8;//총개수
             string strID = "0CFA00D";
             string comPort = strCOM;
             string[] strDataSample = { "0001000000000001", "0002000000000002", "0000000000000003" };
