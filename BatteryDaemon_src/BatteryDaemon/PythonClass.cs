@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -156,6 +157,25 @@ namespace BatteryDaemon
         static public string ConnectFuncCallUSB2CAN(string strCOM)
         {
             string strResult = "";
+#if false
+
+            ClassUSB2CAN usbCANST5520 = new ClassUSB2CAN();
+
+            string comPort = strCOM;
+            strResult = usbCANST5520.connect(comPort);
+#else
+
+            string comPort = strCOM;
+            strResult = uCANSend(comPort);//SystemBase- uCAN
+
+#endif
+
+            return strResult;
+        }
+
+        static public string usbCANST5520Send(string strCOM)
+        {
+            string strResult = "";
             ClassUSB2CAN usbCANST5520 = new ClassUSB2CAN();
 
             string comPort = strCOM;
@@ -164,6 +184,58 @@ namespace BatteryDaemon
             return strResult;
         }
 
+
+        static public string uCANSend(string strCOM)
+        {
+            string strResult = "";
+            int nBaudRate = 115200;
+            ClassRS232C rs232 = new ClassRS232C();
+            string[] strformats =  { "Standard_t", "StardardRmote_T","Extended_e" ,"ExtendedRemote_E" };
+
+            string formatType = "extended";
+            string mode = "";
+
+            foreach (string str in strformats)
+            {
+                string[]  formats = str.Split('_');
+                if(formats[0].ToLower() == formatType.ToLower())
+                {
+                    mode = formats[1];
+                    break;
+                }
+
+            }
+
+            int count = 8;
+            string strID = "0CFA00D";
+            string comPort = strCOM;
+            string[] strDataSample = { "0001000000000001", "0002000000000002", "0000000000000003" };
+            string  strData = string.Format("{0}{1}{2:00}{3}", mode, strID, count, strDataSample[0]);
+                    strData += string.Format(",{0}{1}{2:00}{3}", mode,strID, count, strDataSample[1]);
+                    strData += string.Format(",{0}{1}{2:00}{3}", mode,strID, count, strDataSample[2]);
+
+
+            string phrase = strData;
+            string[] words = phrase.Split(',');
+
+            foreach (string word in words)
+            {
+
+                string   strWord = word +"\r";
+                System.Console.WriteLine($"<{strWord}>");
+
+                byte[] byData = Encoding.ASCII.GetBytes(strWord);
+
+                strResult = rs232.connectCAN(comPort, nBaudRate, byData);
+                //      Thread.Sleep(2000);
+                strResult = "OK";
+            }
+
+
+
+            return strResult;
+        }
+        
 
         static public string ConnectFuncWebSocket(string ip, int  port)
         {

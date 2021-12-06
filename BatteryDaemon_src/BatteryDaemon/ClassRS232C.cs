@@ -174,7 +174,6 @@ namespace BatteryDaemon
         }
 
 
-      //  Write(byte[] buffer, int offset, int count);
         public string connectCAN(string strCOM, int BaudRate, byte[] Buff )//string strCommad)
         {
             string strResult = "";
@@ -212,32 +211,17 @@ namespace BatteryDaemon
                 if (serialPort1.IsOpen)
                 {
 
-                    //  label_status.Text = "포트가 열렸습니다.";
-                    // comboBox_port.Enabled = false;  //COM포트설정 콤보박스 비활성화
-                    //    string[] strCommads = { ":MEASure?", ":TIMer?" };
-                    //     string strCommad = ":MEASure?";
-
-                    //  strCommad = strCommads[0];
-                    //   strCommad += "\r\n";//꼭넣어줘야 한다. 명령어 마지막이라는 표시
-
-                    //  byte[]  RecvStr = Encoding.ASCII.GetBytes();//.GetString(buff);
-
-
-                    //     serialPort1.Write(strCommad);// ":MEASure?");
-
-                   // byte[] buffer = new byte[16];
                     int offset = 0;
                     int count = Buff.Length;// 0;
 
-
                     serialPort1.Write(Buff,  offset,  count);
 
-                    Thread.Sleep(1800);//너무 빠르면 값을 얻어 오지 못한다.
+                  //  Thread.Sleep(1800);//너무 빠르면 값을 얻어 오지 못한다.
+                    Thread.Sleep(3000);//너무 빠르면 값을 얻어 오지 못한다.
+                    //3000
 
                     ////수신 메세지
                     ///
-
-
                     int RecvSize = serialPort1.BytesToRead;
                     string RecvStr = string.Empty;
                     // Recv Data가 있는 경우...
@@ -252,13 +236,12 @@ namespace BatteryDaemon
                         strResult = RecvStr;
                     }
 
-                    serialPort1.Close();
+                    serialPort1.Close();//포트 닫기
 
                 }
 
-                // serialPort1.ReadBufferSize();//.ReadBufferSize();//.ReadByte();
             }
-            // label_status.Text = "포트가 이미 열려 있습니다.";
+            // "포트가 열려 있는지 한번더 체크.";
             if (null != serialPort1 && serialPort1.IsOpen)
                 serialPort1.Close();
 

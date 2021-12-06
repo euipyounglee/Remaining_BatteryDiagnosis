@@ -174,8 +174,7 @@ namespace BatteryDaemon
         {
             _ws = wSocketClient.getInstance();
 
-            string wsIPadress = "ws://192.168.0.167:8005";
-            wsIPadress = "ws://127.0.0.1:8005";
+            string wsIPadress = "ws://127.0.0.1:8005";
             string path = "/";
             wsIPadress = wsIPadress + path ;// "/Testwebsocket";
 
