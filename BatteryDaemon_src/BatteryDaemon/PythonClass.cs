@@ -166,7 +166,7 @@ namespace BatteryDaemon
 #else
 
             string comPort = strCOM;
-            strResult = uCANSend(comPort);//SystemBase- uCAN
+            strResult = systemBase_uCANSend(comPort);//SystemBase- uCAN
 
 #endif
 
@@ -185,7 +185,7 @@ namespace BatteryDaemon
         }
 
 
-        static public string uCANSend(string strCOM)
+        static public string systemBase_uCANSend(string strCOM)
         {
             string strResult = "";
             int nBaudRate = 115200;
