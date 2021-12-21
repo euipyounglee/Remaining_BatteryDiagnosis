@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 
 namespace BatteryDashBoard.View
 {
-	/// <summary>
-	/// Interaction logic for WorkspaceView.xaml
-	/// </summary>
-	public partial class WorkspaceView : UserControl
-	{
-		public WorkspaceView()
-		{
-			InitializeComponent();
-		}
-	}
+    /// <summary>
+    /// WorkspaceView.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class WorkspaceView : UserControl
+    {
+        public WorkspaceView()
+        {
+            InitializeComponent();
+        }
+    }
 }

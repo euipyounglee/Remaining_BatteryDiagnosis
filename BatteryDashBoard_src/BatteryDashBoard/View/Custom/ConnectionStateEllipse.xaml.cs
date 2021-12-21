@@ -23,10 +23,9 @@ namespace BatteryDashBoard.View.Custom
 	public partial class ConnectionStateEllipse : UserControl, INotifyPropertyChanged
 	{
 		public ConnectionStateEllipse()
-		{
-			//InitializeComponent();
-		}
-
+        {
+            //InitializeComponent();
+        }
 		#region bindable 
 
 		public event PropertyChangedEventHandler PropertyChanged;

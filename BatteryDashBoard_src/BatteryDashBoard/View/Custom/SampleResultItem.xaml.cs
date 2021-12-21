@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 
 namespace BatteryDashBoard.View.Custom
 {
-	/// <summary>
-	/// Interaction logic for SampleResultItem.xaml
-	/// </summary>
-	public partial class SampleResultItem : UserControl
-	{
-		public SampleResultItem()
-		{
-			//InitializeComponent();
-		}
-	}
+    /// <summary>
+    /// SampleResultItem.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class SampleResultItem : UserControl
+    {
+        public SampleResultItem()
+        {
+            //InitializeComponent();
+        }
+    }
 }

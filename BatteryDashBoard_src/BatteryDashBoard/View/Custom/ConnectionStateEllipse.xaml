@@ -1,14 +1,14 @@
 ﻿<UserControl 
-	x:Class="gbtp2020.View.Custom.ConnectionStateEllipse"
+	x:Class="BatteryDashBoard.View.Custom.ConnectionStateEllipse"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-    xmlns:local="clr-namespace:gbtp2020.View.Custom"
+    xmlns:local="clr-namespace:BatteryDashBoard.View.Custom"
 	xmlns:bldef="clr-namespace:BaseLib.Defines;assembly=BaseLib"
     mc:Ignorable="d" 
 	Name="uc"
-    Width="20" Height="20">
+    DesignHeight="20" DesignWidth="20">
 
 	<Ellipse>
 		<Ellipse.Style>

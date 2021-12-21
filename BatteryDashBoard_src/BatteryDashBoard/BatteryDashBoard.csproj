@@ -10,7 +10,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>BatteryDashBoard</RootNamespace>
     <AssemblyName>BatteryDashBoard</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -132,7 +132,10 @@
     <Compile Include="Data\VM\SampleAVM.cs" />
     <Compile Include="Defines\ProgramParameters.cs" />
     <Compile Include="Defines\WorkspaceTypes.cs" />
+    <Compile Include="MainModel.cs" />
     <Compile Include="MainViewModel.cs" />
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="ViewModelBase.cs" />
     <Compile Include="View\ChannelView.xaml.cs" />
     <Compile Include="View\ChannelView2.xaml.cs" />
     <Compile Include="View\Channel\AChannelBaseViewModel.cs" />
@@ -168,7 +171,9 @@
     <Compile Include="View\Channel\StartView.xaml.cs" />
     <Compile Include="View\Channel\StartViewModel.cs" />
     <Compile Include="View\ClassSettingView.cs" />
-    <Compile Include="View\Custom\ConnectionStateButton.xaml.cs" />
+    <Compile Include="View\Custom\ConnectionStateButton.xaml.cs">
+      <DependentUpon>ConnectionStateButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Custom\ConnectionStateEllipse.xaml.cs" />
     <Compile Include="View\Custom\SampleResultItem.xaml.cs" />
     <Compile Include="View\DeviceSettingPopup.xaml.cs" />
@@ -289,6 +294,10 @@
     <Page Include="View\Channel\StartView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Custom\ConnectionStateButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DeviceSettingPopup.xaml">
       <Generator>MSBuild:Compile</Generator>

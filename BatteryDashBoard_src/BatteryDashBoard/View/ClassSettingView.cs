@@ -243,7 +243,7 @@ namespace BatteryDashBoard.View
             MainWindow main = new MainWindow();
 
 
-            strReslut = main.sendData(JsonString);
+       //     strReslut = main.sendData(JsonString);
 
             return strReslut;// false;
         }

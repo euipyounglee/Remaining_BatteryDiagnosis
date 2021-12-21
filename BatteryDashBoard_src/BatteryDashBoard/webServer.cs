@@ -29,6 +29,7 @@ namespace BatteryDashBoard
     class WebSocketControllerEx
     {
         //웹 소켓의 상태 객체
+       
         public WebSocketState State { get; private set; } = WebSocketState.None;
 
         private readonly TcpClient targetClient;
@@ -62,7 +63,8 @@ namespace BatteryDashBoard
         {
 
 
-            int size = messageStream.EndRead(ar);   //데이터 수신 종료
+
+            int size = messageStream.EndRead(ar);   //데이터 수
             byte[] httpRequestRaw = new byte[1024];    //HTTP request 
             string httpRequest = Encoding.UTF8.GetString(httpRequestRaw, 0, size);
 
@@ -89,6 +91,7 @@ namespace BatteryDashBoard
 
             bool fin = (dataBuffer[0] & 0b10000000) != 0;   // 혹시 false일 경우 다음 데이터와 이어주는 처리를 해야 함
             bool mask = (dataBuffer[1] & 0b10000000) != 0;  // 클라이언트에서 받는 경우 무조건 true
+
             PayloadDataType opcode = (PayloadDataType)(dataBuffer[0] & 0b00001111); // enum으로 변환
 
             int msglen = dataBuffer[1] - 128; // Mask bit가 무조건 1라는 가정하에 수행
@@ -256,8 +259,8 @@ namespace BatteryDashBoard
             int port = Port;
 
             System.Threading.Thread th = new Thread(new ParameterizedThreadStart(webSocketStart));
-            th.Start(port);
 
+            th.Start(port);
 #endif
         }
 

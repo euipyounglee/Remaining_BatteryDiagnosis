@@ -43,7 +43,8 @@ namespace BatteryDashBoard.View
 
 		private void uiBtn_LoginButton_Click(object sender, RoutedEventArgs e)
 		{
-#if false
+#if true
+
 
 
 			//환경설정 화면 실행시키기

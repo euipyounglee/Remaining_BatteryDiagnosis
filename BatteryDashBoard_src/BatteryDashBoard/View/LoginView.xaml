@@ -38,7 +38,8 @@
 
 				<TextBox x:Name="TB1" Grid.Row="3" Text="{Binding Path=LoginId, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Left" Padding="5,0,5,0" />
 				<PasswordBox Grid.Row="5" PasswordChanged="PasswordBox_PasswordChanged" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Padding="5,0,5,0" />
-                <Button Grid.Row="7" Background="SteelBlue" Foreground="White" Content="로그인" Command="{Binding Path=LoginCommand}" Click="uiBtn_LoginButton_Click" />
+                <!--<Button Grid.Row="7" Background="SteelBlue" Foreground="White" Content="로그인" Command="{Binding Path=LoginCommand}" Click="uiBtn_LoginButton_Click" />-->
+                <Button Grid.Row="7" Background="SteelBlue" Foreground="White" Content="로그인" Command="{Binding SwitchViewCommand}"  CommandParameter="1"   Click="uiBtn_LoginButton_Click" />
 			</Grid>
 		</Border>
 
