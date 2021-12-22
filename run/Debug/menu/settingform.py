@@ -43,7 +43,6 @@ class MyForm(Form):
             self.Text = "Menu: Setting"
         else:
             self.Text = strTitle #//"Menu: Setting"
-        # self.Name = "Hello World"
 
 
         self.pn = Panel()
@@ -112,7 +111,8 @@ class MyForm(Form):
         self.txtACIRPortBox = TextBox()
         self.LayoutTabControl01_ACIR(10,50,self.txtACIRIPBox,'192.168.0.100', self.txtACIRPortBox, 23)
         
-        self.LayoutTabControl01_PNECTS(10,50+30)
+        self.BtnPNE= self.LayoutTabControl01_PNECTS(10,50+30)
+        self.BtnPNE.Click += self.onClick_buttonPNE
 
         # pm-grow : Magnetic-Relay
         self.txtRelarCOMBox = ComboBox()#TextBox()
@@ -404,38 +404,41 @@ class MyForm(Form):
         self.Page2 = TabPage()
         self.Page2.Text='화면설정'
         self.Page2.Location=Point(4,22)
-        self.Page2.Size=Size(208, 78)
+        self.Page2.Size=Size(208, 78+20)
         
         self.txtDashBoardIPBox = TextBox()
-        self.txtDashBoardPortBox = TextBox()
-        self.BtnDashBoard = self.LayoutTabControl02_DashBoard(10,50, self.txtDashBoardIPBox,"192.168.30.1",self.txtDashBoardPortBox ,8005)
+        # self.txtDashBoardPortBox = TextBox()
+        # self.BtnDashBoard = self.LayoutTabControl02_DashBoard(10,50, self.txtDashBoardIPBox,"ws://192.168.30.1:3268",self.txtDashBoardPortBox ,8005)
+        self.BtnDashBoard = self.LayoutTabControl02_DashBoard(10,50, self.txtDashBoardIPBox,"192.168.30.1:3268/battery")
         self.BtnDashBoard.Click += self.onClick_buttonDashBoard
 
         # self.Page2.Controls.Add(self.btnPage2)
         self.tc.Controls.Add(self.Page2)
 
-    def LayoutTabControl02_DashBoard(self,left,top,txt_Box1,vText,txt_Box2,nPort):
-        self.label = Label()
-        self.label.Text = "DashBoard IP"
-        self.label.Location = Point(left, top+3)
-        self.label.Height = 30
-        self.label.Width = 40+70
+    def LayoutTabControl02_DashBoard(self,left,top,txt_Box1,vText):
+        label = Label()
+        label.Text = "DashBoard IP"
+        label.Location = Point(left, top+3)
+        label.Height = 30
+        label.Width = 100 
         
-        self.textBox1 = txt_Box1 #TextBox()
-        self.textBox1.Name='DashBoard_IP_txt'
-        self.textBox1.Text= vText #'192.168.0.100'
-        self.textBox1.Location=Point(140,top)        
-        self.textBox1.BackColor=Color.FromArgb(192,255,255)
-        self.textBox1.TabIndex=1
+        textBox1 = txt_Box1 #TextBox()
+        textBox1.Name='DashBoard_IP_txt'
+        textBox1.Text= vText #'192.168.0.100'
+        textBox1.Location=Point(110,top)        
+        textBox1.BackColor=Color.FromArgb(192,255,255)
+        textBox1.TabIndex=1
+        textBox1.Width = 180 
         
 
-        self.textBox2 = txt_Box2 #TextBox()
-        self.textBox2.Name='BashBoard_PORT_txt'
-        self.textBox2.Text= str(nPort) #'8005'
-        self.textBox2.Location=Point(250,top)
-        self.textBox2.BackColor=Color.FromArgb(192,200,200)
-        self.textBox2.TabIndex=2
-        self.textBox2.Width = 50
+        # self.textBox2 = txt_Box2 #TextBox()
+        # self.textBox2.Name='BashBoard_PORT_txt'
+        # self.textBox2.Text= str(nPort) #'8005'
+        # self.textBox2.Location=Point(250,top)
+        # self.textBox2.BackColor=Color.FromArgb(192,200,200)
+        # self.textBox2.TabIndex=2
+        # self.textBox2.Width = 50
+
         btnpage = Button()
         btnpage.Text='연결체크'
         btnpage.Name='connect_DashBoard_btn'
@@ -443,9 +446,9 @@ class MyForm(Form):
         btnpage.Size=Size(96, 24)
         btnpage.TabIndex=3
 
-        self.Page2.Controls.Add(self.label)
-        self.Page2.Controls.Add(self.textBox1)
-        self.Page2.Controls.Add(self.textBox2)
+        self.Page2.Controls.Add(label)
+        self.Page2.Controls.Add(textBox1)
+        # self.Page2.Controls.Add(self.textBox2)
         self.Page2.Controls.Add(btnpage)
         return  btnpage
 
@@ -457,6 +460,19 @@ class MyForm(Form):
             result = ConnectFuncCallTCP(ip_str)
         except :
             result="\nno call function error"
+        return result
+
+    def CSharpConnectFuncCallPNEconnect(self):
+        result = ""
+        try:
+            # MessageBox.Show("call:" + "ConnectFuncPNEConnect")
+            result = ConnectFuncPNEConnect()
+        except ValueError as ex:
+            result="\nno call function error\n" + ex
+            MessageBox.Show("call:" + result ) # "call function error")
+        else :
+            result="\nno call function error"
+
         return result
 
     def CSharpConnectFuncCallRS232C(self,vPort):
@@ -482,7 +498,10 @@ class MyForm(Form):
     def CSharpConnectFuncCallWebSocket(self,vIpadress,vPort):
         result = ""
         try:
-            ip_str = "{0}:{1}".format(vIpadress,vPort)
+            if (vPort > 80) :
+                ip_str = "{0}:{1}".format(vIpadress,vPort)
+            else:
+                ip_str = "{0}".format(vIpadress)
             # MessageBox.Show("call:" + ip_str)
             result = ConnectFuncWebSocket(vIpadress,vPort)
         except :
@@ -492,9 +511,9 @@ class MyForm(Form):
 
     def onClick_buttonDashBoard(self, sender, args):
         wsIP  = self.txtDashBoardIPBox.Text #"169.254.4.61"
-        wsPort = self.txtDashBoardPortBox.Text # 5024 
-        nPort=int(wsPort)
-        self.CSharpConnectFuncCallWebSocket(wsIP,nPort)
+        wsPort =  0 #//self.txtDashBoardPortBox.Text # 5024 
+        # nPort=int(wsPort)
+        self.CSharpConnectFuncCallWebSocket(wsIP,wsPort)
         MessageBox.Show("연결체크:"+wsIP+ ":"+wsPort) 
 
     def my_func(self,ip):
@@ -514,7 +533,7 @@ class MyForm(Form):
         ip  = self.txtMultimeterIPBox.Text #"169.254.4.61"
         port = self.txtMultimeterPortBox.Text # 5024 
         result  = self.CSharpConnectFuncCallTCP(ip,port)
-        MessageBox.Show("Hello World:" + result)
+        MessageBox.Show(result,"Message")
         # 값이 == 200 이면 타이머 동작하여 값을 갱신한다. self.BtnMultimeter.Text
         if "200" == result :
             MessageBox.Show("200: Timer Start:" + result) #시간 지연시킴 => 타이머 사용해야 할듯
@@ -544,6 +563,16 @@ class MyForm(Form):
             self.resistanceMeterCOMBox.Enabled = True 
             self.BtnResistanceMeter.Text = arrayConnectState[0] #"연결" #"해제"
             MessageBox.Show(result,"Setting-RS232c Error:" + str(len(result)))
+
+    def onClick_buttonPNE (self, sender, args):
+        result = self.CSharpConnectFuncCallPNEconnect()
+        MessageBox.Show("PNE 충방전:"+ str(len(result)))
+        length = len(result)
+        if 13 >= length  and length > 0 :
+            self.BtnPNE.Text = result #"해제"
+        else:
+            self.BtnPNE.Text = arrayConnectState[0] #"연결" #"해제"
+            MessageBox.Show(result,"Setting-PNE Error:" + str(len(result)))
 
     def onClick_buttonRelay(self, sender, args):
         comPort  = self.txtRelarCOMBox.Text 

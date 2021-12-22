@@ -34,8 +34,8 @@ namespace BatteryDaemon
             string strSettingMenu = cjson.jsonMenuParsing(strRoot, subDirPath);
             if ("" == strSettingMenu)
             {
-                strSettingMenu = "settingform";
-                strSettingMenu += ".py";
+                strSettingMenu = "settingform.py";
+                //strSettingMenu += ".py";
             }
 
             pyfile = string.Format("{0}\\{1}\\{2}", strRoot, subDirPath, strSettingMenu);
@@ -81,13 +81,16 @@ namespace BatteryDaemon
         {
             bool bresut = false;
 
-            scope.SetVariable("ConnectFuncCallTCP", new Func<string, string>(PythonClass.ConnectFuncCallTCP));
-            scope.SetVariable("ConnectFuncCallRs232c", new Func<string, string>(PythonClass.ConnectFuncCallRs232c));
-            scope.SetVariable("ConnectFuncCallUSB2CAN", new Func<string, string>(PythonClass.ConnectFuncCallUSB2CAN));
-
-            scope.SetVariable("ConnectFuncWebSocket", new Func<string, int,string>(PythonClass.ConnectFuncWebSocket));
-
-            scope.SetVariable("GetTitleSetting", new Func<string>(PythonClass.GetTitleSetting));
+            if (null != scope)
+            {
+                scope.SetVariable("ConnectFuncCallTCP", new Func<string, string>(PythonClass.ConnectFuncCallTCP));
+                scope.SetVariable("ConnectFuncCallRs232c", new Func<string, string>(PythonClass.ConnectFuncCallRs232c));
+                scope.SetVariable("ConnectFuncCallUSB2CAN", new Func<string, string>(PythonClass.ConnectFuncCallUSB2CAN));
+                scope.SetVariable("ConnectFuncWebSocket", new Func<string, int, string>(PythonClass.ConnectFuncWebSocket));
+                scope.SetVariable("GetTitleSetting", new Func<string>(PythonClass.GetTitleSetting));
+                scope.SetVariable("ConnectFuncPNEConnect", new Func<string>(PythonClass.ConnectFuncPNEConnect)); //PNE 연결 버튼
+                bresut = true;
+            }
 
             return bresut;
         }
@@ -107,7 +110,6 @@ namespace BatteryDaemon
             char[] ch = new char[JSONdata.Length];
 
 
-
             for (int n = 0; n < JSONdata.Length; n++)
             {
                 ch[n] = JSONdata[n];
@@ -125,7 +127,8 @@ namespace BatteryDaemon
         {
            // var result = false;
             Console.WriteLine("결과:{0}", vIpadress);
-            string strResult="";// S_OK = "1";
+            string strResult = "";// S_OK = "1";
+#if false
             string[] adress =vIpadress.Split(':');
             string strIP = "";
             int nPort = 0;
@@ -139,8 +142,16 @@ namespace BatteryDaemon
             string  strRET = client.connectTry(strIP, nPort);
 
             strResult = StringByteToStringDesrilize(strRET);
+#else
+            ClassMultimeter meter = new ClassMultimeter();
 
-            return strResult;
+            string strRET =  meter.ConnectTCP(vIpadress);
+
+            strResult = StringByteToStringDesrilize(strRET);
+
+#endif
+
+            return strRET;
         }
 
         static public string ConnectFuncCallRs232c(string strCOM)
@@ -149,7 +160,9 @@ namespace BatteryDaemon
             ClassRS232C rs232 = new ClassRS232C();
 
             string comPort = strCOM;
-            strResult = rs232.connect(comPort);
+            if ("" != comPort)  {
+                strResult = rs232.connect(comPort);
+            }
 
             return strResult;
         }
@@ -166,7 +179,10 @@ namespace BatteryDaemon
 #else
 
             string comPort = strCOM;
-            strResult = systemBase_uCANSend(comPort);//SystemBase- uCAN
+            if ("" != strCOM)
+            {
+                strResult = systemBase_uCANSend(comPort);//SystemBase- uCAN
+            }
 
 #endif
 
@@ -207,11 +223,10 @@ namespace BatteryDaemon
             }
 
 
-
             int count = 8;//총개수
             string strID = "0CFA00D";
             string comPort = strCOM;
-            string[] strDataSample = { "0001000000000001", "0002000000000002", "0000000000000003" };
+            string[] strDataSample = { "0000000000000000", "0001000000000001", "0000000000000000", "0002000000000002", "0000000000000003" };
             string  strData = string.Format("{0}{1}{2:00}{3}", mode, strID, count, strDataSample[0]);
                     strData += string.Format(",{0}{1}{2:00}{3}", mode,strID, count, strDataSample[1]);
                     strData += string.Format(",{0}{1}{2:00}{3}", mode,strID, count, strDataSample[2]);
@@ -250,13 +265,17 @@ namespace BatteryDaemon
                 nPort = port; 
             }
 
-            string wsIPAdress = string.Format("ws://{0}:{1}/", ip, nPort);
+            string strIPTemp = ip;
+
+            strIPTemp = strIPTemp.Replace(":", ",");//IP와포트 구분 
+            strIPTemp = strIPTemp.Replace("/", ",/");//path
+
+
+            //string wsIPAdress = string.Format("ws://{0}:{1}/", ip, nPort);
+            string wsIPAdress = string.Format("ws://{0}", ip );
             Console.WriteLine("결과:{0}", result);
 
 #if false
-            webSocketClient wb = new webSocketClient(wsIPAdress);
-            wb.StartWS();
-#else
 
             if (wSocketClient.getInstance().getConnectIP() != ip )
             {
@@ -264,6 +283,24 @@ namespace BatteryDaemon
             }
 
             wSocketClient.getInstance(ip,nPort).task_webSocketClient(wsIPAdress);
+#else
+
+            string[] arrayAdress = strIPTemp.Split(',');
+
+            string address="192.168.30.137";
+            int wport = 3268;
+            string path = "/battery";
+
+            if(arrayAdress.Length == 3)
+            {
+                address  = arrayAdress[0];
+                wport =  Int32.Parse(arrayAdress[1]);
+                path = arrayAdress[2];
+            }
+
+
+
+            webSocketSharpClient.getInstance(address, wport, path).connect();
 #endif
 
             return strResult;
@@ -285,6 +322,30 @@ namespace BatteryDaemon
             return _strTitle;
         }
 
+        static public string ConnectFuncPNEConnect()
+        {
+            var result = "false";
+
+#if false
+            try
+            {
+                Core Devices = new Core();
+
+                Devices.Connect();
+            }catch(Exception ex)
+            {
+                result = "false" + ex.Message;
+            }
+#else
+
+            ClassPneCtsLib pne = new ClassPneCtsLib();
+            pne.connect();
+
+#endif
+            Console.WriteLine("PNE 결과:{0}", result);
+
+            return result;
+        }
 
     }
 }

@@ -170,24 +170,31 @@ namespace BatteryDaemon
         }
 
         static wSocketClient _ws=null;
+        static webSocketSharpClient _wsShap = null;
+
         private static void WebSockConnect()
         {
+
+
+#if false
             _ws = wSocketClient.getInstance();
 
-            string wsIPadress = "ws://127.0.0.1:8005";
-            string path = "/";
-            wsIPadress = wsIPadress + path ;// "/Testwebsocket";
+            string wsIPadress = "";
 
-            //설정 정보를 얻어 오기
-
-           // _ws.getConnectIP();
-
-            wsIPadress = string.Format("ws://{0}:{1}{2}", _ws.getConnectIP(), _ws.getConnectPort(), _ws.getConnectPath());
+             wsIPadress = string.Format("ws://{0}:{1}{2}", _ws.getConnectIP(), _ws.getConnectPort(), _ws.getConnectPath());
 
 
             if ("" != wsIPadress) {
                 _ws.task_webSocketClient(wsIPadress);
             }
+#else
+
+            Console.WriteLine("WebSockConnect");
+            _wsShap = webSocketSharpClient.getInstance();
+            
+            _wsShap.connect();
+            
+#endif
         }
 
         private static int jsonParsingPort(string key)

@@ -177,6 +177,11 @@ namespace BatteryDaemon
         public string connectCAN(string strCOM, int BaudRate, byte[] Buff )//string strCommad)
         {
             string strResult = "";
+            if("" == strCOM)
+            {
+                return "";
+            }
+
             string[] nPorts = SerialPort.GetPortNames(); //연결 가능한 시리얼포트 이름을 콤보박스에 가져오기 
             serialPort1 = new SerialPort();
 

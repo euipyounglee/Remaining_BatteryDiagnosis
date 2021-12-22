@@ -148,10 +148,16 @@ namespace BatteryDaemon
                         string strPath = (string)dobj["path"];
 
                         if (nPort <= 80) nPort = 80;
-
+#if false
                         address = strIP;
                         wport = nPort;
                         path = strPath;
+#else
+                        //Test 용
+                        address = "192.168.30.137";// strIP;
+                        wport = 3268;// 2682;// nPort;
+                        path = "/socket";// strPath;
+#endif
                     }
                     catch (Exception ex)
                     {
@@ -203,8 +209,12 @@ namespace BatteryDaemon
             try
             {
                 _webSocket = new ClientWebSocket();
+
+                _webSocket.Options.KeepAliveInterval = TimeSpan.FromSeconds(20);
+
                 await _webSocket.ConnectAsync(new Uri(uri), CancellationToken.None);
                 await Task.WhenAll(Receive(_webSocket), Send(_webSocket));
+                //_webSocket.Closed += OnWebsocketClosed;
             }
             catch (Exception ex)
             {
@@ -244,6 +254,10 @@ namespace BatteryDaemon
 
         }
 
+        private  void ResponseSendData(string strSendData)
+        {
+            SendData(strSendData);
+        }
 
         private  void SendData(string strSendData)
         {
@@ -338,21 +352,75 @@ namespace BatteryDaemon
             }
         }
 
-        private static async Task Receive(ClientWebSocket webSocket)
+        private static async Task Receive2(ClientWebSocket webSocket)
         {
             byte[] buffer = new byte[receiveChunkSize];
+            //WebSocketReceiveResult result = null;
+            var cancelToken = CancellationToken.None;
+            WebSocketReceiveResult result =   await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), cancelToken);
+
             while (webSocket.State == WebSocketState.Open)
             {
-                var result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+                 //result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None)//;
+              //  result = await webSocket.Receive(new ArraySegment<byte>(buffer), CancellationToken.None);
+                //  result = await webSocket.ReceiveAsync(segment, cancellation);
+
                 if (result.MessageType == WebSocketMessageType.Close)
                 {
+                    //return;
                     await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, string.Empty, CancellationToken.None);
                 }
                 else
                 {
                     LogStatus(true, buffer, result.Count);
+                    //값 초기화
+                    Array.Clear(buffer, 0x0, buffer.Length);
                 }
+             //   result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
             }
+
+            Console.WriteLine("State:" + webSocket.State);
+        }
+
+
+        private static async Task Receive(ClientWebSocket webSocket)
+        {
+            byte[] buffer = new byte[receiveChunkSize];
+            //WebSocketReceiveResult result = null;
+          //  var cancelToken = CancellationToken.None;
+            var timeOut = new CancellationTokenSource(500).Token;
+
+            var timeout = new CancellationTokenSource();
+            timeout.CancelAfter(60);
+
+            WebSocketReceiveResult received = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), timeOut);
+
+            while (!webSocket.CloseStatus.HasValue)
+            {
+
+                timeOut = new CancellationTokenSource(500).Token;
+                string text = System.Text.Encoding.UTF8.GetString(buffer, 0, received.Count);
+
+                try
+                {
+                    LogStatus(true, buffer, received.Count);
+                    Array.Clear(buffer, 0x0, buffer.Length);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Unhandled exception: {0}", ex);
+                    break;
+                }
+
+                //문제) 1.서버가 종료되거나 비정상 으로 종료 상태에서 무한 대기 상태가 된다. 해결 해야 할듯.
+                received = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), timeOut);
+
+
+            }
+
+            Console.WriteLine("State:" + webSocket.State);
+            await webSocket.CloseAsync(webSocket.CloseStatus.Value, webSocket.CloseStatusDescription, timeOut);
+
         }
 
         private static void LogStatus(bool receiving, byte[] buffer, int length)
@@ -365,7 +433,7 @@ namespace BatteryDaemon
 
                 if (verbose) {
                     string strText = encoder.GetString(buffer);
-                    Console.WriteLine(strText);// encoder.GetString(buffer));
+                    Console.WriteLine(strText);
 
                     string httpRequest = Encoding.UTF8.GetString(buffer);
 
@@ -507,36 +575,61 @@ namespace BatteryDaemon
 
                     return -1;// false;
                 }
-
-
-                dynamic name = dict["name"]; // result is Dictio
-                dynamic port = dict["port"]; // result is Dictio
-
-
-                if ("RleayCOM" == name)
+                Dictionary<string, string> data = new Dictionary<string, string>();
+                foreach (var pair in dict)
                 {
-                    //   Console.WriteLine("Log Test", json);
-                    Console.WriteLine("port", port);
-                    PythonClass.ConnectFuncCallUSB2CAN(port);// "COM7");
-                }else if ("Multimeter" == name)
-                {
-                    dynamic ipadress = dict["ipadress"]; // result is Dictio
 
-                    string vIpadress = string.Format("{0}:{1}", ipadress, port);
+                    var value = pair.Value;
+                    string nameKey = (string)pair.Key;
+                    if ("daemon" == nameKey) return 0;
+                    
+                    data[nameKey] = (string)value;
 
-                    string strBuffer = PythonClass.ConnectFuncCallTCP(vIpadress);
-
-                    string Value = strBuffer.Replace("\r\n", "");
-                     Value = strBuffer.Replace("\n", "");
-
-                    string JsonString = "{";
-                    JsonString += string.Format("\"name\" : \"{0}\"", name);
-                    JsonString += string.Format(",\"value\" : \"{0}\"", Value);
-                    JsonString += "}";
-
-
-                    SendData(JsonString);
+                    Console.WriteLine("key:"+ nameKey);
                 }
+
+
+                foreach (KeyValuePair<string, string> item in data)
+                {
+                    Console.WriteLine("[{0}:{1}]", item.Key, item.Value);
+
+                    string name = item.Key;
+                    string nameValue = item.Value;
+                    if ("RleayCOM" == nameValue)//item.Key)
+                    {
+
+                        dynamic port = "COM3";// 3456;// dict["port"]; // result is Dictio
+
+                        Console.WriteLine("port", port);
+                        PythonClass.ConnectFuncCallUSB2CAN(port);// "COM7");
+                        break;
+                    }
+                    else if ("Multimeter" == nameValue)
+                    {
+                        dynamic ipadress = "169.254.4.61"; // 장비 고정 IP
+
+                        dynamic port = 5025; //장비의 고정 포트
+
+
+                        string vIpadress = string.Format("{0}:{1}", ipadress, port);
+
+                        string strBuffer = PythonClass.ConnectFuncCallTCP(vIpadress);
+
+                        string Value = strBuffer.Replace("\r\n", "");
+                        Value = strBuffer.Replace("\n", "");
+
+                        string JsonString = "{";
+                        JsonString += string.Format("\"name\" : \"{0}\"", name);
+                        JsonString += string.Format(",\"value\" : \"{0}\"", Value);
+                        JsonString += "}";
+
+
+                        SendData(JsonString);
+                        break;
+                    }
+
+                }
+
 
             }
 
