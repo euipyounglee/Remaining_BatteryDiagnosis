@@ -7,6 +7,7 @@
 	xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
 	xmlns:prism="http://prismlibrary.com/"
     xmlns:local="clr-namespace:BatteryControl.View"
+	xmlns:channel="clr-namespace:BatteryControl.View.Channel"
     mc:Ignorable="d" 
 	UseLayoutRounding="True"
 	SnapsToDevicePixels="True"
@@ -113,7 +114,7 @@
 										<Setter Property="ContentTemplate">
 											<Setter.Value>
 												<DataTemplate>
-													<!--<channel:StartView Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.ChannelIndex}"/>-->
+													<channel:StartView Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.ChannelIndex}"/>
 												</DataTemplate>
 											</Setter.Value>
 										</Setter>

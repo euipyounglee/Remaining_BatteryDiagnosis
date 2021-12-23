@@ -127,7 +127,7 @@
 										<Setter Property="ContentTemplate">
 											<Setter.Value>
 												<DataTemplate>
-													<!--<channel:StartView Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.ChannelIndex}"/>-->
+													<channel:StartView Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.ChannelIndex}"/>
 												</DataTemplate>
 											</Setter.Value>
 										</Setter>

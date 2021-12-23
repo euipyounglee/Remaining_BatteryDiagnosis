@@ -147,6 +147,5 @@ d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl
 d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl\obj\Debug\BatteryControl.Properties.Resources.resources
 d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl\obj\Debug\BatteryControl.csproj.GenerateResource.cache
 d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl\obj\Debug\BatteryControl.csproj.CoreCompileInputs.cache
-d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl\obj\Debug\BatteryControl.csproj.CopyComplete
 d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl\obj\Debug\BatteryControl.exe
 d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl\obj\Debug\BatteryControl.pdb
