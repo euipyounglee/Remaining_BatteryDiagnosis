@@ -23,7 +23,7 @@ namespace BatteryDashBoard.View
 	{
 		public ChannelView()
 		{
-			//InitializeComponent();
+			InitializeComponent();
 		}
 
 	}

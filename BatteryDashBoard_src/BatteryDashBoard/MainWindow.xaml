@@ -6,6 +6,10 @@
         xmlns:local="clr-namespace:BatteryDashBoard"
         xmlns:view="clr-namespace:BatteryDashBoard.View"
         mc:Ignorable="d"
+        WindowState="Maximized"
+        WindowStyle="None"
+        UseLayoutRounding="True"
+	    SnapsToDevicePixels="True"
          Title="배터리 팩 성능진단시스템" Height="1024" Width="1280" MinWidth="1280" MinHeight="768">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
