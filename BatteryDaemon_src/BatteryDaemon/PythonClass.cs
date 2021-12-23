@@ -128,28 +128,12 @@ namespace BatteryDaemon
            // var result = false;
             Console.WriteLine("결과:{0}", vIpadress);
             string strResult = "";// S_OK = "1";
-#if false
-            string[] adress =vIpadress.Split(':');
-            string strIP = "";
-            int nPort = 0;
-            if( adress.Length == 2)
-            {
-                strIP = adress[0];
-                nPort = int.Parse(adress[1]);
-            }
 
-            ClassTCPClient client = new ClassTCPClient();
-            string  strRET = client.connectTry(strIP, nPort);
-
-            strResult = StringByteToStringDesrilize(strRET);
-#else
             ClassMultimeter meter = new ClassMultimeter();
-
             string strRET =  meter.ConnectTCP(vIpadress);
 
             strResult = StringByteToStringDesrilize(strRET);
 
-#endif
 
             return strRET;
         }
@@ -260,12 +244,22 @@ namespace BatteryDaemon
             var result = false;
             int nPort = 80;
             if ("" == ip) return strResult;// ""
+
+
             if( port >= 80)
             {
                 nPort = port; 
             }
 
+
             string strIPTemp = ip;
+
+            if (ip.Contains("ws://") || ip.Contains("wss://"))
+            {
+                strIPTemp  = strIPTemp.Replace("ws://", "");
+            }
+
+
 
             strIPTemp = strIPTemp.Replace(":", ",");//IP와포트 구분 
             strIPTemp = strIPTemp.Replace("/", ",/");//path
@@ -287,15 +281,22 @@ namespace BatteryDaemon
 
             string[] arrayAdress = strIPTemp.Split(',');
 
-            string address="192.168.30.137";
-            int wport = 3268;
-            string path = "/battery";
+            string address="";
+            int wport = 0;// 3268;
+            string path = "";// "/battery";
 
             if(arrayAdress.Length == 3)
             {
                 address  = arrayAdress[0];
                 wport =  Int32.Parse(arrayAdress[1]);
                 path = arrayAdress[2];
+            }
+            else
+            {
+                address = "";
+                wport =  3268;
+                path =  "/battery";
+
             }
 
 
