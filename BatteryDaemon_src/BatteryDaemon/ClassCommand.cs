@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using log4net;
 
 
-namespace BatteryDaemon
+namespace BatteryGateway
 {
     class ClassCommand
     {

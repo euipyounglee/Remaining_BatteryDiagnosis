@@ -9,13 +9,13 @@ using System.Windows.Forms;
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
 using System.IO;
-using static BatteryDaemon.Program;
+using static BatteryGateway.Program;
 using System.Diagnostics;
 
 
 
 
-namespace BatteryDaemon
+namespace BatteryGateway
 {
     class CTrayIcon 
     {
@@ -143,7 +143,7 @@ namespace BatteryDaemon
 #else
             //  PythonClass py = new PythonClass();
 
-            string strTitle = "Daemon";
+            string strTitle = "BatteryGateway";
             wSocketClient wsServ = wSocketClient.getInstance();
 
             string subTitle = string.Format("{0}-{1}:{2}{3}", strTitle, wsServ.getConnectIP(), wsServ.getConnectPort(), wsServ.getConnectPath());
@@ -167,7 +167,7 @@ namespace BatteryDaemon
         {
             PythonClass py = new PythonClass();
 
-            string subTitle = strTitle;// "Daemon";
+            string subTitle = strTitle;// 
 
             return py.CallFileView(subTitle, "Settting");
         }

@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace BatteryDaemon
+namespace BatteryGateway
 {
 
     //[System.Runtime.InteropServices.DllImport("user32.dll")]

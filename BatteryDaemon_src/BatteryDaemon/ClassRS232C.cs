@@ -7,7 +7,7 @@ using System.IO.Ports;  //시리얼통신을 위해 추가해줘야 함
 using System.Threading;
 using System.Windows.Forms;
 
-namespace BatteryDaemon
+namespace BatteryGateway
 {
     class ClassRS232C
     {

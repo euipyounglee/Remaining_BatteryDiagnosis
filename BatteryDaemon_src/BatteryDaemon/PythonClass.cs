@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BatteryDaemon
+namespace BatteryGateway
 {
     public  class PythonClass
     {
@@ -61,14 +61,14 @@ namespace BatteryDaemon
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(string.Format("{0}", ex.Message) , string.Format("Daemon Menu : {0}", menuName));
+                    MessageBox.Show(string.Format("{0}", ex.Message) , string.Format("BatteryGateway Menu : {0}", menuName));
                     Console.WriteLine(ex.ToString());
                 }
 
             }
             else
             {
-                MessageBox.Show(string.Format("File Not Found :\n{0}", pyfile)  , string.Format("Daemon Menu-2 : {0}", menuName));
+                MessageBox.Show(string.Format("File Not Found :\n{0}", pyfile)  , string.Format("BatteryGateway Menu-2 : {0}", menuName));
             }
 
 

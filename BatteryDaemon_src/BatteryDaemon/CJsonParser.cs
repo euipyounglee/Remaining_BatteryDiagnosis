@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Reflection;
 
-namespace BatteryDaemon
+namespace BatteryGateway
 {
     class CJsonParser
     {

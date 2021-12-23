@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using WebSocketSharp;
 
-namespace BatteryDaemon
+namespace BatteryGateway
 {
     class webSocketSharpClient
     {
@@ -320,8 +320,13 @@ namespace BatteryDaemon
 
         public void Send(WebSocket webSocket, string strSendData)
         {
-
-            webSocket.Send(strSendData);
+            try
+            {
+                webSocket.Send(strSendData);
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
 

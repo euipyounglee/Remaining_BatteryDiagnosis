@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("BatteryDaemon")]
 [assembly: AssemblyDescription("배터리 데몬 백그라운 동작")]
 [assembly: AssemblyCompany("PMGrow.co.kr")]
-[assembly: AssemblyProduct("BatteryDaemon")]
+[assembly: AssemblyProduct("BatteryGateway")]
 [assembly: AssemblyCopyright("Copyright ©PMGrow")]
 
 [assembly: ComVisible(false)]

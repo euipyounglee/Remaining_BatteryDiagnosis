@@ -23,7 +23,7 @@ using System.Threading;
 using System.Reflection;
 using System.IO;
 
-namespace BatteryDaemon
+namespace BatteryGateway
 {
    
 

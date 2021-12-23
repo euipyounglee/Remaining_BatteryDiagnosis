@@ -11,7 +11,7 @@ using System.Net.NetworkInformation;
 using System.Collections;
 using System.Windows.Forms;
 
-namespace BatteryDaemon
+namespace BatteryGateway
 {
     public class wSocketClient
     {
