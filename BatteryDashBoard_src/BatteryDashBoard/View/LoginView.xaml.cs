@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Resources;
 //using System.Windows.Shapes;
 
-namespace BatteryDashBoard.View
+namespace BatteryControl.View
 {
 	/// <summary>
 	/// Interaction logic for LoginView.xaml

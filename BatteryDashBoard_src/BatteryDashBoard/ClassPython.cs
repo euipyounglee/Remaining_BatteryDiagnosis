@@ -12,7 +12,7 @@ using System.Windows;
 
 
 
-namespace BatteryDashBoard
+namespace BatteryControl
 {
     class ClassPython
     {

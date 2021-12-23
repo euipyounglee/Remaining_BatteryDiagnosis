@@ -1,4 +1,4 @@
-﻿using BatteryDashBoard.Data.VM;
+﻿using BatteryControl.Data.VM;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace BatteryDashBoard.Data.Converter
+namespace BatteryControl.Data.Converter
 {
 	public class GetRowIndexOfSampleBConverter : IMultiValueConverter
 	{

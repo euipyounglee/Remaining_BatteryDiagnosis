@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace BatteryDashBoard.View.Channel
+namespace BatteryControl.View.Channel
 {
 	public class InspectionResultViewModel : AChannelBaseViewModel
 	{

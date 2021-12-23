@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BatteryDashBoard.Defines
+namespace BatteryControl.Defines
 {
 	public enum WorkspaceTypes
 	{

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BatteryDashBoard.View.Custom
+namespace BatteryControl.View.Custom
 {
     /// <summary>
     /// ConnectionStateButton.xaml에 대한 상호 작용 논리

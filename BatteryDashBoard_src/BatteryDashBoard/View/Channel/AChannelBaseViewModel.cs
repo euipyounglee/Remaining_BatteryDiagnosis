@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace BatteryDashBoard.View.Channel
+namespace BatteryControl.View.Channel
 {
 	public abstract class AChannelBaseViewModel //: BindableBase
 	{

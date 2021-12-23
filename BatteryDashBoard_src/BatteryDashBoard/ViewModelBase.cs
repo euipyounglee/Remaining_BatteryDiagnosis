@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace BatteryDashBoard
+namespace BatteryControl
 {
     public class ViewModelBase : INotifyPropertyChanged
     {

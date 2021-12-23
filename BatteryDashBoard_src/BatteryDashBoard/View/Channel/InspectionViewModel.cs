@@ -1,6 +1,6 @@
 ﻿//using BaseLib.Defines;
 //using BaseLib.Pubsub;
-//using BatteryDashBoard.Defines;
+//using BatteryControl.Defines;
 //using InspectEngineLib.Defines;
 //using PneCtsLib.Data.DTO;
 //using Prism.Commands;
@@ -25,7 +25,7 @@ using System.Threading;
 using System.Collections.Concurrent;
 using System.Runtime.CompilerServices;
 
-namespace BatteryDashBoard.View.Channel
+namespace BatteryControl.View.Channel
 {
     public partial class InspectionViewModel : AChannelBaseViewModel
     {

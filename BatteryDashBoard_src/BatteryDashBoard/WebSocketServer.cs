@@ -1,5 +1,5 @@
-using BatteryDashBoard;
-using BatteryDashBoard.View;
+using BatteryControl;
+using BatteryControl.View;
 using System;
 using System.Collections;
 using System.Collections.Generic;

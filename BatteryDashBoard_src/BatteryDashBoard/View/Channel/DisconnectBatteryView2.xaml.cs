@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BatteryDashBoard.View.Channel
+namespace BatteryControl.View.Channel
 {
 	/// <summary>
 	/// Interaction logic for DisconnectBatteryView2.xaml

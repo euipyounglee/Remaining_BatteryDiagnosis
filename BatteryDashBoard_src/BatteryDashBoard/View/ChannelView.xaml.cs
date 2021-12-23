@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BatteryDashBoard.View
+namespace BatteryControl.View
 {
 	/// <summary>
 	/// Interaction logic for ChannelView.xaml

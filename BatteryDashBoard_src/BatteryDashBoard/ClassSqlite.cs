@@ -10,7 +10,7 @@ using IronPython.SQLite;
 
 
 
-namespace BatteryDashBoard
+namespace BatteryControl
 {
     class ClassSqlite
     {

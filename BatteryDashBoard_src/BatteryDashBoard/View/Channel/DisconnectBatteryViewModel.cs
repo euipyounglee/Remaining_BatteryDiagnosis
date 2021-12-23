@@ -1,4 +1,4 @@
-﻿using BatteryDashBoard.Defines;
+﻿using BatteryControl.Defines;
 //using Prism.Commands;
 //using RestApiLib.Defines;
 //using SharedLib.Core;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BatteryDashBoard.View.Channel
+namespace BatteryControl.View.Channel
 {
 	public class DisconnectBatteryViewModel : AChannelBaseViewModel
 	{

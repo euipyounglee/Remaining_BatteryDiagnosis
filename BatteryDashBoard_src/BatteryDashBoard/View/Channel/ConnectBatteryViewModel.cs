@@ -1,4 +1,4 @@
-﻿using BatteryDashBoard.Defines;
+﻿using BatteryControl.Defines;
 //using RestApiLib.Defines;
 //using SharedLib.Core;
 //using SQLManager.Data;
@@ -12,7 +12,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Controls;
 
-namespace BatteryDashBoard.View.Channel
+namespace BatteryControl.View.Channel
 {
 	public class ConnectBatteryViewModel : AChannelBaseViewModel
 	{
@@ -31,7 +31,7 @@ namespace BatteryDashBoard.View.Channel
 				string retChannelBatteryTestType = "";// SharedPreferences.Instance.LocalConfig.BatteryTestType;
 
 				//Border b = FindVisualParentByName<Border>(this, "border1");
-				//DependencyObject parent = FindVisualParent<UserControl>(BatteryDashBoard.View.Channel.ConnectBatteryView);
+				//DependencyObject parent = FindVisualParent<UserControl>(BatteryControl.View.Channel.ConnectBatteryView);
 
                 //byte ChannelNum = (ChannelIndex == 0) ? (byte)1 : (byte)2;
 #if false 

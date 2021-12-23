@@ -8,7 +8,7 @@ using System.Web.Script.Serialization;
 using System.Reflection;
 using System.IO;
 
-namespace BatteryDashBoard
+namespace BatteryControl
 {
     class CJsonParser
     {

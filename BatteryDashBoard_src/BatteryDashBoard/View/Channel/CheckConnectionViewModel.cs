@@ -1,6 +1,6 @@
 ﻿//using BaseLib.Defines;
 //using BaseLib.Pubsub;
-//using BatteryDashBoard.Defines;
+//using BatteryControl.Defines;
 //using Prism.Commands;
 //using Prism.Mvvm;
 //using RelayBoxLib.Defines;
@@ -16,7 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BatteryDashBoard.View.Channel
+namespace BatteryControl.View.Channel
 {
 	public class CheckConnectionViewModel : AChannelBaseViewModel
 	{

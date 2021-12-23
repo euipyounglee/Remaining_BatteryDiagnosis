@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 
-namespace BatteryDashBoard
+namespace BatteryControl
 {
 
     public enum PayloadDataType

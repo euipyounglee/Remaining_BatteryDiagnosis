@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BatteryDashBoard.View.Channel
+namespace BatteryControl.View.Channel
 {
 	/// <summary>
 	/// Interaction logic for ConnectBatteryView.xaml
@@ -69,7 +69,7 @@ namespace BatteryDashBoard.View.Channel
 				string retChannelBatteryTestType = SharedPreferences.Instance.LocalConfig.BatteryTestType;
 
 				//Border b = FindVisualParentByName<Border>(this, "border1");
-				//DependencyObject parent = FindVisualParent<UserControl>(BatteryDashBoard.View.Channel.ConnectBatteryView);
+				//DependencyObject parent = FindVisualParent<UserControl>(BatteryControl.View.Channel.ConnectBatteryView);
 
 				//byte ChannelNum = (ChannelIndex == 0) ? (byte)1 : (byte)2;
 				if (ChannelIndex == 0)

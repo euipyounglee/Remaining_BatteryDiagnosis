@@ -1,4 +1,4 @@
-﻿//using BatteryDashBoard.Defines;
+﻿//using BatteryControl.Defines;
 //using Prism.Commands;
 //using Prism.Mvvm;
 //using RestApiLib.Core;
@@ -8,7 +8,7 @@
 //using SharedLib.View;
 //using SQLManager.Data;
 //using SQLManager.Data.Query;
-using BatteryDashBoard.Defines;
+using BatteryControl.Defines;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,7 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace BatteryDashBoard
+namespace BatteryControl
 {
 	public class MainViewModel //: BindableBase
 	{

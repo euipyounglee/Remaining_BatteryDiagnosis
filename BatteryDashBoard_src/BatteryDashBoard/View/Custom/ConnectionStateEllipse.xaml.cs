@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BatteryDashBoard.View.Custom
+namespace BatteryControl.View.Custom
 {
 	/// <summary>
 	/// Interaction logic for ConnectionStateEllipse.xaml
