@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 //using RelayBoxLib.Core;
 //using BaseLib.Helper;
-using BaseLib.Helper;
-using SharedLib;
-using SharedLib.Core;
-using RelayBoxLib.Defines;
-using RelayBoxLib.Core;
+
+//using BaseLib.Helper;
+//using SharedLib;
+//using SharedLib.Core;
+//using RelayBoxLib.Defines;
+//using RelayBoxLib.Core;
 using System.Runtime.InteropServices;
 using VCI_CAN_DotNET;//as I7651h;
 using VxCAN_DotNET;
@@ -144,7 +145,9 @@ namespace BatteryGateway
     class ClassUSB2CAN //: I7565H1Lib.Core.AI7565H1
     {
 
+#if false
         RelayBoxLib.Core.Core relayCore = null;
+#endif
         const int MODNUM = 2;
 
         ////Declare multi-module object for I-7565-H1/H2
@@ -175,10 +178,12 @@ namespace BatteryGateway
             var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             path = Path.Combine(path, IntPtr.Size == 8 ? "x64" : "x86");
 
+#if flase
             BaseLib.Helper.LogHelper.log4net_DebugWrite("USB2CAN");//.log4net_Init();
 
             //var a = SharedPreferences.Instance;
             relayCore = new RelayBoxLib.Core.Core();
+#endif
         }
 
         public string connect_1(string strCOM)
@@ -310,7 +315,7 @@ namespace BatteryGateway
             {
 
 
-
+#if false
                 bConnectState = relayCore.connect(strCOM);
 
                 if (bConnectState)
@@ -332,7 +337,8 @@ namespace BatteryGateway
                     }
 
                 }
-               
+#endif
+
             }
             catch(Exception ex)
             {
@@ -347,8 +353,8 @@ namespace BatteryGateway
         private int  DoRelayBoxInsulationCheck(byte ChannelNum)
         {
 
-           // byte ChannelNum = 2;
-
+            // byte ChannelNum = 2;
+#if false
             if (relayCore.CurrentInfo.GetCurrentMode(ChannelNum) == RelayBoxModes.Error)
             {
                 if (!relayCore.SetMode(ChannelNum, RelayBoxModes.Off))
@@ -415,7 +421,7 @@ namespace BatteryGateway
             }
 
 
-
+#endif
 
             return 0;
 
@@ -520,9 +526,10 @@ namespace BatteryGateway
             {
                 Console.WriteLine(ex.ToString());
                 //    BaseLib.Helper.log.Debug("Main() started");
-
+#if false
                 BaseLib.Helper.LogHelper.log.Debug(ex.Message);// "Main() started");
                 BaseLib.Helper.LogHelper.log.Debug(ex.ToString());// "Main() started");
+#endif
             }
             
 

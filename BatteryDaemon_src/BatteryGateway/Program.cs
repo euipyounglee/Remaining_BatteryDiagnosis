@@ -110,10 +110,8 @@ namespace BatteryGateway
 
             CJsonParser cjson = new  CJsonParser();
 
-            AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
+            AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;// 종료 이벤트
 
-           //     Console.CancelKeyPress += new ConsoleCancelEventHandler(myHandler);
-            AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit1; 
 
 
             User32Wrapper.MSG msg = new User32Wrapper.MSG();
@@ -122,6 +120,8 @@ namespace BatteryGateway
 
             User32Wrapper.SetConsoleCtrlHandler(new HandlerRoutine(ConsoleCtrlCheck), true);
 
+            //CALLBACK_CONNECTED CB_Connected = new CALLBACK_CONNECTED(ctsConnected);
+            //CallbackConnected(CB_Connected);
 
 
             User32Wrapper.ShowWindow(handle, SW_HIDE);
@@ -250,6 +250,8 @@ namespace BatteryGateway
 
             User32Wrapper.ShowWindow(handle, SW_HIDE);
 
+
+
             throw new NotImplementedException();
         }
 
@@ -286,6 +288,12 @@ namespace BatteryGateway
 
             return false;// true;
         }
+
+
+        //static void CurrentDomain_ProcessExit(object sender, EventArgs e)
+        //{
+        //    Console.WriteLine("exit");
+        //}
 
     }
 

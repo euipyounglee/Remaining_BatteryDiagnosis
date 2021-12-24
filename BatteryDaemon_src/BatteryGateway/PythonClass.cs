@@ -35,7 +35,6 @@ namespace BatteryGateway
             if ("" == strSettingMenu)
             {
                 strSettingMenu = "settingform.py";
-                //strSettingMenu += ".py";
             }
 
             pyfile = string.Format("{0}\\{1}\\{2}", strRoot, subDirPath, strSettingMenu);

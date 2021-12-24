@@ -145,28 +145,28 @@ class MyForm(Form):
         self.tc.Controls.Add(self.Page1)
 
     def LayoutTabControl01_ACIR(self,left,top,txt_Box1,vText,txt_Box2,nPort):
-        self.label = Label()
-        self.label.Text = arrayLabelNames[0]# "ACIR"
-        self.label.Location = Point(left, top+3)
-        self.label.Height = 30
-        self.label.Width = 40+70
+        label = Label()
+        label.Text = arrayLabelNames[0]# "ACIR"
+        label.Location = Point(left, top+3)
+        label.Height = 30
+        label.Width = 40+70
        
 
-        self.textBox1 = txt_Box1 
-        self.textBox1.Name='ACIR_IP_txt'
-        self.textBox1.Text= vText #'192.168.0.100'
-        self.textBox1.Location=Point(140,top)        
-        self.textBox1.BackColor=Color.FromArgb(192,255,255)
-        self.textBox1.TabIndex=1
+        textBox1 = txt_Box1 
+        textBox1.Name='ACIR_IP_txt'
+        textBox1.Text= vText #'192.168.0.100'
+        textBox1.Location=Point(140,top)        
+        textBox1.BackColor=Color.FromArgb(192,255,255)
+        textBox1.TabIndex=1
         
 
-        self.textBox2 = txt_Box2 
-        self.textBox2.Name='ACIR_PORT_txt'
-        self.textBox2.Text= str(nPort) #'8005'
-        self.textBox2.Location=Point(250,top)
-        self.textBox2.BackColor=Color.FromArgb(192,200,200)
-        self.textBox2.TabIndex=2
-        self.textBox2.Width = 50
+        textBox2 = txt_Box2 
+        textBox2.Name='ACIR_PORT_txt'
+        textBox2.Text= str(nPort) #'8005'
+        textBox2.Location=Point(250,top)
+        textBox2.BackColor=Color.FromArgb(192,200,200)
+        textBox2.TabIndex=2
+        textBox2.Width = 50
 
 
         button1 = Button()
@@ -178,19 +178,37 @@ class MyForm(Form):
         if 1 == _mainonFlg :
             button1.ForeColor = Color.FromArgb(255,0,0)
 
-        self.Page1.Controls.Add(self.label)
-        self.Page1.Controls.Add(self.textBox1)
-        self.Page1.Controls.Add(self.textBox2)
+        self.Page1.Controls.Add(label)
+        self.Page1.Controls.Add(textBox1)
+        self.Page1.Controls.Add(textBox2)
         self.Page1.Controls.Add(button1)
         return  button1
        
     
     def LayoutTabControl01_PNECTS(self,left,top  ):
-        self.label = Label()
-        self.label.Text = arrayLabelNames[1]#"PNE CTS"
-        self.label.Location = Point(left, top+3)
-        self.label.Height = 30
-        self.label.Width = 40+70
+        label = Label()
+        label.Text = arrayLabelNames[1]#"PNE CTS"
+        label.Location = Point(left, top+3)
+        label.Height = 30
+        label.Width = 40+70
+
+        textBox1 = TextBox() #// txt_Box1 
+        # textBox1.Name='PNE_CTS_IP'
+        textBox1.Text= '192.168.4.111'
+        textBox1.Location=Point(140,top)        
+        textBox1.BackColor=Color.FromArgb(192,220,220)
+        textBox1.TabIndex=1
+        textBox1.ReadOnly = True #강제로 막함.. 수정못함
+
+       
+        textBox2 = TextBox() # txt_Box2 
+        # textBox2.Name='ACIR_PORT_txt'
+        textBox2.Text= '2001' #// str(nPort) #'8005'
+        textBox2.Location=Point(250,top)
+        textBox2.BackColor=Color.FromArgb(192,220,220)
+        textBox2.TabIndex=2
+        textBox2.Width = 50 
+        textBox2.ReadOnly = True #강제로 막음.. 수정못함
 
         button1 = Button()
         button1.Text='연결'
@@ -201,9 +219,9 @@ class MyForm(Form):
         if 1 == _mainonFlg :
             button1.ForeColor = Color.FromArgb(255,0,0)
 
-        self.Page1.Controls.Add(self.label)
-        self.Page1.Controls.Add(self.textBox1)
-        self.Page1.Controls.Add(self.textBox2)
+        self.Page1.Controls.Add(label)
+        self.Page1.Controls.Add(textBox1)
+        self.Page1.Controls.Add(textBox2)
         self.Page1.Controls.Add(button1)
 
         return button1

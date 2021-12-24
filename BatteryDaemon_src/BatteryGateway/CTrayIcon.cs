@@ -80,7 +80,7 @@ namespace BatteryGateway
                 notificationIcon.Icon = new System.Drawing.Icon(IconPath);
 #endif
                 notificationIcon.ContextMenu = menu;
-                notificationIcon.Text = "Main";
+                notificationIcon.Text = "BatteryGateWay";
 
                 mnuSetting.Click += new EventHandler(mnuSetting_Click);
                 mnuExit.Click += new EventHandler(mnuExit_Click);
