@@ -149,3 +149,4 @@ d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl
 d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl\obj\Debug\BatteryControl.csproj.CoreCompileInputs.cache
 d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl\obj\Debug\BatteryControl.exe
 d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl\obj\Debug\BatteryControl.pdb
+d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDashBoard_src\BatteryControl\obj\Debug\BatteryControl.csproj.CopyComplete
