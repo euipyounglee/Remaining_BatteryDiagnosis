@@ -58,11 +58,11 @@
 			<!-- 장비 연결 설정 -->
 			<Border HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0" Cursor="Hand">
 				<Border.InputBindings>
-					<MouseBinding MouseAction="LeftClick" Command="{Binding Path=ChangeChannelViewPopupStateCommand}">
-						<!--<MouseBinding.CommandParameter>
+					<!--<MouseBinding MouseAction="LeftClick" Command="{Binding Path=ChangeChannelViewPopupStateCommand}">
+						<MouseBinding.CommandParameter>
 							<define:ChannelViewPopupStates>Setting</define:ChannelViewPopupStates>
-						</MouseBinding.CommandParameter>-->
-					</MouseBinding>
+						</MouseBinding.CommandParameter>
+					</MouseBinding>-->
 				</Border.InputBindings>
                 <Image Width="26" Height="27" Source="/BatteryControl;component/Resources/btn_setting_normal.png"/>
 			</Border>
