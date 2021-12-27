@@ -1,4 +1,5 @@
 ﻿//using PneCtsLib.Core;
+using Microsoft.Scripting.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -257,8 +258,14 @@ namespace BatteryGateway
         public static extern void CallbackChData(dCallbackChData handler);
 
 
-//        private dCallbackChData CallbackChData { get; set; }
 
+        //        private dCallbackChData CallbackChData { get; set; }
+
+        ScriptScope _scope;
+        public ClassPneCtsLib(ScriptScope scope)
+        {
+            _scope = scope;
+        }
 
         public bool connect()
         {
@@ -286,10 +293,6 @@ namespace BatteryGateway
                         CALLBACK_CONNECTED CB_Connected = new CALLBACK_CONNECTED(ctsConnected);
                         CallbackConnected(CB_Connected);
 
-                        //rtn = SimepeTest();
-                        //if (1 == rtn) {
-                        //    result = true;
-                        //}
                     }
 
                     Console.WriteLine(":" + rtn.ToString());
@@ -400,6 +403,9 @@ namespace BatteryGateway
 
             if ("" != str)
             {
+                getPytghonFunc();
+                MessageBox.Show(str, "OK"); // 통신 연결됨---- OK
+
                 rtn = SimepeTest();
 
                 if (1 == rtn)
@@ -407,7 +413,7 @@ namespace BatteryGateway
                    var  CallbackChData = new dCallbackChData(HandleCallbackChData);
 
                 }
-                //MessageBox.Show(str, "OK"); // 통신 연결됨---- OK
+             //   MessageBox.Show(str, "OK"); // 통신 연결됨---- OK
             }
 
             //MessageBox.Show(str, "OK"); // 통신 연결됨---- OK
@@ -452,6 +458,25 @@ namespace BatteryGateway
 
             //var currentTaskInfo = GetCurrentTaskInfo((byte)nChIndex);   // nModIDandChIdex --> nChIndex, 0-base
             //string str = sVarChResultData.ChData.StateToString();
+
+        }
+
+        void getPytghonFunc()
+        {
+            if (null != _scope)
+            {
+                try
+                {
+                    var getPythonFuncResult = _scope.GetVariable<Func<string, string>>("getPythonFunc");
+
+                    Console.WriteLine(":" + getPythonFuncResult("Start!!"));
+
+                    Console.WriteLine(":");
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message,"Error");
+                }
+            }
 
         }
 

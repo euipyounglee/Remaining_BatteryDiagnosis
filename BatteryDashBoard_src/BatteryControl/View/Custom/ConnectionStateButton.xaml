@@ -6,7 +6,27 @@
              xmlns:local="clr-namespace:BatteryControl.View.Custom"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <Label Cursor="Hand">
+        <Label.Style>
+            <Style TargetType="{x:Type Label}" BasedOn="{StaticResource PopupClickableLabelStyle}">
+                <Setter Property="Content" Value="연결"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=uc, Path=IsOpened}">
+                        <!--<DataTrigger.Value>
+                            <bldef:ConnectionStates>Connected</bldef:ConnectionStates>
+                        </DataTrigger.Value>-->
+                        <Setter Property="Background" Value="#888888"/>
+                        <Setter Property="Content" Value="연결해제"/>
+                    </DataTrigger>
+
+                    <DataTrigger Binding="{Binding ElementName=uc, Path=IsOpened}">
+                        <!--<DataTrigger.Value>
+                            <bldef:ConnectionStates>Connecting</bldef:ConnectionStates>
+                        </DataTrigger.Value>-->
+                        <Setter Property="Content" Value="연결중"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Label.Style>
+    </Label>
 </UserControl>

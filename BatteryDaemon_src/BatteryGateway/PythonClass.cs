@@ -15,6 +15,7 @@ namespace BatteryGateway
     {
 
         static string _strTitle;
+        static  ScriptScope _scope;
 
         public bool CallFileView(string subTitle, string menuName)
         {
@@ -24,6 +25,8 @@ namespace BatteryGateway
             string subDirPath = "menu";//디렉토리
             ScriptEngine engine = Python.CreateEngine();
             ScriptScope scope = engine.CreateScope();
+            _scope = scope;
+
             var pyfile = "";
 
             CJsonParser cjson = new CJsonParser();
@@ -88,6 +91,11 @@ namespace BatteryGateway
                 scope.SetVariable("ConnectFuncWebSocket", new Func<string, int, string>(PythonClass.ConnectFuncWebSocket));
                 scope.SetVariable("GetTitleSetting", new Func<string>(PythonClass.GetTitleSetting));
                 scope.SetVariable("ConnectFuncPNEConnect", new Func<string>(PythonClass.ConnectFuncPNEConnect)); //PNE 연결 버튼
+
+               // scope.SetVariable("getPythonFunc", new Func<string, string>(PythonClass.getPythonFunc)); //PNE 연결 버튼 호출
+
+
+
                 bresut = true;
             }
 
@@ -338,13 +346,24 @@ namespace BatteryGateway
             }
 #else
 
-            ClassPneCtsLib pne = new ClassPneCtsLib();
+            ClassPneCtsLib pne = new ClassPneCtsLib(_scope);
             pne.connect();
 
 #endif
             Console.WriteLine("PNE 결과:{0}", result);
 
             return result;
+        }
+
+        static public string getPythonFunc(string strArg)
+        {
+
+            var getPythonFuncResult = _scope.GetVariable<Func<string,string>>("getPythonFunc");
+
+            //getPythonFuncResult();
+            Console.WriteLine("def 실행 테스트 : " + getPythonFuncResult("madla"));
+
+            return "OK-1";
         }
 
     }

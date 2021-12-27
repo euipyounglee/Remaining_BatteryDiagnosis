@@ -24,6 +24,9 @@ arrayLabelNames = ["ACIR","PNE CTS", "Relay Controller", "BI Controller","Zebra 
 _mainonFlg = 1
 _comlist=["COM0","COM1"] 
 
+global g_BtnPNE
+global myform
+
 def getPorNames():
     try:
         comlist = IO.Ports.SerialPort.GetPortNames()
@@ -38,6 +41,8 @@ class MyForm(Form):
         # 창 크기 고정 
         self.FormBorderStyle = FormBorderStyle.FixedSingle
         self.MaximizeBox = False # MinimizeSize 
+
+        self.gBtnPNE = Button
 
         if(""== strTitle ) :
             self.Text = "Menu: Setting"
@@ -113,6 +118,9 @@ class MyForm(Form):
         
         self.BtnPNE= self.LayoutTabControl01_PNECTS(10,50+30)
         self.BtnPNE.Click += self.onClick_buttonPNE
+        
+        g_BtnPNE = self.BtnPNE
+        self.gBtnPNE = self.BtnPNE
 
         # pm-grow : Magnetic-Relay
         self.txtRelarCOMBox = ComboBox()#TextBox()
@@ -403,6 +411,7 @@ class MyForm(Form):
 
         return  button1
 
+
     def onClick_buttonbtnZebraScan(self,sender, args):
         self.txtZebraBox.Text= "vText" #'192.168.0.100'
 
@@ -584,13 +593,13 @@ class MyForm(Form):
 
     def onClick_buttonPNE (self, sender, args):
         result = self.CSharpConnectFuncCallPNEconnect()
-        MessageBox.Show("PNE 충방전:"+ str(len(result)))
+        #MessageBox.Show("PNE 충방전:"+ str(len(result)))
         length = len(result)
         if 13 >= length  and length > 0 :
             self.BtnPNE.Text = result #"해제"
         else:
             self.BtnPNE.Text = arrayConnectState[0] #"연결" #"해제"
-            MessageBox.Show(result,"Setting-PNE Error:" + str(len(result)))
+           # MessageBox.Show(result,"Setting-PNE Error:" + str(len(result)))
 
     def onClick_buttonRelay(self, sender, args):
         comPort  = self.txtRelarCOMBox.Text 
@@ -614,6 +623,20 @@ class MyForm(Form):
 
     def webServerConnect(var1 ,var2):
         print("log...")
+
+    def TestDiag(self,strMsg):
+        MessageBox.Show(strMsg +" 연결 시작-1")
+        # self.BtnPNE.Text ="strMsg"
+        # ChekforllIealCrossThreadCalls = False
+        # self.gBtnPNE.Text = strMsg +"1"
+
+
+def getPythonFunc(strmsg):
+    #   myform.g_BtnPNE.Text = strmsg
+      myform.TestDiag(strmsg)
+      MessageBox.Show(strmsg +" PNE 연결 시작")
+      return "OK"
+
 def Apply_func(var2):
     return True
 
@@ -637,7 +660,7 @@ if __name__ == '__main__':
     main()
 else :
     _mainonFlg = 0
-    title=GetCallTitle()
-    _comlist= getPorNames()
+    title = GetCallTitle()
+    _comlist = getPorNames()
     myform = MyForm(title)
     Application.Run(myform)

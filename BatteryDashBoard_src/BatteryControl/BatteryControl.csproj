@@ -174,8 +174,12 @@
     <Compile Include="View\Custom\ConnectionStateButton.xaml.cs">
       <DependentUpon>ConnectionStateButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Custom\ConnectionStateEllipse.xaml.cs" />
-    <Compile Include="View\Custom\SampleResultItem.xaml.cs" />
+    <Compile Include="View\Custom\ConnectionStateEllipse.xaml.cs">
+      <DependentUpon>ConnectionStateEllipse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Custom\SampleResultItem.xaml.cs">
+      <DependentUpon>SampleResultItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DeviceSettingPopup.xaml.cs" />
     <Compile Include="View\LoginView.xaml.cs" />
     <Compile Include="View\WorkspaceView.xaml.cs" />

@@ -120,8 +120,6 @@ namespace BatteryGateway
 
             User32Wrapper.SetConsoleCtrlHandler(new HandlerRoutine(ConsoleCtrlCheck), true);
 
-            //CALLBACK_CONNECTED CB_Connected = new CALLBACK_CONNECTED(ctsConnected);
-            //CallbackConnected(CB_Connected);
 
 
             User32Wrapper.ShowWindow(handle, SW_HIDE);
