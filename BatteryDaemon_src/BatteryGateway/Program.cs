@@ -105,8 +105,55 @@ namespace BatteryGateway
         static void Main(string[] args)
         {
 
+
+            //var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            //path = Path.Combine(path, IntPtr.Size == 8 ? "x64" : "x86");
+
+            ////DLL 읽기 지정하기
+            //string assemblyProbeDirectory = "";// Path.GetTempPath();// + "..\\..\\run\\x6x\\PSServerAPI64.dll";
+            //if (8  == IntPtr.Size)
+            //{
+            //   // assemblyProbeDirectory = string.Format("{0}\\PSServerAPI64.dll", path);
+            //    assemblyProbeDirectory = string.Format("{0}", path);
+            //}
+            //else
+            //{
+            //    //assemblyProbeDirectory = string.Format("{0}\\PSServerAPI.dll", path);
+            //    assemblyProbeDirectory = string.Format("{0}", path);
+            //}
+
+            //if (Directory.Exists(assemblyProbeDirectory))
+            //{
+            //    //현재 실행 위치를 세팅한다.
+            //    Directory.SetCurrentDirectory(assemblyProbeDirectory);
+            //}
+
+#if true
+
+            DllCureenSet();
+#else
             var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             path = Path.Combine(path, IntPtr.Size == 8 ? "x64" : "x86");
+
+            //DLL 읽기 지정하기
+            string assemblyProbeDirectory = "";// Path.GetTempPath();// + "..\\..\\run\\x6x\\PSServerAPI64.dll";
+            if (8 == IntPtr.Size)
+            {
+                // assemblyProbeDirectory = string.Format("{0}\\PSServerAPI64.dll", path);
+                assemblyProbeDirectory = string.Format("{0}", path);
+            }
+            else
+            {
+                //assemblyProbeDirectory = string.Format("{0}\\PSServerAPI.dll", path);
+                assemblyProbeDirectory = string.Format("{0}", path);
+            }
+
+            if (Directory.Exists(assemblyProbeDirectory))
+            {
+                //현재 실행 위치를 세팅한다.
+                Directory.SetCurrentDirectory(assemblyProbeDirectory);
+            }
+#endif
 
             CJsonParser cjson = new  CJsonParser();
 
@@ -119,7 +166,6 @@ namespace BatteryGateway
             var handle = User32Wrapper.GetConsoleWindow();
 
             User32Wrapper.SetConsoleCtrlHandler(new HandlerRoutine(ConsoleCtrlCheck), true);
-
 
 
             User32Wrapper.ShowWindow(handle, SW_HIDE);
@@ -173,26 +219,10 @@ namespace BatteryGateway
         private static void WebSockConnect()
         {
 
-
-#if false
-            _ws = wSocketClient.getInstance();
-
-            string wsIPadress = "";
-
-             wsIPadress = string.Format("ws://{0}:{1}{2}", _ws.getConnectIP(), _ws.getConnectPort(), _ws.getConnectPath());
-
-
-            if ("" != wsIPadress) {
-                _ws.task_webSocketClient(wsIPadress);
-            }
-#else
-
             Console.WriteLine("WebSockConnect");
             _wsShap = webSocketSharpClient.getInstance();
-            
             _wsShap.connect();
             
-#endif
         }
 
         private static int jsonParsingPort(string key)
@@ -292,6 +322,36 @@ namespace BatteryGateway
         //{
         //    Console.WriteLine("exit");
         //}
+            
+        static int DllCureenSet()
+        {
+
+            int nReuslt = 0;
+            var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            path = Path.Combine(path, IntPtr.Size == 8 ? "x64" : "x86");
+
+            //DLL 읽기 지정하기
+            string assemblyProbeDirectory = "";// Path.GetTempPath();// + "..\\..\\run\\x6x\\PSServerAPI64.dll";
+            if (8 == IntPtr.Size)
+            {
+                // assemblyProbeDirectory = string.Format("{0}\\PSServerAPI64.dll", path);
+                assemblyProbeDirectory = string.Format("{0}", path);
+            }
+            else
+            {
+                //assemblyProbeDirectory = string.Format("{0}\\PSServerAPI.dll", path);
+                assemblyProbeDirectory = string.Format("{0}", path);
+            }
+
+            if (Directory.Exists(assemblyProbeDirectory))
+            {
+                //현재 실행 위치를 세팅한다.
+                Directory.SetCurrentDirectory(assemblyProbeDirectory);
+                nReuslt = 1;
+            }
+
+            return nReuslt;
+        }
 
     }
 

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -33,7 +34,14 @@ namespace BatteryGateway
 
             SetTitleSetting(subTitle);//환경설정 타이틀
 
+#if false
             string strRoot = System.Environment.CurrentDirectory;
+#else
+
+            var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            string strRoot = path;
+
+#endif
             string strSettingMenu = cjson.jsonMenuParsing(strRoot, subDirPath);
             if ("" == strSettingMenu)
             {

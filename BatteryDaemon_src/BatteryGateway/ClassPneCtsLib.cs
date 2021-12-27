@@ -3,6 +3,7 @@ using Microsoft.Scripting.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -112,9 +113,6 @@ namespace BatteryGateway
     }
 
 
-   
-
-
     enum PS_STEP
     {
         PS_STEP_NONE = 0, //Idle
@@ -188,8 +186,14 @@ namespace BatteryGateway
         public Int32 nSafetyAhLow;               //  용량 하한 mAh 
 
 
+#if true
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]//길이 4 * 4 = 16
         public Int32[] reserved;
+#else
+        [MarshalAs(UnmanagedType.SafeArray, SafeArraySubType = VarEnum.VT_I4)] 
+        public Int32[] reserved;
+
+#endif
 
     }
 
@@ -201,6 +205,8 @@ namespace BatteryGateway
 
 #if x64
         private const string STR_DllNAME = "PSServerAPI64.dll";
+       // string strRootPath = Path.GetTempPath() + "..\x64\\PSServerAPI64.dll";
+       // const   string  STR_DllNAME = strRootPath;
 #else
         private const  string STR_DllNAME = "PSServerAPI.dll";
 #endif
@@ -403,8 +409,8 @@ namespace BatteryGateway
 
             if ("" != str)
             {
-                getPytghonFunc();
-                MessageBox.Show(str, "OK"); // 통신 연결됨---- OK
+                getPytghonFunc(str);
+               // MessageBox.Show(str, "OK"); // 통신 연결됨---- OK
 
                 rtn = SimepeTest();
 
@@ -461,7 +467,7 @@ namespace BatteryGateway
 
         }
 
-        void getPytghonFunc()
+        void getPytghonFunc(string strMsg)
         {
             if (null != _scope)
             {
@@ -469,7 +475,7 @@ namespace BatteryGateway
                 {
                     var getPythonFuncResult = _scope.GetVariable<Func<string, string>>("getPythonFunc");
 
-                    Console.WriteLine(":" + getPythonFuncResult("Start!!"));
+                    Console.WriteLine(":" + getPythonFuncResult(strMsg +"\nStart!!!"));
 
                     Console.WriteLine(":");
                 }catch(Exception ex)
