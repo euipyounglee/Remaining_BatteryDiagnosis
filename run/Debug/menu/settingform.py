@@ -634,7 +634,7 @@ class MyForm(Form):
 def getPythonFunc(strmsg):
     #   myform.g_BtnPNE.Text = strmsg
       myform.TestDiag(strmsg)
-      MessageBox.Show(strmsg +" PNE 연결 시작")
+    #   MessageBox.Show(strmsg +" PNE 연결 시작")
       return "OK"
 
 def Apply_func(var2):

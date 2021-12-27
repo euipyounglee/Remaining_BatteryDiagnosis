@@ -205,8 +205,6 @@ namespace BatteryGateway
 
 #if x64
         private const string STR_DllNAME = "PSServerAPI64.dll";
-       // string strRootPath = Path.GetTempPath() + "..\x64\\PSServerAPI64.dll";
-       // const   string  STR_DllNAME = strRootPath;
 #else
         private const  string STR_DllNAME = "PSServerAPI.dll";
 #endif
@@ -278,8 +276,10 @@ namespace BatteryGateway
             var result = false;
 #if x64
             Console.WriteLine("x64");
+            MessageBox.Show("PSServerAPI64.dll", "Loadding");
 #else
             Console.WriteLine("x86");
+            MessageBox.Show("PSServerAPI.dll" ,"Loadding");
 #endif
 
             try
@@ -367,6 +367,9 @@ namespace BatteryGateway
             SimpleSch[5].nCutoffCondTime = 3;
 
             String strOut = "1";
+#if true
+            MessageBox.Show("ctsSendSimpleTest" + string.Format("CH={0}",strOut), "Start~!!!");
+#endif
             int errCode;
             errCode = ctsSendSimpleTest((uint)nModuleNum, Int32.Parse(strOut), 0, nStepCount, SimpleSch);
 
@@ -407,7 +410,7 @@ namespace BatteryGateway
 
             int rtn = 0;
 
-            if ("" != str)
+          if ("" != str)
             {
                 getPytghonFunc(str);
                // MessageBox.Show(str, "OK"); // 통신 연결됨---- OK
