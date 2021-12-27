@@ -113,3 +113,11 @@ run/Daemon/Debug/System.Memory.dll
 run/Daemon/Debug/System.Runtime.CompilerServices.Unsafe.dll
 run/Debug/BatteryDashBoard.pdb
 run/Debug/mybase.db
+../BatteryDaemon_src/.vs/BatteryGateway/v16/.suo
+../BatteryDaemon_src/BatteryGateway/BatteryGateway.csproj.user
+../BatteryDaemon_src/BatteryGateway/obj/Debug/BatteryGateway.csproj.AssemblyReference.cache
+../BatteryDaemon_src/BatteryGateway/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+.vs/BatteryControl/v16/.suo
+BatteryControl/obj/Debug/BatteryControl.csproj.FileListAbsolute.txt
+../run/Debug/BatteryGateway.exe
+../run/Debug/BatteryGateway.pdb
