@@ -335,7 +335,7 @@ namespace BatteryGateway
             ctsSetLogPath("C:\\PNE1");
 #else
             string LogRoot = root + "\\PNE";
-            ctsSetLogPath(LogRoot);// "C:\\PNE1");
+            ctsSetLogPath(LogRoot);
 #endif
 
             int nModuleNum = 1;
@@ -368,7 +368,7 @@ namespace BatteryGateway
 
             String strOut = "1";
 #if true
-            MessageBox.Show("ctsSendSimpleTest" + string.Format("CH={0}",strOut), "Start~!!!");
+            MessageBox.Show("ctsSendSimpleTest" + string.Format(",CH={0}",strOut), "Start~!!!");
 #endif
             int errCode;
             errCode = ctsSendSimpleTest((uint)nModuleNum, Int32.Parse(strOut), 0, nStepCount, SimpleSch);
