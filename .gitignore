@@ -121,3 +121,4 @@ run/Debug/mybase.db
 BatteryControl/obj/Debug/BatteryControl.csproj.FileListAbsolute.txt
 ../run/Debug/BatteryGateway.exe
 ../run/Debug/BatteryGateway.pdb
+BatteryGateway/obj/Debug/BatteryGateway.csproj.CoreCompileInputs.cache
