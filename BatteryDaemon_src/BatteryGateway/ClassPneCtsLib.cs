@@ -113,6 +113,7 @@ namespace BatteryGateway
     }
 
 
+
     enum PS_STEP
     {
         PS_STEP_NONE = 0, //Idle
@@ -133,74 +134,72 @@ namespace BatteryGateway
     [StructLayout(LayoutKind.Sequential)]
     public struct CTS_SIMPLE_TEST_INFO
     {
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        // 시험 조건
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nStepType;             //   스텝. Charge:1, Discharge:2, Rest:3, OCV:4  
 
         [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
         public Int32 nMode;             //   모드. CCCV:1, CC:2 CV:3 CP:6   
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nRefVoltage;             // <  설정 전압 mV   
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nRefCurrent;             //   설정 전압 mA   
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nRefPower;             //   설정 파워 mW 
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
-        public Int32 nRecordTime;				//  기록 시간 (1/10초) 예) 1초:10 , 20초:200, 0.1초: 1 
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
+        public Int32 nRecordTime;               //  기록 시간 (1/10초) 예) 1초:10 , 20초:200, 0.1초: 1 
 
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
         //종료 조건
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nCutoffCondTime;            //  종료 시간 (초) 
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nCutoffCondVolt;            //  종료 전압 mV 
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nCutoffCondCurrent;         //  종료 전류 mA 
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nCutoffCondAh;              //  종료 용량 mAh 
 
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
         //안전 조건
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nSafetyVoltageHigh;         //  전압 상한 mV 
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nSafetyVoltageLow;          //  전압 하한 mV 
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nSafetyCurrentHigh;         //  전류 상한 mA 
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nSafetyCurrentLow;          //  전류 하한 mA 
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nSafetyAhHigh;              //  용량 상한 mAh 
 
-        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]//길이 4
+        [MarshalAs(UnmanagedType.I4, SizeConst = 1)]
         public Int32 nSafetyAhLow;               //  용량 하한 mAh 
 
 
-#if true
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]//길이 4 * 4 = 16
-        public Int32[] reserved;
-#else
-        [MarshalAs(UnmanagedType.SafeArray, SafeArraySubType = VarEnum.VT_I4)] 
-        public Int32[] reserved;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]//길이 = 12
+        public Int32[] nReserved;                   // 미사용
 
-#endif
 
     }
 
-    class ClassPneCtsLib
+
+
+    //======================================================================
+
+    public class ClassPneCtsLib
     {
-
-
 
 
 #if x64
@@ -328,13 +327,25 @@ namespace BatteryGateway
             return rtn;
         }
 
-        private int SimepeTest()
+        private static async void SimepeTest(string path)
         {
             string root = System.Windows.Forms.Application.StartupPath;
 #if false
             ctsSetLogPath("C:\\PNE1");
 #else
-            string LogRoot = root + "\\PNE";
+
+            string LogRoot = "";// root + "\\PNE";
+
+            if (path.Contains(":"))
+            {
+                LogRoot = path;
+            }
+            else
+            {
+                LogRoot = root + path;// "\\PNE";
+            }
+
+            //Log file 생성및 스케쥴 파일 생성
             ctsSetLogPath(LogRoot);
 #endif
 
@@ -368,7 +379,7 @@ namespace BatteryGateway
 
             String strOut = "1";
 #if true
-            MessageBox.Show("ctsSendSimpleTest" + string.Format(",CH={0}",strOut), "Start~!!!");
+            MessageBox.Show("ctsSendSimpleTest" + string.Format(", CH={0}",strOut), "Start~!!!");
 #endif
             int errCode;
             errCode = ctsSendSimpleTest((uint)nModuleNum, Int32.Parse(strOut), 0, nStepCount, SimpleSch);
@@ -376,7 +387,7 @@ namespace BatteryGateway
             if (errCode == 1)
             {
                 // 정상
-                //  MessageBox.Show(string.Format("code ={0}", errCode.ToString()), "OK");
+                MessageBox.Show(string.Format("code ={0}", errCode.ToString()), "OK");
                 Console.WriteLine("OK.....");
             }
             else
@@ -386,7 +397,7 @@ namespace BatteryGateway
             }
 
 
-            return errCode;
+            return;// errCode;
         }
 
         private void ServerClose()
@@ -413,32 +424,46 @@ namespace BatteryGateway
           if ("" != str)
             {
                 getPytghonFunc(str);
-               // MessageBox.Show(str, "OK"); // 통신 연결됨---- OK
 
-                rtn = SimepeTest();
+#if flase
+                rtn = SimepeTest("c:\\PNE4");
 
                 if (1 == rtn)
                 {
                    var  CallbackChData = new dCallbackChData(HandleCallbackChData);
 
                 }
-             //   MessageBox.Show(str, "OK"); // 통신 연결됨---- OK
+#else
+
+                MyAsyncFunc();
+#endif
             }
 
-            //MessageBox.Show(str, "OK"); // 통신 연결됨---- OK
             Console.Write(str + "\n"); // 통신 연결됨---- OK
 
 
-           // int rtn = SimepeTest();
-
-            //if(1 == rtn )
-            //{
-            //    var  CallbackChData = new dCallbackChData(HandleCallbackChData);
-
-            //}
 
             return 0;
         }
+
+       
+        public static async void MyAsyncFunc()
+        {
+            await Task.Delay(5000);
+            Console.WriteLine("End MyAsyncFunc");
+
+             SimepeTest("c:\\PNE3");
+            //rtn = SimepeTest("c:\\PNE4");
+        }
+
+
+        //public  async Task<int> SumTwoOperationsAsync()
+        //{
+        //    var firstTask = GetOperationOneAsync();
+        //    var secondTask = GetOperationTwoAsync();
+
+        //    return await firstTask + await secondTask;
+        //}
 
 
         private void HandleCallbackChData(UInt32 nModIDandChIdex, ref CTS_VARIABLE_CH_DATA ChData)
@@ -455,18 +480,7 @@ namespace BatteryGateway
             Console.WriteLine("::" + nChIndex.ToString());
             //BaseLib.Helper.LogHelper.Debug($"0", $"[TRACDE] HandleCallbackChData(), wc.HIWORD = {wc.HIWORD}");
 
-         //   if (ConnectionState == BaseLib.Defines.ConnectionStates.Disconnected) return;
 
-          //  if (SystemData.InstalledChCount == 0) return;
-
-            //ChData.chData.lVoltage = rnd.Next();
-
-            //var sVarChResultData = new CTS_VARIABLE_CH_DATA(ChData);
-            //CtsData.UpdateData(sVarChResultData.ChData);
-            //Publish(PushDataDTO.PushDataTypes.Data, sVarChResultData);
-
-            //var currentTaskInfo = GetCurrentTaskInfo((byte)nChIndex);   // nModIDandChIdex --> nChIndex, 0-base
-            //string str = sVarChResultData.ChData.StateToString();
 
         }
 
@@ -489,5 +503,5 @@ namespace BatteryGateway
 
         }
 
-    }
-}
+    }//class
+}//namespace

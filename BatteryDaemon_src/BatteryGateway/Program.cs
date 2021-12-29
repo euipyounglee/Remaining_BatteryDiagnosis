@@ -106,54 +106,7 @@ namespace BatteryGateway
         {
 
 
-            //var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            //path = Path.Combine(path, IntPtr.Size == 8 ? "x64" : "x86");
-
-            ////DLL 읽기 지정하기
-            //string assemblyProbeDirectory = "";// Path.GetTempPath();// + "..\\..\\run\\x6x\\PSServerAPI64.dll";
-            //if (8  == IntPtr.Size)
-            //{
-            //   // assemblyProbeDirectory = string.Format("{0}\\PSServerAPI64.dll", path);
-            //    assemblyProbeDirectory = string.Format("{0}", path);
-            //}
-            //else
-            //{
-            //    //assemblyProbeDirectory = string.Format("{0}\\PSServerAPI.dll", path);
-            //    assemblyProbeDirectory = string.Format("{0}", path);
-            //}
-
-            //if (Directory.Exists(assemblyProbeDirectory))
-            //{
-            //    //현재 실행 위치를 세팅한다.
-            //    Directory.SetCurrentDirectory(assemblyProbeDirectory);
-            //}
-
-#if true
-
             DllCureenSet();
-#else
-            var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            path = Path.Combine(path, IntPtr.Size == 8 ? "x64" : "x86");
-
-            //DLL 읽기 지정하기
-            string assemblyProbeDirectory = "";// Path.GetTempPath();// + "..\\..\\run\\x6x\\PSServerAPI64.dll";
-            if (8 == IntPtr.Size)
-            {
-                // assemblyProbeDirectory = string.Format("{0}\\PSServerAPI64.dll", path);
-                assemblyProbeDirectory = string.Format("{0}", path);
-            }
-            else
-            {
-                //assemblyProbeDirectory = string.Format("{0}\\PSServerAPI.dll", path);
-                assemblyProbeDirectory = string.Format("{0}", path);
-            }
-
-            if (Directory.Exists(assemblyProbeDirectory))
-            {
-                //현재 실행 위치를 세팅한다.
-                Directory.SetCurrentDirectory(assemblyProbeDirectory);
-            }
-#endif
 
             CJsonParser cjson = new  CJsonParser();
 
@@ -279,7 +232,6 @@ namespace BatteryGateway
             User32Wrapper.ShowWindow(handle, SW_HIDE);
 
 
-
             throw new NotImplementedException();
         }
 
@@ -318,28 +270,35 @@ namespace BatteryGateway
         }
 
 
-        //static void CurrentDomain_ProcessExit(object sender, EventArgs e)
-        //{
-        //    Console.WriteLine("exit");
-        //}
             
         static int DllCureenSet()
         {
 
             int nReuslt = 0;
             var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            //path = Path.Combine(path, IntPtr.Size == 8 ? "x64" : "x86");
+
+#if x64
+            var pathTemp = Path.Combine(path, "x64");
+#else
+            var pathTemp = Path.Combine(path,  "x86");
+#endif
+
             path = Path.Combine(path, IntPtr.Size == 8 ? "x64" : "x86");
 
+            if (pathTemp != path)
+            {
+                path = pathTemp;
+            }
+
             //DLL 읽기 지정하기
-            string assemblyProbeDirectory = "";// Path.GetTempPath();// + "..\\..\\run\\x6x\\PSServerAPI64.dll";
+            string assemblyProbeDirectory = "";
             if (8 == IntPtr.Size)
             {
-                // assemblyProbeDirectory = string.Format("{0}\\PSServerAPI64.dll", path);
                 assemblyProbeDirectory = string.Format("{0}", path);
             }
             else
             {
-                //assemblyProbeDirectory = string.Format("{0}\\PSServerAPI.dll", path);
                 assemblyProbeDirectory = string.Format("{0}", path);
             }
 
