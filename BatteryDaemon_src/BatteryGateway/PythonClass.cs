@@ -356,7 +356,7 @@ namespace BatteryGateway
 
             ClassPneCtsLib pne = new ClassPneCtsLib(_scope);
 
-            if (pne.connect()) {
+            if ((int)rRET.CTS_ACK == pne.connect()) {
 
                 result = "true";
 
