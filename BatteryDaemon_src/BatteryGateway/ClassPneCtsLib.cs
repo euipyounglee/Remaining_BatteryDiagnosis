@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BatteryGateway.Program;
 
 namespace BatteryGateway
 {
@@ -262,31 +263,40 @@ namespace BatteryGateway
 
 
 
-        //        private dCallbackChData CallbackChData { get; set; }
 
         ScriptScope _scope;
+        string g_strPNEPath;
+
         public ClassPneCtsLib(ScriptScope scope)
         {
             _scope = scope;
+
+            CALLBACK_CONNECTED CB_Connected = new CALLBACK_CONNECTED(ctsConnected);
+            CallbackConnected(CB_Connected);
+
+
+            g_strPNEPath = jsonParsingValue("PNE_charger","path");
+
         }
 
         public bool connect()
         {
             var result = false;
 #if x64
-            Console.WriteLine("x64");
-            MessageBox.Show("PSServerAPI64.dll", "Loadding");
+            Console.WriteLine("x64,PSServerAPI64.dll ...");
+         //   MessageBox.Show("PSServerAPI64.dll", "Loadding");
 #else
-            Console.WriteLine("x86");
-            MessageBox.Show("PSServerAPI.dll" ,"Loadding");
+            Console.WriteLine("x86,PSServerAPI.dll ...");
+          //  MessageBox.Show("PSServerAPI.dll" ,"Loadding");
 #endif
+
 
             try
             {
-                //IntPtr hWnd = GetConsoleWindow();
 
-                IntPtr hWnd =  Process.GetCurrentProcess().MainWindowHandle;
+                if ("" == g_strPNEPath) return result;
 
+                IntPtr hWnd = User32Wrapper.GetConsoleWindow();
                 int rtn = ctsServerCreate(1, hWnd);
 
 
@@ -294,10 +304,9 @@ namespace BatteryGateway
                 {
                     if(1 == ServerStart())
                     {
-
-                        CALLBACK_CONNECTED CB_Connected = new CALLBACK_CONNECTED(ctsConnected);
-                        CallbackConnected(CB_Connected);
-
+                        //로그 정보를 보기 위해 출력 화면 띄움
+                        ConsoleVisible(SW_SHOW);
+                        result = true;
                     }
 
                     Console.WriteLine(":" + rtn.ToString());
@@ -312,7 +321,7 @@ namespace BatteryGateway
             }
 
             Console.WriteLine("PNE 결과:{0}", result);
-            return result;// false;// result;
+            return result;
         }
 
         private int ServerStart()
@@ -327,12 +336,10 @@ namespace BatteryGateway
             return rtn;
         }
 
-        private static async void SimepeTest(string path)
+       
+        private async Task<int> SimepeTest(string path)
         {
             string root = System.Windows.Forms.Application.StartupPath;
-#if false
-            ctsSetLogPath("C:\\PNE1");
-#else
 
             string LogRoot = "";// root + "\\PNE";
 
@@ -347,7 +354,7 @@ namespace BatteryGateway
 
             //Log file 생성및 스케쥴 파일 생성
             ctsSetLogPath(LogRoot);
-#endif
+         //   Console.WriteLine(string.Format("path ={0}", LogRoot));
 
             int nModuleNum = 1;
             int nStepCount = 6;
@@ -378,26 +385,36 @@ namespace BatteryGateway
             SimpleSch[5].nCutoffCondTime = 3;
 
             String strOut = "1";
-#if true
+#if false
             MessageBox.Show("ctsSendSimpleTest" + string.Format(", CH={0}",strOut), "Start~!!!");
 #endif
             int errCode;
             errCode = ctsSendSimpleTest((uint)nModuleNum, Int32.Parse(strOut), 0, nStepCount, SimpleSch);
 
-            if (errCode == 1)
+            if (1 == errCode )
             {
+                Console.WriteLine(string.Format("path ={0}", LogRoot));
+
                 // 정상
-                MessageBox.Show(string.Format("code ={0}", errCode.ToString()), "OK");
-                Console.WriteLine("OK.....");
+                Console.WriteLine(string.Format("OK - code ={0}", errCode.ToString()));
+                //Console.WriteLine("OK.....");
+
             }
             else
             {
-                MessageBox.Show(string.Format("code ={0}", errCode.ToString()), "Error");
-
+                Console.WriteLine(string.Format("error- code ={0}", errCode.ToString()));
             }
 
 
-            return;// errCode;
+            return errCode;
+        }
+
+        private int ConsoleVisible(int nCmdShow)
+        {
+            IntPtr hWnd = User32Wrapper.GetConsoleWindow();
+            User32Wrapper.ShowWindow(hWnd, nCmdShow);
+
+            return User32Wrapper.IsWindowVisible(hWnd);
         }
 
         private void ServerClose()
@@ -423,47 +440,88 @@ namespace BatteryGateway
 
           if ("" != str)
             {
-                getPytghonFunc(str);
+                getPythonCallFunc(str);
 
-#if flase
-                rtn = SimepeTest("c:\\PNE4");
 
-                if (1 == rtn)
+#if true
+                //1. JSON 경로 
+                //if ("" != g_strPNEPath)
+                //{
+                //    aSyncSimepeTest(g_strPNEPath);// "c:\\PNE3");
+                //}
+
+
+
+                var mydelegate = new Action<object>(delegate (object param)
                 {
-                   var  CallbackChData = new dCallbackChData(HandleCallbackChData);
+                    Console.WriteLine(param.ToString());
+                    aSyncSimepeTest(param.ToString());
+                });
 
+                if ("" != g_strPNEPath)
+                {
+                    mydelegate.Invoke(g_strPNEPath);// "Hello");
                 }
-#else
 
-                MyAsyncFunc();
+                // Or: Started as Thread:
+                new System.Threading.Thread(delegate (object param) {
+                    //So something
+                }).Start();
+
+
+#else
+                aSyncSimepeTest("c:\\PNE3");
 #endif
             }
 
             Console.Write(str + "\n"); // 통신 연결됨---- OK
 
 
-
             return 0;
         }
 
-       
-        public static async void MyAsyncFunc()
+        public string jsonParsingValue(string key, string subkey)
         {
-            await Task.Delay(5000);
-            Console.WriteLine("End MyAsyncFunc");
+            dynamic  dobj =  jsonParsingWebSocketValue(key);
 
-             SimepeTest("c:\\PNE3");
-            //rtn = SimepeTest("c:\\PNE4");
+            string value = "";
+            if(null != dobj)
+            {
+                if (dobj.ContainsKey(subkey))
+                {
+                    value = dobj[subkey];
+                }
+
+            }
+         
+            return value;//;
+        }
+
+       public  dynamic jsonParsingWebSocketValue(string key)
+       {
+
+            CJsonParser cjson = CJsonParser.Instatce(); //new CJsonParser();
+            dynamic dobj = cjson.getObject(key);
+            return dobj;
         }
 
 
-        //public  async Task<int> SumTwoOperationsAsync()
-        //{
-        //    var firstTask = GetOperationOneAsync();
-        //    var secondTask = GetOperationTwoAsync();
 
-        //    return await firstTask + await secondTask;
-        //}
+        public async void aSyncSimepeTest(string path)
+        {
+
+          await Task.Delay(1000);// 대기...
+
+          int nReuslt = await SimepeTest(path);// "c:\\PNE3");
+
+          Console.WriteLine("aSyncSimepeTest:" + nReuslt.ToString());
+
+          if (1 == nReuslt)
+          {
+               ConsoleVisible(SW_HIDE);
+          }
+
+        }
 
 
         private void HandleCallbackChData(UInt32 nModIDandChIdex, ref CTS_VARIABLE_CH_DATA ChData)
@@ -484,15 +542,15 @@ namespace BatteryGateway
 
         }
 
-        void getPytghonFunc(string strMsg)
+        void getPythonCallFunc(string strMsg)
         {
             if (null != _scope)
             {
                 try
                 {
-                    var getPythonFuncResult = _scope.GetVariable<Func<string, string>>("getPythonFunc");
+                    var getPythonFunc = _scope.GetVariable<Func<string, string>>("getPythonFunc");
 
-                    Console.WriteLine(":" + getPythonFuncResult(strMsg +"\nStart!!!"));
+                    Console.WriteLine(":" + getPythonFunc(strMsg +"\nStart!!!"));
 
                     Console.WriteLine(":");
                 }catch(Exception ex)

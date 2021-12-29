@@ -17,6 +17,17 @@ namespace BatteryGateway
 
         static string _strTitle;
         static  ScriptScope _scope;
+        static PythonClass g_pythonClass;
+
+        public static PythonClass Instatce()
+        {
+            if (null == g_pythonClass)
+            {
+                g_pythonClass = new PythonClass();
+            }
+
+            return g_pythonClass;
+        }
 
         public bool CallFileView(string subTitle, string menuName)
         {
@@ -30,7 +41,7 @@ namespace BatteryGateway
 
             var pyfile = "";
 
-            CJsonParser cjson = new CJsonParser();
+            CJsonParser cjson = CJsonParser.Instatce();// new CJsonParser();
 
             SetTitleSetting(subTitle);//환경설정 타이틀
 
@@ -342,23 +353,20 @@ namespace BatteryGateway
         {
             var result = "false";
 
-#if false
-            try
-            {
-                Core Devices = new Core();
-
-                Devices.Connect();
-            }catch(Exception ex)
-            {
-                result = "false" + ex.Message;
-            }
-#else
 
             ClassPneCtsLib pne = new ClassPneCtsLib(_scope);
-            pne.connect();
 
-#endif
-            Console.WriteLine("PNE 결과:{0}", result);
+            if (pne.connect()) {
+
+                result = "true";
+
+                Console.WriteLine("PNE 결과:{0}", result);
+
+            }
+            else
+            {
+                MessageBox.Show("Connect Start Faild !!!!" , "Error");
+            }
 
             return result;
         }

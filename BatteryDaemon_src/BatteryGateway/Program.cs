@@ -9,8 +9,11 @@ using System.Threading.Tasks;
 
 namespace BatteryGateway
 {
+
     class Program
     {
+        public  const int SW_HIDE = 0;
+        public  const int SW_SHOW = 5;
 
 
         public class User32Wrapper
@@ -38,6 +41,10 @@ namespace BatteryGateway
 
             [DllImport("user32.dll")]
             public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+            [DllImport("user32")]
+            public static extern int IsWindowVisible(IntPtr hwnd);
+
 
             [StructLayout(LayoutKind.Sequential)]
             public struct POINT
@@ -78,8 +85,6 @@ namespace BatteryGateway
         private const uint WM_DISTORY = 0x0002;
         private const uint WM_QUIT = 0x0012;
 
-        const int SW_HIDE = 0;
-        const int SW_SHOW = 5;
 
         private const uint SC_CLOSE = 0xf060; /// <summary> /// MF_ENABLED /// </summary>    
         private const uint MF_ENABLED = 0x00000000; /// <summary> /// MF_GRAYED /// </summary>        
@@ -107,18 +112,13 @@ namespace BatteryGateway
 
 
             DllCureenSet();
-
-            CJsonParser cjson = new  CJsonParser();
-
-            AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;// 종료 이벤트
-
-
+            CJsonParser cjson =  CJsonParser.Instatce();
 
             User32Wrapper.MSG msg = new User32Wrapper.MSG();
-
             var handle = User32Wrapper.GetConsoleWindow();
 
             User32Wrapper.SetConsoleCtrlHandler(new HandlerRoutine(ConsoleCtrlCheck), true);
+            //AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;// 종료 이벤트
 
 
             User32Wrapper.ShowWindow(handle, SW_HIDE);
@@ -190,7 +190,7 @@ namespace BatteryGateway
         {
             int nPort = 80;
 
-            CJsonParser cjson = new CJsonParser();
+            CJsonParser cjson = CJsonParser.Instatce();// new CJsonParser();
             nPort = cjson.getConfigjsonInt32(key);
 
             return nPort;
@@ -199,7 +199,7 @@ namespace BatteryGateway
         public static dynamic  jsonParsingWebSocketValue( string key)
         {
 
-            CJsonParser cjson = new CJsonParser();
+            CJsonParser cjson = CJsonParser.Instatce(); //new CJsonParser();
             dynamic dobj = cjson.getObject(key);
             return dobj;
         }
@@ -212,6 +212,7 @@ namespace BatteryGateway
 
         static public void KillAppHide()
         {
+            //종료 될때.. 
             Console.WriteLine("종료");
 
             var handle = User32Wrapper.GetConsoleWindow();
@@ -225,11 +226,21 @@ namespace BatteryGateway
             KillAppHide();
         }
 
-        static void CurrentDomain_ProcessExit(object sender, EventArgs e)
+        static void consleVisible()
         {
             var handle = User32Wrapper.GetConsoleWindow();
 
             User32Wrapper.ShowWindow(handle, SW_HIDE);
+
+        }
+            
+        static void CurrentDomain_ProcessExit(object sender, EventArgs e)
+        {
+        //    var handle = User32Wrapper.GetConsoleWindow();
+
+          //  User32Wrapper.ShowWindow(handle, SW_HIDE);
+
+            consleVisible();
 
 
             throw new NotImplementedException();
@@ -256,9 +267,12 @@ namespace BatteryGateway
 
                 case CtrlTypes.CTRL_CLOSE_EVENT:
                     Console.WriteLine("Program being closed!");
+                    // consleVisible();
+
                     KillAppHide();
-                   // return true;
-                    break;
+
+                    return true;// false;
+                    //break;
 
                 case CtrlTypes.CTRL_LOGOFF_EVENT:
                 case CtrlTypes.CTRL_SHUTDOWN_EVENT:
@@ -275,8 +289,7 @@ namespace BatteryGateway
         {
 
             int nReuslt = 0;
-            var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            //path = Path.Combine(path, IntPtr.Size == 8 ? "x64" : "x86");
+            var path = Utils.rootPath();
 
 #if x64
             var pathTemp = Path.Combine(path, "x64");

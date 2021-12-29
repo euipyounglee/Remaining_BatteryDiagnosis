@@ -180,7 +180,7 @@ namespace BatteryGateway
 
         public static dynamic jsonParsingWebSocketValue(string key)
         {
-            CJsonParser cjson = new CJsonParser();
+            CJsonParser cjson = CJsonParser.Instatce();
             dynamic dobj = cjson.getObject(key);
             return dobj;
         }

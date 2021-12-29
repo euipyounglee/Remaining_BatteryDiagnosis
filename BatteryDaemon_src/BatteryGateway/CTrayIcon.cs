@@ -61,10 +61,18 @@ namespace BatteryGateway
 
                 IntPtr Hicon = bitmap1.GetHicon();
                 Icon myIcon = Icon.FromHandle(Hicon);
+#if false
                 string strRoot = System.Environment.CurrentDirectory;
+#else
+                string strRoot =  Utils.rootPath();
+#endif
+
                 string IconPath = string.Format("{0}\\{1}",strRoot ,"Tray.ico");
                 if (File.Exists(IconPath) == false)
                 {
+                    //없으면 생성 시키기 
+                    //리소스에 파일 읽기
+
                     using (System.IO.FileStream f = new System.IO.FileStream(IconPath, System.IO.FileMode.OpenOrCreate))
                     {
                         _Icon.Save(f);
@@ -138,21 +146,18 @@ namespace BatteryGateway
 
         public bool MenuSetting() 
         {
-#if false
-            string menuName = "setting";
-#else
-            //  PythonClass py = new PythonClass();
 
-            string strTitle = "BatteryGateway";
+            string strMainTitle = "BatteryGateway";
+
+            string strTitle = Path.Combine(strMainTitle, IntPtr.Size == 8 ? "x64" : "x86");
+
             wSocketClient wsServ = wSocketClient.getInstance();
 
             string subTitle = string.Format("{0}-{1}:{2}{3}", strTitle, wsServ.getConnectIP(), wsServ.getConnectPort(), wsServ.getConnectPath());
 
 
-
             return callFileView(subTitle, "Settting");
 
-#endif
 
         }
 
@@ -165,11 +170,20 @@ namespace BatteryGateway
 
         public bool callFileView(string strTitle, string menuName)
         {
+#if false
             PythonClass py = new PythonClass();
 
+              string subTitle = strTitle;// 
+
+            return py.CallFileView(subTitle, "Settting");
+
+#else
+
+            PythonClass py = PythonClass.Instatce();
             string subTitle = strTitle;// 
 
             return py.CallFileView(subTitle, "Settting");
+#endif
         }
 
     }

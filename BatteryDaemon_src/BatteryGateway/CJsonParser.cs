@@ -29,15 +29,34 @@ namespace BatteryGateway
         }
 
         string _strAppConfig;
-        public CJsonParser()
+        private CJsonParser()
         {
             string strApp = Path.GetFileNameWithoutExtension(Assembly.GetEntryAssembly().Location);
 
             string strAppConfig = strApp + "_config.json";
 
-            _strAppConfig = strAppConfig;
+            string strRoot = Utils.rootPath();
+
+            _strAppConfig = Path.Combine(strRoot, strAppConfig);
+
 
         }
+
+
+
+        private static CJsonParser g_CJsonParser;
+
+        public static CJsonParser Instatce()
+        {
+            if (null == g_CJsonParser)
+            {
+                g_CJsonParser = new CJsonParser();
+            }
+
+            return g_CJsonParser;
+        }
+
+
 
         //포트 알아내기
         public string jsonMenuParsing(string jsonDir, string keyvalue)

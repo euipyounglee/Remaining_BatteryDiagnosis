@@ -6,6 +6,7 @@ using System.IO;
 using System.Drawing;
 using System.Reflection;
 using System.Diagnostics;
+using static BatteryGateway.Program;
 
 namespace BatteryGateway
 {
@@ -21,11 +22,14 @@ namespace BatteryGateway
     //UInt32 nIcons,
     //UInt32 flags
     //);
-    
+
+//     SW_SHOW
+
     sealed class CmdArgumentException : Exception {
-    public CmdArgumentException(string message) : base(message) {
+        public CmdArgumentException(string message) : base(message) 
+        {
+        }
     }
-  }
 
   static class Utils {
 
@@ -122,6 +126,21 @@ namespace BatteryGateway
                 } 
             }
             return null; 
+        }
+
+        public static string rootPath()
+        {
+
+            int nReuslt = 0;
+            var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            //path = Path.Combine(path, IntPtr.Size == 8 ? "x64" : "x86");
+
+            return path;
+        }
+
+        public static bool isWindowVisible(IntPtr hwnd)
+        {
+            return User32Wrapper.ShowWindow(hwnd, Program.SW_SHOW);
         }
 
         public static void Gaaa(string strProcessesByName)
