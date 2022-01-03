@@ -349,18 +349,22 @@ namespace BatteryGateway
             return _strTitle;
         }
 
-        static public string ConnectFuncPNEConnect()
+
+        static PSServerAPI _pne;
+
+        public static  string ConnectFuncPNEConnect()
         {
             var result = "false";
 
 
-            ClassPneCtsLib pne = new ClassPneCtsLib(_scope);
+            _pne = new PSServerAPI(_scope);
+         //   ClassPneCtsLib pne =  ClassPneCtsLib.Instatce(_scope);
 
-            if ((int)rRET.CTS_ACK == pne.connect()) {
+            if ((int)rRET.CTS_ACK == _pne.connect()) {
 
                 result = "true";
 
-                Console.WriteLine("PNE 결과:{0}", result);
+                Console.WriteLine("async OK PNE 결과:{0}", result);
 
             }
             else

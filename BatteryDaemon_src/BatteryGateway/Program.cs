@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BatteryGateway
 {
@@ -44,6 +45,11 @@ namespace BatteryGateway
 
             [DllImport("user32")]
             public static extern int IsWindowVisible(IntPtr hwnd);
+
+
+            [DllImport("user32")]
+            public static extern int GetWindowText(IntPtr hwnd, StringBuilder lpString, int cch);
+
 
 
             [StructLayout(LayoutKind.Sequential)]
@@ -112,6 +118,10 @@ namespace BatteryGateway
 
 
             DllCureenSet();
+#if false
+            firewallManager();//방화벽
+#endif
+
             CJsonParser cjson =  CJsonParser.Instatce();
 
             User32Wrapper.MSG msg = new User32Wrapper.MSG();
@@ -212,6 +222,8 @@ namespace BatteryGateway
 
         static public void KillAppHide()
         {
+            PSServerAPI.Close();
+
             //종료 될때.. 
             Console.WriteLine("종료");
 
@@ -325,7 +337,35 @@ namespace BatteryGateway
             return nReuslt;
         }
 
-    }
+        public static void firewallManager()
+        {
 
+            string appPath = Utils.GetAppPathName();
+            IntPtr hwnd = Utils.getSafeHwnd();
+            StringBuilder strText = new StringBuilder(255);
+            User32Wrapper.GetWindowText(hwnd, strText, 254);
+
+
+            ClassFirwallManager firewallMng = new ClassFirwallManager();
+            FirewallAppInfo appInfo = firewallMng.getAppInfo(appPath);// Application.ExecutablePath);
+
+            // 방화벽 앱 목록에 없음 - 프로그램을 최초로 실행시키는 경우
+            if (appInfo.mListAdded == false)
+            {
+
+                // TODO : 필요한 처리 추가
+                firewallMng.setAuthorizeProgramRun(strText.ToString(), appPath);
+            }
+            // 방화벽에 허용된 앱으로 등록되지 않았음 - "액세스" 허용 하지 않은 경우
+            else if (appInfo.mEnabled == false)
+            {
+                // TODO : 필요한 처리 추가
+            }
+
+
+
+
+        }
+    }
 
 }

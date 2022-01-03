@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Diagnostics;
 using static BatteryGateway.Program;
+using System.Windows.Forms;
 
 namespace BatteryGateway
 {
@@ -141,6 +142,24 @@ namespace BatteryGateway
         public static bool isWindowVisible(IntPtr hwnd)
         {
             return User32Wrapper.ShowWindow(hwnd, Program.SW_SHOW);
+        }
+
+        //나의 콘솔 핸들 얻기
+        public static IntPtr getSafeHwnd()
+        {
+            IntPtr hWnd = User32Wrapper.GetConsoleWindow();
+
+            return hWnd;
+
+        }
+
+        //실행 파일 위치
+        public static string  GetAppPathName()
+        {
+
+           string  appPathName = Assembly.GetEntryAssembly().Location;// Application.ExecutablePath;
+
+            return appPathName;
         }
 
         public static void Gaaa(string strProcessesByName)

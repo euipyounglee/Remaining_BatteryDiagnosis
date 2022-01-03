@@ -625,7 +625,8 @@ class MyForm(Form):
         print("log...")
 
     def TestDiag(self,strMsg):
-        MessageBox.Show(strMsg +" 연결 시작-1")
+        #MessageBox.Show(strMsg +" 연결 시작-1")
+        print(strMsg +" 연결 시작-1")
         # self.BtnPNE.Text ="strMsg"
         # ChekforllIealCrossThreadCalls = False
         # self.gBtnPNE.Text = strMsg +"1"

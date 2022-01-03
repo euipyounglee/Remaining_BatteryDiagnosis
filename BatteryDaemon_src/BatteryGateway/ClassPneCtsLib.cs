@@ -217,7 +217,7 @@ namespace BatteryGateway
 
     //======================================================================
 
-    public class ClassPneCtsLib
+    public class PSServerAPI
     {
 
 
@@ -284,25 +284,51 @@ namespace BatteryGateway
 
 
 
+        public const int INSTALLED_MODULE_NO = 1;
 
         ScriptScope _scope;
         string g_strPNEPath;
 
-        public ClassPneCtsLib(ScriptScope scope)
+
+        //        static PSServerAPI g_ClassPneCtsLib ;
+
+        CALLBACK_CONNECTED CB_Connected;
+        CALLBACK_BACKGETCHDATA CB_BackGetChData;
+
+        public PSServerAPI(ScriptScope scope)
         {
             _scope = scope;
 
-            CALLBACK_CONNECTED CB_Connected = new CALLBACK_CONNECTED(ctsConnected); //connect  콜백
-            CallbackConnected(CB_Connected);
+            CB_Connected = new PSServerAPI.CALLBACK_CONNECTED(ctsConnected); //connect  콜백
+
+            PSServerAPI.CallbackConnected(CB_Connected);
 
 
 #if true
-            CALLBACK_BACKGETCHDATA CB_BackGetChData = new CALLBACK_BACKGETCHDATA(TestCallBackGetChData); 
-            CallbackChData(CB_BackGetChData);
+            CB_BackGetChData = new PSServerAPI.CALLBACK_BACKGETCHDATA(HandleCallbackChData);
+            PSServerAPI.CallbackChData(CB_BackGetChData);
 #endif
 
             g_strPNEPath = jsonParsingValue("PNE_charger","path");
 
+        }
+
+        //public static ClassPneCtsLib Instatce(ScriptScope scope)
+        //{
+        //    if (null == g_ClassPneCtsLib)
+        //    {
+        //        g_ClassPneCtsLib = new ClassPneCtsLib(scope);
+        //    }
+
+        //    return g_ClassPneCtsLib;
+        //}
+
+        public static int Close()
+        {
+
+            int nRtn = PSServerAPI.ctsServerClose();
+            Console.WriteLine("ctsServerClose:" + nRtn.ToString());
+            return nRtn;// 0;
         }
 
         public int connect()
@@ -310,12 +336,10 @@ namespace BatteryGateway
             int result = (int)rRET.CTS_NACK;// false;
 #if x64
             Console.WriteLine("x64,PSServerAPI64.dll ...");
-         //   MessageBox.Show("PSServerAPI64.dll", "Loadding");
 #else
             Console.WriteLine("x86,PSServerAPI.dll ...");
           //  MessageBox.Show("PSServerAPI.dll" ,"Loadding");
 #endif
-
 
             try
             {
@@ -323,19 +347,26 @@ namespace BatteryGateway
                 if ("" == g_strPNEPath) return (int)rRET.CTS_FILE_NOT_EXIST; ;// result;
 
                 IntPtr hWnd = User32Wrapper.GetConsoleWindow();
-                int rtn = ctsServerCreate(1, hWnd);
 
+                int nRtn = PSServerAPI.ctsServerCreate(INSTALLED_MODULE_NO, hWnd);
+                ConsoleVisible(SW_SHOW);
+                Console.WriteLine("ctsServerCreate ..." + nRtn.ToString());
 
-                if ((int)rRET.CTS_ACK == rtn)
+                if ((int)rRET.CTS_ACK == nRtn)
                 {
-                    if((int)rRET.CTS_ACK == ServerStart())
+                    nRtn = ServerStart();
+
+                    Console.WriteLine("ServerStart ..." + nRtn.ToString());
+
+                    if ((int)rRET.CTS_ACK == nRtn)
                     {
+                        //Console.WriteLine("ServerStart ...");
                         //로그 정보를 보기 위해 출력 화면 띄움
-                        ConsoleVisible(SW_SHOW);
+                       // ConsoleVisible(SW_SHOW);
                         result = (int)rRET.CTS_ACK;// true;
                     }
 
-                    Console.WriteLine(":" + rtn.ToString());
+                    Console.WriteLine("wait connect:" + nRtn.ToString());
                 }
 
 
@@ -346,26 +377,28 @@ namespace BatteryGateway
                MessageBox.Show(ex.Message, "Connect Error");
             }
 
-            Console.WriteLine("PNE 결과:{0}", result);
+          //  Console.WriteLine("PNE 결과:{0}", result);
             return result;
         }
 
         private int ServerStart()
         {
 
-            int rtn = ctsServerStart();
+            int nRtn = PSServerAPI.ctsServerStart();
 
             // MessageBox.Show(string.Format("rtn : {0}", rtn));
 
-            Console.WriteLine("결과: " + rtn.ToString());
+            Console.WriteLine("결과: " + nRtn.ToString());
 
-            return rtn;
+            return nRtn;
         }
 
-       
-        private async Task<int> SimepeTest(string path)
+        private static async Task<int> SimepeTest(string path)
         {
             string root = System.Windows.Forms.Application.StartupPath;
+#if false
+            ctsSetLogPath("C:\\PNE1");
+#else
 
             string LogRoot = "";// root + "\\PNE";
 
@@ -380,7 +413,8 @@ namespace BatteryGateway
 
             //Log file 생성및 스케쥴 파일 생성
             ctsSetLogPath(LogRoot);
-         //   Console.WriteLine(string.Format("path ={0}", LogRoot));
+            Console.WriteLine(string.Format("path ={0}", LogRoot));
+#endif
 
             int nModuleNum = 1;
             int nStepCount = 6;
@@ -411,31 +445,35 @@ namespace BatteryGateway
             SimpleSch[5].nCutoffCondTime = 3;
 
             String strOut = "1";
-#if false
-            MessageBox.Show("ctsSendSimpleTest" + string.Format(", CH={0}",strOut), "Start~!!!");
-#endif
             int errCode;
             errCode = ctsSendSimpleTest((uint)nModuleNum, Int32.Parse(strOut), 0, nStepCount, SimpleSch);
 
-            if ((int)rRET.CTS_ACK == errCode )
+            if (errCode == 1)
             {
-                Console.WriteLine(string.Format("path ={0}", LogRoot));
-
                 // 정상
-                Console.WriteLine(string.Format("OK - code ={0}", errCode.ToString()));
-                //Console.WriteLine("OK.....");
+                Console.WriteLine(string.Format("code ={0}", errCode.ToString()));
+
+              //  MessageBox.Show(string.Format("code ={0}", errCode.ToString()), "OK");
+                Console.WriteLine("func SimepeTest OK.....");
+
+                // Console Visible -Hide
+                //  ConsoleVisible(SW_HIDE);
+
+            //    CALLBACK_BACKGETCHDATA CB_BackGetChData = new CALLBACK_BACKGETCHDATA(HandleCallbackChData);
+             //   CallbackChData(CB_BackGetChData);
 
             }
             else
             {
-                Console.WriteLine(string.Format("error- code ={0}", errCode.ToString()));
+                MessageBox.Show(string.Format("code ={0}", errCode.ToString()), "Error");
+
             }
 
 
-            return errCode;
+            return  errCode;
         }
 
-        private int ConsoleVisible(int nCmdShow)
+        private static int ConsoleVisible(int nCmdShow)
         {
             IntPtr hWnd = User32Wrapper.GetConsoleWindow();
             User32Wrapper.ShowWindow(hWnd, nCmdShow);
@@ -451,8 +489,10 @@ namespace BatteryGateway
         }
 
         //ksj 20200728 : delegate 호출 메소드 선언 (접속 이벤트)
-        public int ctsConnected(int nModuleID, ref CTS_MD_SYSTEM_DATA sysinfo)
+        public int ctsConnected(int nModuleID, ref CTS_MD_SYSTEM_DATA data)//sysinfo)
         {
+#if false
+
             string str;
             string strModelName = Encoding.Default.GetString(sysinfo.szModelName);
 
@@ -468,37 +508,65 @@ namespace BatteryGateway
             {
                 getPythonCallFunc(str);
 
-
-#if true
-                //1. JSON 경로 
-
-                var mydelegate = new Action<object>(delegate (object param)
-                {
-                    Console.WriteLine(param.ToString());
-                    aSyncSimepeTest(param.ToString());
-                    
-                });
-
-                if ("" != g_strPNEPath)
-                {
-                    mydelegate.Invoke(g_strPNEPath);
-                }
-
-                // Or: Started as Thread:
-                new System.Threading.Thread(delegate (object param) {
-                    //So something
-                }).Start();
-
-
-#else
-
-                if ("" != g_strPNEPath) { 
-                    aSyncSimepeTest(g_strPNEPath);// "c:\\PNE3");
-                }
-#endif
+                asyncSchedule();
             }
 
             Console.Write(str + "\n"); // 통신 연결됨---- OK
+#else
+            ////////////////////////////////////////////////////////////////////////////////
+
+            //ModuleID = data.nModuleID;
+            //SystemType = data.nSystemType;
+          //  ProtocolVersion = data.nProtocolVersion;
+
+            Console.WriteLine("nModuleID:" + data.nModuleID.ToString());
+            Console.WriteLine("nSystemType:" + data.nSystemType.ToString());
+            Console.WriteLine("nProtocolVersion:" + data.nProtocolVersion.ToString());
+
+
+            //ModelName = new sbyte[data.szModelName.Length];
+            //Array.Copy(data.szModelName, 0, ModelName, 0, data.szModelName.Length);
+
+         //   OSVersion = data.nOSVersion;
+         //   VoltageRange = data.wVoltageRange;
+         //   CurrentRange = data.wCurrentRange;
+
+            Console.WriteLine("nOSVersion:" + data.nOSVersion.ToString());
+            Console.WriteLine("wVoltageRange:" + data.wVoltageRange.ToString());
+            Console.WriteLine("wCurrentRange:" + data.wCurrentRange.ToString());
+
+
+            //VoltageSpec = new uint[data.nVoltageSpec.Length];
+            //Array.Copy(data.nVoltageSpec, 0, VoltageSpec, 0, data.nVoltageSpec.Length);
+
+            //CurrentSpec = new uint[data.nCurrentSpec.Length];
+            //Array.Copy(data.nCurrentSpec, 0, CurrentSpec, 0, data.nCurrentSpec.Length);
+
+            //CanCommType = data.byCanCommType;
+
+            //TypeData = new byte[data.byTypeData.Length];
+            //Array.Copy(data.byTypeData, 0, TypeData, 0, data.byTypeData.Length);
+
+            //InstalledBoard = data.wInstalledBoard;
+            //ChannelPerBoard = data.wChannelPerBoard;
+          //  InstalledChCount = data.nInstalledChCount;
+           // TotalJigNo = data.nTotalJigNo;
+
+            Console.WriteLine("wInstalledBoard:" + data.wInstalledBoard.ToString());
+            Console.WriteLine("wChannelPerBoard:" + data.wChannelPerBoard.ToString());
+            Console.WriteLine("nInstalledChCount:" + data.nInstalledChCount.ToString());
+            Console.WriteLine("nTotalJigNo:" + data.nTotalJigNo.ToString());
+
+
+            //BdInJig = new uint[data.awBdInJig.Length];
+            //Array.Copy(data.awBdInJig, 0, BdInJig, 0, data.awBdInJig.Length);
+
+            //Reserved = new uint[data.reserved.Length];
+            //Array.Copy(data.reserved, 0, Reserved, 0, data.reserved.Length);
+
+
+
+#endif
 
 
             return 0;
@@ -530,61 +598,44 @@ namespace BatteryGateway
 
 
 
-        public async void aSyncSimepeTest(string path)
+        public static async void asyncSchedule()
         {
+           // await Task.Delay(5000);
 
-            Console.WriteLine("=======================================aSyncSimepeTest:");//
-                                                                                         //+ nReuslt.ToString());
-            await Task.Delay(1000);// 대기...
+            Console.WriteLine("syncSchedule...");
+            await Task.Delay(1000);
 
-          int nReuslt = await SimepeTest(path);
+            int nRtn  = await SimepeTest("c:\\PNE3");
 
-
-          Console.WriteLine("aSyncSimepeTest:" + nReuslt.ToString());
-
-          if ((int)rRET.CTS_ACK == nReuslt)
-          {
-#if false
-                ConsoleVisible(SW_HIDE);
-#else
-                //1.실제 정보 출력이 보여지면 화면을 닫기 (CallBack)
-
-#endif
-
-            }
+            Console.Write("asyncSchedule : " + nRtn.ToString() + "\n"); // 통신 연결됨---- OK
 
         }
 
 
-        private void TestCallBackGetChData(UInt32 nModIDandChIdex, ref CTS_VARIABLE_CH_DATA ChData)
+        private  void HandleCallbackChData(UInt32 nModIDandChIdex, ref CTS_VARIABLE_CH_DATA ChData)
         {
 
-            try
+
+            var wc = new WORDConverter
             {
-#if true
-                Console.WriteLine("::1111");
+                Value = (uint)nModIDandChIdex
+            };
+            int nChIndex = wc.HIWORD;       // 0 : 채널 1, 1 : 채널 2, unused
+            int nModuleID = wc.LOWORD;
 
-                var wc = new WORDConverter
-                {
-                    Value = (uint)nModIDandChIdex
-                };
-                int nChIndex = wc.HIWORD;       // 0 : 채널 1, 1 : 채널 2, unused
-                int nModuleID = wc.LOWORD;
+            Console.WriteLine("::" + nChIndex.ToString());
+         //   var sVarChResultData = new PSServerAPI.CTS_VARIABLE_CH_DATA(ChData);
 
 
-                Console.WriteLine("::" + nChIndex.ToString());
-#else
-                Console.WriteLine("::1111");
-#endif
+        //    var currentTaskInfo = GetCurrentTaskInfo((byte)nChIndex);   // nModIDandChIdex --> nChIndex, 0-base
+          //  string str = sVarChResultData.ChData.StateToString();
 
-                //BaseLib.Helper.LogHelper.Debug($"0", $"[TRACDE] HandleCallbackChData(), wc.HIWORD = {wc.HIWORD}");
-                throw new AccessViolationException();
-            }
-            catch(Exception ex)
-            {
+         //   Console.Out.WriteLine($"[HandleCallbackChData] State : {str}, Voltage : {sVarChResultData.ChData.Voltage / 1000000.0f}V, Current : {sVarChResultData.ChData.Current / 1000000.0f}A, Code : {sVarChResultData.ChData.ChCode}");
 
-                Console.WriteLine("ex" + ex.Message);// nChIndex.ToString());
-            }
+
+            //BaseLib.Helper.LogHelper.Debug($"0", $"[TRACDE] HandleCallbackChData(), wc.HIWORD = {wc.HIWORD}");
+
+
 
         }
 

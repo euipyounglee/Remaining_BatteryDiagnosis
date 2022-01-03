@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>BatteryGateway</RootNamespace>
     <AssemblyName>BatteryGateway</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -141,6 +141,7 @@
   <ItemGroup>
     <Compile Include="CJsonParser.cs" />
     <Compile Include="ClassCommand.cs" />
+    <Compile Include="ClassFirwallManager.cs" />
     <Compile Include="ClassMultimeter.cs" />
     <Compile Include="ClassPneCtsLib.cs" />
     <Compile Include="ClassRESTful.cs" />
@@ -169,6 +170,17 @@
   <ItemGroup>
     <Content Include="Properties\Tray.ico" />
     <Content Include="Tray.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="NetFwTypeLib">
+      <Guid>{58FBCF7C-E7A9-467C-80B3-FC65E8FCCA08}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
