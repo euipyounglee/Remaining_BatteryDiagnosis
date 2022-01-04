@@ -222,7 +222,7 @@ namespace BatteryGateway
 
         static public void KillAppHide()
         {
-            PSServerAPI.Close();
+            ClassPneCtsLib.Close();
 
             //종료 될때.. 
             Console.WriteLine("종료");
@@ -329,7 +329,7 @@ namespace BatteryGateway
 
             if (Directory.Exists(assemblyProbeDirectory))
             {
-                //현재 실행 위치를 세팅한다.
+                //현재 DLL 실행 위치를 세팅한다.
                 Directory.SetCurrentDirectory(assemblyProbeDirectory);
                 nReuslt = 1;
             }

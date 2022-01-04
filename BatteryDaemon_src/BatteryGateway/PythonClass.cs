@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BatteryGateway.PneCtsLib.PSServerAPI;
 
 namespace BatteryGateway
 {
@@ -49,8 +50,8 @@ namespace BatteryGateway
             string strRoot = System.Environment.CurrentDirectory;
 #else
 
-            var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            string strRoot = path;
+            var rootpath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            string strRoot = rootpath;
 
 #endif
             string strSettingMenu = cjson.jsonMenuParsing(strRoot, subDirPath);
@@ -59,37 +60,53 @@ namespace BatteryGateway
                 strSettingMenu = "settingform.py";
             }
 
+            string path = string.Format("{0}\\{1}", strRoot, subDirPath);
+            //  Directory aa;
+
+
+            DirectoryInfo di = new DirectoryInfo(path);// string.Format("{0}\\{1}", strRoot, subDirPath));
+
             pyfile = string.Format("{0}\\{1}\\{2}", strRoot, subDirPath, strSettingMenu);
             var result = false;
-            if (File.Exists(pyfile)) //파일 존재 확인
+            bool fileExit = false;
+            if (di.Exists)
             {
-                try
+
+                if (File.Exists(pyfile)) //파일 존재 확인
                 {
-                    // 함수 전달하기
-                    PyCallSetFounctions(scope);
+                    try
+                    {
+                        // 함수 전달하기
+                        PyCallSetFounctions(scope);
 
-                    engine.ExecuteFile(pyfile, scope);
+                        engine.ExecuteFile(pyfile, scope);
 
-                    //화면이 닫이면(파이썬 화면이종료) 함수 호출이 된다.
-                    dynamic Apply_func = scope.GetVariable("Apply_func");
-                    var var1 = "json-save-ok";
+                        //화면이 닫이면(파이썬 화면이종료) 함수 호출이 된다.
+                        dynamic Apply_func = scope.GetVariable("Apply_func");
+                        var var1 = "json-save-ok";
+
+                        result = Apply_func(var1);
+
+                        fileExit = true;
                     
-                    result = Apply_func(var1);
-             
+                        Console.WriteLine("결과:{0}", result);
 
-                    Console.WriteLine("결과:{0}", result);
-                    
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(string.Format("{0}", ex.Message) , string.Format("BatteryGateway Menu : {0}", menuName));
-                    Console.WriteLine(ex.ToString());
-                }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(string.Format("{0}", ex.Message), string.Format("BatteryGateway Menu : {0}", menuName));
+                        Console.WriteLine(ex.ToString());
+                    }
 
+                }
             }
             else
             {
-                MessageBox.Show(string.Format("File Not Found :\n{0}", pyfile)  , string.Format("BatteryGateway Menu-2 : {0}", menuName));
+                di.Create();
+            }
+
+            if (false == fileExit) { 
+                MessageBox.Show(string.Format("File Not Found :{0}\n{1}", strSettingMenu, pyfile), string.Format("BatteryGateway Menu-2 : {0}", menuName));
             }
 
 
@@ -350,17 +367,18 @@ namespace BatteryGateway
         }
 
 
-        static PSServerAPI _pne;
+        static ClassPneCtsLib _pne;
 
         public static  string ConnectFuncPNEConnect()
         {
             var result = "false";
 
+            int chNo = 1;
 
-            _pne = new PSServerAPI(_scope);
-         //   ClassPneCtsLib pne =  ClassPneCtsLib.Instatce(_scope);
+            _pne = new ClassPneCtsLib(_scope, chNo);
+       
 
-            if ((int)rRET.CTS_ACK == _pne.connect()) {
+            if ((int)rRET.CTS_ACK == _pne.ServerListen()) {
 
                 result = "true";
 

@@ -17,8 +17,8 @@ using System.Windows.Forms;
 //using RelayBoxLib.Defines;
 //using RelayBoxLib.Core;
 using System.Runtime.InteropServices;
-using VCI_CAN_DotNET;//as I7651h;
-using VxCAN_DotNET;
+//using VCI_CAN_DotNET;//as I7651h;
+//using VxCAN_DotNET;
 
 using System.Threading;
 using System.Reflection;
@@ -33,7 +33,7 @@ namespace BatteryGateway
 
         public static int openCAN(byte devPort, byte devtype, uint CAN1_baud,uint CAN2_baud)
         {
-            int nResult = VCI_SDK.VCI_OpenCAN_NoStruct(devPort, devtype, CAN1_baud, CAN2_baud);
+            int nResult = 0;// VCI_SDK.VCI_OpenCAN_NoStruct(devPort, devtype, CAN1_baud, CAN2_baud);
 
             return nResult;
         }
@@ -42,7 +42,7 @@ namespace BatteryGateway
         {
             int ret = 0;
             //	# Plus
-             ret = VCI_SDK.VCI_SendCANMsg_NoStruct(CANNo, mode, rtr, dlc, CANId, data);
+            ret = 0;// VCI_SDK.VCI_SendCANMsg_NoStruct(CANNo, mode, rtr, dlc, CANId, data);
 
             return ret;
 
@@ -51,20 +51,20 @@ namespace BatteryGateway
         public static ulong ver()
         {
             ulong ret = 0;
-            ret = VCI_SDK.VCI_Get_DllVer();
+            ret = 0;// VCI_SDK.VCI_Get_DllVer();
             return ret;
         }
         public static int recvCANMsg(byte CANNo,ref byte mode, ref byte rtr,ref byte dlc, ref uint CANId,ref uint TimeL,ref uint TimeH, byte[] data)
         {
             int ret = 0;
-            ret = VCI_SDK.VCI_RecvCANMsg_NoStruct(CANNo, ref mode,ref rtr, ref dlc, ref CANId, ref TimeL, ref TimeH, data);
+            ret = 0;// VCI_SDK.VCI_RecvCANMsg_NoStruct(CANNo, ref mode,ref rtr, ref dlc, ref CANId, ref TimeL, ref TimeH, data);
             return ret;
         }
 
         public static int closeCAN(byte devPort)
         {
             int ret = 0;
-            ret = VCI_SDK.VCI_CloseCAN(devPort);
+            ret = 0;// VCI_SDK.VCI_CloseCAN(devPort);
             return ret;
         }
 
@@ -77,8 +77,8 @@ namespace BatteryGateway
         public static uint Ver(char[] ver)
         {
             uint  ret = 0;
-           
-            ret = VxCAN_DotNET.VxCAN_DotNET.VxCAN_DLL_Ver(ver);
+
+            ret = 0;// VxCAN_DotNET.VxCAN_DotNET.VxCAN_DLL_Ver(ver);
             return ret;
         }
 
@@ -88,7 +88,7 @@ namespace BatteryGateway
         {
             
             uint nResult = 0;
-            nResult = VxCAN_DotNET.VxCAN_DotNET.VxCAN_OpenCAN(devPort, dw_baudRate);
+            nResult = 0;// VxCAN_DotNET.VxCAN_DotNET.VxCAN_OpenCAN(devPort, dw_baudRate);
 
             return (int)nResult;
         }
@@ -96,14 +96,14 @@ namespace BatteryGateway
         public static int Send(byte devPort, uint CANId, byte mode, byte rtr, byte len_dlc,  byte[] data)
         {
             uint nResult = 0;
-            nResult = VxCAN_DotNET.VxCAN_DotNET.VxCAN_Send(devPort, CANId, mode, rtr, len_dlc, data);
+            nResult = 0;// VxCAN_DotNET.VxCAN_DotNET.VxCAN_Send(devPort, CANId, mode, rtr, len_dlc, data);
             return (int)nResult;
         }
 
         public static int Send_Log(byte devPort, uint CANId, byte mode, byte rtr, byte len_dlc, byte[] data, string logfilePath)
         {
             uint nResult = 0;
-            nResult = VxCAN_DotNET.VxCAN_DotNET.VxCAN_Send_And_Log(devPort, CANId, mode, rtr, len_dlc, data, logfilePath);
+            nResult = 0;// VxCAN_DotNET.VxCAN_DotNET.VxCAN_Send_And_Log(devPort, CANId, mode, rtr, len_dlc, data, logfilePath);
             return (int)nResult;
         }
 
@@ -111,13 +111,13 @@ namespace BatteryGateway
         public static int Receive(byte devPort,ref uint CANId,ref byte mode, ref byte rtr,ref byte len_dlc, byte[] data, ref double messageTime)
         {
             uint nResult = 0;
-            nResult = VxCAN_DotNET.VxCAN_DotNET.VxCAN_Receive(devPort, ref CANId, ref mode, ref rtr, ref len_dlc, data, ref messageTime);
+            nResult = 0;// VxCAN_DotNET.VxCAN_DotNET.VxCAN_Receive(devPort, ref CANId, ref mode, ref rtr, ref len_dlc, data, ref messageTime);
             return (int)nResult;
         }
         public static int Receive_Log(byte devPort, ref uint CANId, ref byte mode, ref byte rtr, ref byte len_dlc, byte[] data, ref double messageTime,string logfilePath)
         {
             uint nResult = 0;
-            nResult = VxCAN_DotNET.VxCAN_DotNET.VxCAN_Receive_And_Log(devPort, ref CANId, ref mode, ref rtr, ref len_dlc, data, ref messageTime, logfilePath);
+            nResult = 0;// VxCAN_DotNET.VxCAN_DotNET.VxCAN_Receive_And_Log(devPort, ref CANId, ref mode, ref rtr, ref len_dlc, data, ref messageTime, logfilePath);
             return (int)nResult;
         }
 
@@ -125,7 +125,7 @@ namespace BatteryGateway
         public static int Close(byte devPort)
         {
             uint nResult = 0;
-            nResult = VxCAN_DotNET.VxCAN_DotNET.VxCAN_CloseCAN(devPort);//.HW_UARTCAN_COMPort_ComPortNotOpen(.VxCAN_OpenCAN(devPort, dw_baudRate);
+            nResult = 0;// VxCAN_DotNET.VxCAN_DotNET.VxCAN_CloseCAN(devPort);//.HW_UARTCAN_COMPort_ComPortNotOpen(.VxCAN_OpenCAN(devPort, dw_baudRate);
 
             return (int)nResult;
         }
@@ -133,7 +133,7 @@ namespace BatteryGateway
         public static uint GetError(uint error , char[] errDesc )
         {
             uint nResult = 0;
-            nResult = VxCAN_DotNET.VxCAN_DotNET.VxCAN_GetErrorString(error, errDesc);
+            nResult = 0;// VxCAN_DotNET.VxCAN_DotNET.VxCAN_GetErrorString(error, errDesc);
             return nResult;
         }
 

@@ -170,20 +170,13 @@ namespace BatteryGateway
 
         public bool callFileView(string strTitle, string menuName)
         {
-#if false
-            PythonClass py = new PythonClass();
 
-              string subTitle = strTitle;// 
-
-            return py.CallFileView(subTitle, "Settting");
-
-#else
 
             PythonClass py = PythonClass.Instatce();
             string subTitle = strTitle;// 
 
             return py.CallFileView(subTitle, "Settting");
-#endif
+
         }
 
     }

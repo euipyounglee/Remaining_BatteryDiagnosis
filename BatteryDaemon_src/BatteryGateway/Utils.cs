@@ -162,45 +162,6 @@ namespace BatteryGateway
             return appPathName;
         }
 
-        public static void Gaaa(string strProcessesByName)
-        {
-
-            // 이름이 notepad인 프로세스.(.exe 붙이면 안됨)
-            Process P = Process.GetProcessesByName("notepad")[0];
-
-            // icon 파라메타용.
-            IntPtr[] phicon = new IntPtr[] { IntPtr.Zero };
-            IntPtr[] piconid = new IntPtr[] { IntPtr.Zero };
-
-            // 추출
-            PrivateExtractIcons(new StringBuilder(P.MainModule.FileName), 0, 0, 0, phicon, piconid, 1, 0);
-
-#if true
-            // 추출된게 있다면
-            if (phicon[0] != IntPtr.Zero)
-            {
-                // name.ico로 저장.
-                Icon.FromHandle(phicon[0]).Save(new FileStream("name.ico", FileMode.Create));
-                Console.WriteLine("name.ico is saved.");
-            }
-#else
-            string strRoot = System.Environment.CurrentDirectory;
-            string IconPath = string.Format("{0}\\{1}", strRoot, "Tray.ico");
-
-            if (phicon[0] != IntPtr.Zero)
-                //if (File.Exists(IconPath) == false)
-            {
-                using (System.IO.FileStream f = new System.IO.FileStream(IconPath, System.IO.FileMode.OpenOrCreate))
-                {
-                    myIcon.Save(f);
-                    //_Icon.Save(f);
-                    //  icon1.Save(f);
-                }
-            }
-#endif
-
-
-        }
-
+    
     }
 }

@@ -11,7 +11,7 @@ namespace BatteryGateway
 {
     class CJsonParser
     {
-
+        bool bFileExit =false;
         public void Sampleload()
         {
 #if true
@@ -39,6 +39,10 @@ namespace BatteryGateway
 
             _strAppConfig = Path.Combine(strRoot, strAppConfig);
 
+            if (File.Exists(_strAppConfig))
+            {
+                bFileExit = true;
+            }
 
         }
 
