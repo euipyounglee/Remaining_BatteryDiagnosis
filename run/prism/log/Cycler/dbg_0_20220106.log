@@ -1,0 +1,6 @@
+[2022.01.06 17:13:16.752] channelNo = 2, IsIsolationCheckRunning()
+[2022.01.06 17:13:16.753]  = 2, m_IsIsolationCheckRunning2 = False
+[2022.01.06 17:13:16.755]  = 1, SetIsolationCheckRunning()
+[2022.01.06 17:13:16.756]  = 1, m_IsIsolationCheckRunning1 = True
+[2022.01.06 17:13:27.634]  = 1, SetIsolationCheckRunning()
+[2022.01.06 17:13:27.634]  = 1, m_IsIsolationCheckRunning1 = False

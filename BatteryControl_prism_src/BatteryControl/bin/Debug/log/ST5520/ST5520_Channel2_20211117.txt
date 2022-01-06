@@ -1,0 +1,64 @@
+[2021.11.17 10:04:21.465] ST5520 was created
+[2021.11.17 11:34:20.830] [Send] :STARt
+[2021.11.17 11:34:21.852] [Send] :STOP
+[2021.11.17 11:34:21.864] [Send] :MEASure?
+[2021.11.17 11:34:24.683] ST5520 Exception -> System.InvalidOperationException: 포트가 닫혀 있습니다.
+   위치: System.IO.Ports.SerialPort.Write(String text)
+   위치: System.IO.Ports.SerialPort.WriteLine(String text)
+   위치: SerialPortLib.ASerialPortBase`1.WriteLine(String text) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\SerialPortLib\ASerialPortBase.cs:줄 85
+   위치: ST5520Lib.Core.Core.SendQueryCommand(QueryCommand cmd) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 119
+   위치: ST5520Lib.Core.Core.<>c__DisplayClass22_0.<Measure>b__0() 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 152
+[2021.11.17 11:34:26.833] [Send] :STARt
+[2021.11.17 11:34:27.850] [Send] :MEASure?
+[2021.11.17 11:34:27.851] [Send] :STOP
+[2021.11.17 11:34:27.868] ST5520 Exception -> System.InvalidOperationException: 포트가 닫혀 있습니다.
+   위치: System.IO.Ports.SerialPort.Write(String text)
+   위치: System.IO.Ports.SerialPort.WriteLine(String text)
+   위치: SerialPortLib.ASerialPortBase`1.WriteLine(String text) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\SerialPortLib\ASerialPortBase.cs:줄 85
+   위치: ST5520Lib.Core.Core.SendQueryCommand(QueryCommand cmd) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 119
+   위치: ST5520Lib.Core.Core.<>c__DisplayClass22_0.<Measure>b__0() 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 152
+[2021.11.17 11:36:01.591] ST5520 was created
+[2021.11.17 11:36:52.921] [Send] :STARt
+[2021.11.17 11:36:53.945] [Send] :STOP
+[2021.11.17 11:36:53.946] [Send] :MEASure?
+[2021.11.17 11:36:56.602] ST5520 Exception -> System.InvalidOperationException: 포트가 닫혀 있습니다.
+   위치: System.IO.Ports.SerialPort.Write(String text)
+   위치: System.IO.Ports.SerialPort.WriteLine(String text)
+   위치: SerialPortLib.ASerialPortBase`1.WriteLine(String text) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\SerialPortLib\ASerialPortBase.cs:줄 85
+   위치: ST5520Lib.Core.Core.SendQueryCommand(QueryCommand cmd) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 119
+   위치: ST5520Lib.Core.Core.<>c__DisplayClass22_0.<Measure>b__0() 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 152
+[2021.11.17 11:36:58.928] [Send] :STARt
+[2021.11.17 11:36:59.945] [Send] :MEASure?
+[2021.11.17 11:36:59.946] [Send] :STOP
+[2021.11.17 11:36:59.955] ST5520 Exception -> System.InvalidOperationException: 포트가 닫혀 있습니다.
+   위치: System.IO.Ports.SerialPort.Write(String text)
+   위치: System.IO.Ports.SerialPort.WriteLine(String text)
+   위치: SerialPortLib.ASerialPortBase`1.WriteLine(String text) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\SerialPortLib\ASerialPortBase.cs:줄 85
+   위치: ST5520Lib.Core.Core.SendQueryCommand(QueryCommand cmd) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 119
+   위치: ST5520Lib.Core.Core.<>c__DisplayClass22_0.<Measure>b__0() 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 152
+[2021.11.17 11:37:08.230] open COM8 success
+[2021.11.17 13:10:07.148] ST5520 was created
+[2021.11.17 13:12:29.836] ST5520 was created
+[2021.11.17 14:02:30.956] ST5520 was created
+[2021.11.17 14:46:16.461] ST5520 was created
+[2021.11.17 18:25:15.543] ST5520 was created
+[2021.11.17 18:49:19.584] ST5520 was created
+[2021.11.17 18:50:03.309] open COM8 success
+[2021.11.17 18:52:38.329] ST5520 was created
+[2021.11.17 18:53:03.329] open COM8 success
+[2021.11.17 18:53:36.306] [Send] :STARt
+[2021.11.17 18:53:37.317] [Send] :STOP
+[2021.11.17 18:53:37.319] [Send] :MEASure?
+[2021.11.17 18:53:39.014] [Recv] 9999E+06
+[2021.11.17 18:53:39.598] Measure -> 9999E+06
+[2021.11.17 18:53:39.600] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.17 18:53:42.300] [Send] :STARt
+[2021.11.17 18:53:43.304] [Send] :MEASure?
+[2021.11.17 18:53:44.384] [Recv] 9999E+06
+[2021.11.17 18:53:45.012] Measure -> 9999E+06
+[2021.11.17 18:53:45.022] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.17 20:29:11.628] ST5520 was created
+[2021.11.17 20:36:42.262] ST5520 was created
+[2021.11.17 20:40:45.776] ST5520 was created
+[2021.11.17 20:49:54.307] ST5520 was created
+[2021.11.17 20:51:15.721] open COM8 success

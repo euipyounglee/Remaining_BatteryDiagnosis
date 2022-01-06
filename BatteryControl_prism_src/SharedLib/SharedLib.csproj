@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC031061-2598-4696-A92B-355793135D4C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharedLib</RootNamespace>
+    <AssemblyName>SharedLib</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.5\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Prism, Version=8.0.0.1909, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.8.0.0.1909\lib\net47\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=8.0.0.1909, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.8.0.0.1909\lib\net47\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ChannelDevice.cs" />
+    <Compile Include="Core\ConvertHelper.cs" />
+    <Compile Include="Core\SharedPreferences.cs" />
+    <Compile Include="Core\XmlHelper.cs" />
+    <Compile Include="Data\Converter\CheckDeviceNameConverter.cs" />
+    <Compile Include="Data\Converter\chStateConverter.cs" />
+    <Compile Include="Data\Converter\DateTimeFormatConverter.cs" />
+    <Compile Include="Data\Converter\DecimalPointConverter.cs" />
+    <Compile Include="Data\Converter\FloatPointConverter.cs" />
+    <Compile Include="Data\Converter\GetRowIndexOfItemsControlConverter.cs" />
+    <Compile Include="Data\Converter\GetRowIndexOfListViewConverter.cs" />
+    <Compile Include="Data\Converter\ReverseBoolConverter.cs" />
+    <Compile Include="Data\Converter\StringConcatConverter.cs" />
+    <Compile Include="Data\Converter\TimeSpanFormatConverter.cs" />
+    <Compile Include="Data\VM\ACIRMeasureDataAckVM.cs" />
+    <Compile Include="Data\VM\ACIRMeasureResultAckVM.cs" />
+    <Compile Include="Data\VM\CanSourceVM.cs" />
+    <Compile Include="Data\VM\ChannelConfigVM.cs" />
+    <Compile Include="Data\VM\CTS_AUX_DATA_D_VM.cs" />
+    <Compile Include="Data\VM\CTS_AUX_DATA_VM.cs" />
+    <Compile Include="Data\VM\CTS_CAN_DATA_VM.cs" />
+    <Compile Include="Data\VM\CTS_CAN_VALUE_VM.cs" />
+    <Compile Include="Data\VM\CTS_CH_DATA_VM.cs" />
+    <Compile Include="Data\VM\CTS_VARIABLE_CH_DATA_D_VM.cs" />
+    <Compile Include="Data\VM\CTS_VARIABLE_CH_DATA_F_VM.cs" />
+    <Compile Include="Data\VM\CTS_VARIABLE_CH_DATA_VM.cs" />
+    <Compile Include="Data\VM\DatabaseConfigVM.cs" />
+    <Compile Include="Data\VM\EngineConfigVM.cs" />
+    <Compile Include="Data\VM\EvaluationResultVM.cs" />
+    <Compile Include="Data\VM\LocalConfigVM.cs" />
+    <Compile Include="Data\VM\pg_btry_info_VM.cs" />
+    <Compile Include="Data\VM\RelayBoxInformationVM.cs" />
+    <Compile Include="Data\VM\RestApiConfigVM.cs" />
+    <Compile Include="Data\VM\SampleBVM.cs" />
+    <Compile Include="Data\VM\tbl_task_result_VM.cs" />
+    <Compile Include="Data\VM\tbl_task_VM.cs" />
+    <Compile Include="Defines\ChannelViewPopupStates.cs" />
+    <Compile Include="Defines\ProgressStateTypes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChannelViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseLib\BaseLib.csproj">
+      <Project>{3e3150bb-1fa2-46e9-8a65-0a91443f62e9}</Project>
+      <Name>BaseLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACIRLib\ACIRLib.csproj">
+      <Project>{932b967b-19be-48bd-b071-37424f1f1555}</Project>
+      <Name>ACIRLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIBoxLib\BIBoxLib.csproj">
+      <Project>{e5310653-4eba-4218-b87a-189112871b8a}</Project>
+      <Name>BIBoxLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\I7565H1Lib\I7565H1Lib.csproj">
+      <Project>{edcb15f0-7a5a-4049-8a39-8bc741811267}</Project>
+      <Name>I7565H1Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InspectEngineLib\InspectEngineLib.csproj">
+      <Project>{ad8772e9-e200-46a5-b00a-7ee7e0d6b5cc}</Project>
+      <Name>InspectEngineLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultimeterLib\MultimeterLib.csproj">
+      <Project>{10a49c82-9382-4f6f-9639-1764ae8e431b}</Project>
+      <Name>MultimeterLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PneCtsLib\PneCtsLib.csproj">
+      <Project>{aeaf69ff-974d-41d3-a0d8-bf8abadfd1b0}</Project>
+      <Name>PneCtsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RelayBoxLib\RelayBoxLib.csproj">
+      <Project>{e056d66d-f699-4c04-9716-9a4b19797444}</Project>
+      <Name>RelayBoxLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RestApiLib\RestApiLib.csproj">
+      <Project>{cea8d3e2-1edf-4cba-8cf2-8727969d1524}</Project>
+      <Name>RestApiLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SerialPortLib\SerialPortLib.csproj">
+      <Project>{2eeb2727-3ac0-43ef-a94a-973157b7f21c}</Project>
+      <Name>SerialPortLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLManager\SQLManager.csproj">
+      <Project>{84aa21d2-70f4-4410-b62a-4d98dcc61dcd}</Project>
+      <Name>SQLManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ST5520Lib\ST5520Lib.csproj">
+      <Project>{446ae916-8e4a-4f21-86ef-a5d7e2b3cc02}</Project>
+      <Name>ST5520Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZebraScannerLib\ZebraScannerLib.csproj">
+      <Project>{28905996-1238-4004-a445-ef76eeb74145}</Project>
+      <Name>ZebraScannerLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

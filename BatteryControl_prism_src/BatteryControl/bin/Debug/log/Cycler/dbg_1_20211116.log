@@ -1,0 +1,180 @@
+[2021.11.16 10:12:58.789] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 10:12:58.791] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 10:12:58.793] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 10:12:58.795] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 10:12:58.795] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 10:12:58.796] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 10:12:58.885] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 10:13:01.888] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 10:13:02.892] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 10:13:02.898] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 10:13:02.900] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 10:13:05.899] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 10:13:06.901] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 10:13:06.902] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 10:13:06.903] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 10:13:08.902] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 10:13:08.903] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 10:13:08.904] channelNo = 1, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 10:27:30.104] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 10:27:30.107] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 10:27:30.108] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 10:27:30.110] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 10:27:30.111] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 10:27:30.112] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 10:27:30.341] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 10:27:33.349] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 10:27:34.355] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 10:27:34.356] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 10:27:34.357] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 10:27:37.358] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 10:27:38.384] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 10:27:38.384] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 10:27:38.386] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 10:27:40.364] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 10:27:40.365] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 10:27:40.366] channelNo = 1, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 10:32:26.093] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 10:32:26.094] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 10:32:26.095] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 10:32:26.096] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 10:32:26.097] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 10:32:26.097] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 10:32:26.499] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 10:32:29.512] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 10:32:30.515] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 10:32:30.516] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 10:32:30.540] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 10:32:33.519] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 10:32:34.522] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 10:32:34.523] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 10:32:34.524] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 10:32:36.512] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 10:32:36.513] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 10:32:36.514] channelNo = 1, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 10:34:46.302] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 10:34:46.302] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 10:34:46.304] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 10:34:46.306] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 10:34:46.306] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 10:34:46.307] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 10:34:46.584] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 10:34:49.596] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 10:34:50.599] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 10:34:50.600] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 10:34:50.601] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 10:34:53.598] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 10:34:54.601] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 10:34:54.602] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 10:34:54.604] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 10:34:56.603] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 10:34:56.604] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 10:34:56.605] channelNo = 1, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 10:37:40.973] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 10:37:40.974] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 10:37:40.975] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 10:37:40.978] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 10:37:40.979] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 10:37:40.979] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 10:37:41.685] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 10:37:44.694] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 10:37:45.697] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 10:37:45.697] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 10:37:45.703] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 10:37:48.692] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 10:37:49.695] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 10:37:49.696] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 10:37:49.720] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 10:37:51.701] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 10:37:51.702] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 10:37:51.704] channelNo = 1, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 10:41:37.142] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 10:41:37.143] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 10:41:37.145] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 10:41:37.146] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 10:41:37.147] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 10:41:37.147] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 10:41:37.813] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 10:41:40.821] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 10:41:41.824] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 10:41:41.824] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 10:41:41.840] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 10:41:44.831] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 10:41:45.833] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 10:41:45.834] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 10:41:45.851] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 10:41:47.835] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 10:41:47.836] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 10:41:47.838] channelNo = 1, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 11:00:08.830] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 11:00:08.835] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 11:00:08.837] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 11:00:08.839] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Off
+[2021.11.16 11:00:08.840] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Off
+[2021.11.16 11:00:08.841] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 11:00:19.706] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #4
+[2021.11.16 11:02:17.144] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 11:02:17.144] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 11:02:17.146] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 11:02:17.148] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 11:02:17.149] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 11:02:17.149] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 11:02:18.001] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 11:02:28.846] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #4
+[2021.11.16 14:22:41.861] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 14:22:41.864] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 14:22:41.867] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 14:22:41.870] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Off
+[2021.11.16 14:22:41.871] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Off
+[2021.11.16 14:22:41.872] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 14:22:52.657] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #4
+[2021.11.16 14:36:13.446] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 14:36:13.449] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 14:36:15.511] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 14:36:15.517] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Off
+[2021.11.16 14:36:15.519] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Off
+[2021.11.16 14:36:15.520] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 14:36:26.916] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #4
+[2021.11.16 15:35:57.458] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 15:35:57.460] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 15:36:09.463] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 15:36:09.466] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 15:36:09.467] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Off
+[2021.11.16 15:36:09.467] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 15:36:21.694] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #2
+[2021.11.16 15:37:30.053] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 15:37:30.054] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 15:37:35.211] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 15:37:35.213] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 15:37:35.213] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 15:37:35.214] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 15:37:36.766] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 15:37:48.441] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #4
+[2021.11.16 15:37:59.601] TaskCompletedCallback [-1] #START
+[2021.11.16 15:37:59.602] TaskCompletedCallback [-1] CheckOverVoltageStop()
+[2021.11.16 15:38:00.183] TaskCompletedCallback [-1] #START
+[2021.11.16 15:38:00.184] TaskCompletedCallback [-1] CheckOverVoltageStop()
+[2021.11.16 16:06:04.169] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 16:06:04.171] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 16:06:06.474] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 16:06:06.476] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 16:06:06.477] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 16:06:06.478] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 16:06:07.793] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 16:06:19.391] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #4
+[2021.11.16 16:07:14.787] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 16:07:14.787] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 16:07:17.064] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 16:07:17.066] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 16:07:17.067] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 16:07:17.068] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 16:07:17.973] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 16:07:29.691] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #4
+[2021.11.16 16:52:07.505] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 16:52:07.509] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.16 16:52:09.764] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 16:52:09.767] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 16:52:09.768] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 16:52:09.769] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 16:52:16.975] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 16:52:35.508] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #4

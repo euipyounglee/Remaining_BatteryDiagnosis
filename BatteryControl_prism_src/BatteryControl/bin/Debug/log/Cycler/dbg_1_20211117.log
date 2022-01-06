@@ -1,0 +1,12 @@
+[2021.11.17 11:32:47.368] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2021.11.17 11:32:47.370] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2021.11.17 11:32:49.282] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.17 11:32:49.285] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.17 11:32:49.286] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.17 11:32:49.287] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.17 11:32:53.002] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.17 11:33:05.529] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #4
+[2021.11.17 11:33:11.163] TaskCompletedCallback [-1] #START
+[2021.11.17 11:33:11.163] TaskCompletedCallback [-1] CheckOverVoltageStop()
+[2021.11.17 11:33:36.264] TaskCompletedCallback [-1] #START
+[2021.11.17 11:33:36.264] TaskCompletedCallback [-1] CheckOverVoltageStop()

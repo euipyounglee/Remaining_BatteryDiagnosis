@@ -1,0 +1,89 @@
+[2021.11.18 10:12:42.016] ST5520 was created
+[2021.11.18 10:13:04.904] open COM8 success
+[2021.11.18 10:13:56.880] [Send] :STARt
+[2021.11.18 10:13:57.894] [Send] :MEASure?
+[2021.11.18 10:13:57.896] [Send] :STOP
+[2021.11.18 10:14:00.319] [Recv] 9999E+06
+[2021.11.18 10:14:00.326] Measure -> 9999E+06
+[2021.11.18 10:14:00.327] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.18 10:14:02.887] [Send] :STARt
+[2021.11.18 10:14:03.889] [Send] :MEASure?
+[2021.11.18 10:14:03.890] [Send] :STOP
+[2021.11.18 10:14:07.887] [Recv] 9999E+06
+[2021.11.18 10:14:18.893] Measure -> 9999E+06
+[2021.11.18 10:14:18.895] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.18 10:47:54.802] ST5520 was created
+[2021.11.18 11:27:48.685] ST5520 was created
+[2021.11.18 11:43:10.112] ST5520 was created
+[2021.11.18 11:46:55.654] [Send] :STARt
+[2021.11.18 11:46:56.679] [Send] :STOP
+[2021.11.18 11:46:56.687] [Send] :MEASure?
+[2021.11.18 11:46:59.914] ST5520 Exception -> System.InvalidOperationException: 포트가 닫혀 있습니다.
+   위치: System.IO.Ports.SerialPort.Write(String text)
+   위치: System.IO.Ports.SerialPort.WriteLine(String text)
+   위치: SerialPortLib.ASerialPortBase`1.WriteLine(String text) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\SerialPortLib\ASerialPortBase.cs:줄 85
+   위치: ST5520Lib.Core.Core.SendQueryCommand(QueryCommand cmd) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 119
+   위치: ST5520Lib.Core.Core.<>c__DisplayClass22_0.<Measure>b__0() 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 152
+[2021.11.18 11:47:03.654] [Send] :STARt
+[2021.11.18 11:47:04.669] [Send] :MEASure?
+[2021.11.18 11:47:04.670] [Send] :STOP
+[2021.11.18 11:47:04.682] ST5520 Exception -> System.InvalidOperationException: 포트가 닫혀 있습니다.
+   위치: System.IO.Ports.SerialPort.Write(String text)
+   위치: System.IO.Ports.SerialPort.WriteLine(String text)
+   위치: SerialPortLib.ASerialPortBase`1.WriteLine(String text) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\SerialPortLib\ASerialPortBase.cs:줄 85
+   위치: ST5520Lib.Core.Core.SendQueryCommand(QueryCommand cmd) 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 119
+   위치: ST5520Lib.Core.Core.<>c__DisplayClass22_0.<Measure>b__0() 파일 d:\pmgrow\SynologyDrive\work_job\BatteryDiagnosis\gbtp2020_pro\net4.7.1\gbtp2020\ST5520Lib\Core\Core.cs:줄 152
+[2021.11.18 11:52:06.280] ST5520 was created
+[2021.11.18 11:52:42.854] open COM8 success
+[2021.11.18 11:53:20.861] [Send] :STARt
+[2021.11.18 11:53:21.869] [Send] :STOP
+[2021.11.18 11:53:21.870] [Send] :MEASure?
+[2021.11.18 11:53:25.865] [Recv] 9999E+06
+[2021.11.18 11:53:25.872] Measure -> 9999E+06
+[2021.11.18 11:53:25.873] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.18 11:53:28.868] [Send] :STARt
+[2021.11.18 11:53:29.874] [Send] :MEASure?
+[2021.11.18 11:53:29.874] [Send] :STOP
+[2021.11.18 11:53:31.605] [Recv] 9999E+06
+[2021.11.18 11:53:32.144] Measure -> 9999E+06
+[2021.11.18 11:53:32.144] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.18 13:28:22.235] ST5520 was created
+[2021.11.18 13:28:46.712] open COM8 success
+[2021.11.18 13:32:29.888] ST5520 was created
+[2021.11.18 13:36:40.782] open COM8 success
+[2021.11.18 13:37:10.793] [Send] :STARt
+[2021.11.18 13:37:11.799] [Send] :STOP
+[2021.11.18 13:37:11.799] [Send] :MEASure?
+[2021.11.18 13:37:15.064] [Recv] 9999E+06
+[2021.11.18 13:37:15.073] Measure -> 9999E+06
+[2021.11.18 13:37:15.080] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.18 13:37:17.802] [Send] :STARt
+[2021.11.18 13:37:18.805] [Send] :MEASure?
+[2021.11.18 13:37:18.805] [Send] :STOP
+[2021.11.18 13:37:20.372] [Recv] 9999E+06
+[2021.11.18 13:37:20.991] Measure -> 9999E+06
+[2021.11.18 13:37:20.992] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.18 13:38:29.839] [Send] :STARt
+[2021.11.18 13:38:30.842] [Send] :MEASure?
+[2021.11.18 13:38:30.843] [Send] :STOP
+[2021.11.18 13:38:32.187] [Recv] 9999E+06
+[2021.11.18 13:38:32.726] Measure -> 9999E+06
+[2021.11.18 13:38:32.727] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.18 13:38:36.860] [Send] :STARt
+[2021.11.18 13:38:37.863] [Send] :MEASure?
+[2021.11.18 13:38:37.863] [Send] :STOP
+[2021.11.18 13:38:40.311] [Recv] 9999E+06
+[2021.11.18 13:38:40.880] Measure -> 9999E+06
+[2021.11.18 13:38:40.881] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.18 13:53:16.279] [Send] :STARt
+[2021.11.18 13:53:17.283] [Send] :MEASure?
+[2021.11.18 13:53:17.284] [Send] :STOP
+[2021.11.18 13:53:18.543] [Recv] 9999E+06
+[2021.11.18 13:53:19.101] Measure -> 9999E+06
+[2021.11.18 13:53:19.102] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.18 13:53:22.279] [Send] :STARt
+[2021.11.18 13:53:23.282] [Send] :MEASure?
+[2021.11.18 13:53:23.283] [Send] :STOP
+[2021.11.18 13:53:24.718] [Recv] 9999E+06
+[2021.11.18 13:53:25.955] Measure -> 9999E+06
+[2021.11.18 13:53:25.956] ST5520 Measure -> 9999000000, isOverflow = True

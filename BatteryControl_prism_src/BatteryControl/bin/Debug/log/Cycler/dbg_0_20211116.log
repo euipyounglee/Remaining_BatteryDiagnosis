@@ -1,0 +1,149 @@
+[2021.11.16 10:12:58.792] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 10:12:58.793]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 10:12:58.794]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:12:58.794]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 10:13:08.902]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:13:08.902]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 10:14:11.871] InspectionResultViewModel::DoLoaded(), ch = 1, run_id = 20211116101053_1_59e30be1-c124-4a26-94a0-a552888f61c8
+[2021.11.16 10:18:12.655] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.16 10:18:12.656]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 10:18:12.657]  = 2, SetIsolationCheckRunning()
+[2021.11.16 10:18:12.657]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.16 10:18:23.070]  = 2, SetIsolationCheckRunning()
+[2021.11.16 10:18:23.070]  = 2, m_IsIsolationCheckRunning1 = False
+[2021.11.16 10:19:06.506] InspectionResultViewModel::DoLoaded(), ch = 2, run_id = 20211116101626_2_41449342-d7a1-4d4b-851b-d84f1e26980a
+[2021.11.16 10:23:22.539] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.16 10:23:22.539]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 10:23:22.540]  = 2, SetIsolationCheckRunning()
+[2021.11.16 10:23:22.540]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.16 10:23:33.229]  = 2, SetIsolationCheckRunning()
+[2021.11.16 10:23:33.229]  = 2, m_IsIsolationCheckRunning1 = False
+[2021.11.16 10:27:30.108] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 10:27:30.108]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 10:27:30.109]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:27:30.110]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 10:27:40.364]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:27:40.365]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 10:28:00.306] InspectionResultViewModel::DoLoaded(), ch = 1, run_id = 20211116102553_1_0b532d79-9492-4fcb-ab09-d4a48077af04
+[2021.11.16 10:32:26.094] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 10:32:26.095]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 10:32:26.095]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:32:26.096]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 10:32:36.512]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:32:36.513]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 10:33:06.322] InspectionResultViewModel::DoLoaded(), ch = 1, run_id = 20211116103049_1_f83b5158-506d-448e-a975-af67f1b80abf
+[2021.11.16 10:34:46.303] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 10:34:46.304]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 10:34:46.305]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:34:46.305]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 10:34:56.603]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:34:56.604]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 10:35:12.286] InspectionResultViewModel::DoLoaded(), ch = 1, run_id = 20211116103351_1_12e60c91-ff0b-4c42-b603-9e7f8ab9c96f
+[2021.11.16 10:37:40.975] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 10:37:40.975]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 10:37:40.977]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:37:40.977]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 10:37:51.701]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:37:51.702]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 10:39:02.362] InspectionResultViewModel::DoLoaded(), ch = 1, run_id = 20211116103544_1_d47d2aed-d9ec-4b79-85db-b27e84552157
+[2021.11.16 10:41:37.144] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 10:41:37.144]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 10:41:37.145]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:41:37.146]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 10:41:47.835]  = 1, SetIsolationCheckRunning()
+[2021.11.16 10:41:47.836]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 10:42:55.342] InspectionResultViewModel::DoLoaded(), ch = 1, run_id = 20211116103957_1_fa02a8ce-a1e5-4306-8542-8a894df976de
+[2021.11.16 11:00:08.836] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 11:00:08.837]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 11:00:08.838]  = 1, SetIsolationCheckRunning()
+[2021.11.16 11:00:08.838]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 11:00:19.706]  = 1, SetIsolationCheckRunning()
+[2021.11.16 11:00:19.707]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 11:00:40.935] InspectionResultViewModel::DoLoaded(), ch = 1, run_id = 20211116105949_1_3b0e6c52-386d-40e6-845c-938bfc3c889c
+[2021.11.16 11:02:17.145] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 11:02:17.145]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 11:02:17.147]  = 1, SetIsolationCheckRunning()
+[2021.11.16 11:02:17.147]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 11:02:28.847]  = 1, SetIsolationCheckRunning()
+[2021.11.16 11:02:28.847]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 11:05:37.734] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.16 11:05:37.734]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 11:05:37.735]  = 2, SetIsolationCheckRunning()
+[2021.11.16 11:05:37.736]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.16 11:05:48.235]  = 2, SetIsolationCheckRunning()
+[2021.11.16 11:05:48.236]  = 2, m_IsIsolationCheckRunning1 = False
+[2021.11.16 14:22:41.865] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 14:22:41.866]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 14:22:41.868]  = 1, SetIsolationCheckRunning()
+[2021.11.16 14:22:41.868]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 14:22:52.658]  = 1, SetIsolationCheckRunning()
+[2021.11.16 14:22:52.659]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 14:36:15.509] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 14:36:15.510]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 14:36:15.516]  = 1, SetIsolationCheckRunning()
+[2021.11.16 14:36:15.516]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 14:36:26.917]  = 1, SetIsolationCheckRunning()
+[2021.11.16 14:36:26.918]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 15:35:59.698] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 15:36:07.743]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 15:36:09.464]  = 1, SetIsolationCheckRunning()
+[2021.11.16 15:36:09.465]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 15:36:31.695]  = 1, SetIsolationCheckRunning()
+[2021.11.16 15:36:31.695]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 15:36:50.949] InspectionResultViewModel::DoLoaded(), ch = 1, run_id = 20211116153532_1_7ceebb2a-db23-4b7d-a0c6-2a4e5534e73f
+[2021.11.16 15:37:32.862] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 15:37:35.208]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 15:37:35.212]  = 1, SetIsolationCheckRunning()
+[2021.11.16 15:37:35.212]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 15:37:48.442]  = 1, SetIsolationCheckRunning()
+[2021.11.16 15:37:48.442]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 15:39:30.040] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.16 15:39:31.932]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 15:39:31.933]  = 2, SetIsolationCheckRunning()
+[2021.11.16 15:39:31.934]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.16 15:39:54.985]  = 2, SetIsolationCheckRunning()
+[2021.11.16 15:39:54.985]  = 2, m_IsIsolationCheckRunning1 = False
+[2021.11.16 16:03:54.579] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.16 16:03:54.580]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 16:03:54.581]  = 2, SetIsolationCheckRunning()
+[2021.11.16 16:03:54.581]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.16 16:04:06.725]  = 2, SetIsolationCheckRunning()
+[2021.11.16 16:04:06.727]  = 2, m_IsIsolationCheckRunning1 = False
+[2021.11.16 16:06:06.470] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 16:06:06.473]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 16:06:06.474]  = 1, SetIsolationCheckRunning()
+[2021.11.16 16:06:06.475]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 16:06:19.392]  = 1, SetIsolationCheckRunning()
+[2021.11.16 16:06:19.393]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 16:06:45.659] InspectionResultViewModel::DoLoaded(), ch = 1, run_id = 20211116160543_1_0370afd6-33e2-4066-ab6e-8a476e981dc7
+[2021.11.16 16:07:17.061] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 16:07:17.062]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 16:07:17.065]  = 1, SetIsolationCheckRunning()
+[2021.11.16 16:07:17.065]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 16:07:29.692]  = 1, SetIsolationCheckRunning()
+[2021.11.16 16:07:29.692]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 16:09:35.948] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.16 16:09:35.949]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 16:09:35.950]  = 2, SetIsolationCheckRunning()
+[2021.11.16 16:09:35.951]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.16 16:09:50.200]  = 2, SetIsolationCheckRunning()
+[2021.11.16 16:09:50.201]  = 2, m_IsIsolationCheckRunning1 = False
+[2021.11.16 16:52:09.762] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.16 16:52:09.764]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.16 16:52:09.765]  = 1, SetIsolationCheckRunning()
+[2021.11.16 16:52:09.766]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.16 16:52:35.509]  = 1, SetIsolationCheckRunning()
+[2021.11.16 16:52:35.509]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 19:13:06.355] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.16 19:13:06.356]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 19:13:06.358]  = 2, SetIsolationCheckRunning()
+[2021.11.16 19:13:06.359]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.16 19:13:19.987]  = 2, SetIsolationCheckRunning()
+[2021.11.16 19:13:19.987]  = 2, m_IsIsolationCheckRunning1 = False
+[2021.11.16 19:13:47.666] InspectionResultViewModel::DoLoaded(), ch = 2, run_id = 20211116191052_2_c79ca83f-c9a3-48ac-9b66-94259e272dbc
+[2021.11.16 19:14:13.595] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.16 19:14:13.596]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.16 19:14:13.599]  = 2, SetIsolationCheckRunning()
+[2021.11.16 19:14:13.600]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.16 19:15:15.139]  = 2, SetIsolationCheckRunning()
+[2021.11.16 19:15:15.140]  = 2, m_IsIsolationCheckRunning1 = False

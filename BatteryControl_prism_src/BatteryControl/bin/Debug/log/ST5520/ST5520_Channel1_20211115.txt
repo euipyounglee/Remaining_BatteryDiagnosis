@@ -1,0 +1,25 @@
+[2021.11.15 17:45:22.138] ST5520 was created
+[2021.11.15 17:46:28.925] open COM8 failure
+[2021.11.15 17:46:39.045] open COM8 success
+[2021.11.15 17:50:02.574] Closed
+[2021.11.15 17:51:49.059] ST5520 was created
+[2021.11.15 18:17:58.943] ST5520 was created
+[2021.11.15 18:35:55.437] open COM8 failure
+[2021.11.15 18:36:27.867] ST5520 was created
+[2021.11.15 18:37:08.759] open COM8 success
+[2021.11.15 18:43:21.944] ST5520 was created
+[2021.11.15 18:44:29.827] open COM8 success
+[2021.11.15 18:52:33.719] ST5520 was created
+[2021.11.15 18:53:04.342] open COM8 success
+[2021.11.15 18:56:33.465] ST5520 was created
+[2021.11.15 19:43:59.449] ST5520 was created
+[2021.11.15 19:44:43.010] open COM8 failure
+[2021.11.15 19:44:51.290] open COM8 success
+[2021.11.15 19:46:12.007] [Send] :STARt
+[2021.11.15 19:46:13.013] [Send] :STOP
+[2021.11.15 19:46:18.535] [Send] :MEASure?
+[2021.11.15 19:46:24.772] ST5520 Measure -> 9999000000, isOverflow = True
+[2021.11.15 19:46:26.007] [Send] :STARt
+[2021.11.15 19:46:29.506] [Send] :STOP
+[2021.11.15 19:46:29.506] [Send] :MEASure?
+[2021.11.15 19:46:31.742] ST5520 Measure -> 9999000000, isOverflow = True

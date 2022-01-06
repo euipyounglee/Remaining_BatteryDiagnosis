@@ -1,0 +1,9 @@
+[2021.11.16 10:10:20.970] [Request] dev_id(1) key(220) uriCmd(input) fullURL(http://collect.gbtp.cion.co.kr/btrySrviveEvl/input/1/220)
+[2021.11.16 10:10:30.998] [Error] REST API Exceiption(input): 하나 이상의 오류가 발생했습니다.
+[2021.11.16 10:15:22.015] [Request] dev_id(1) key(231) uriCmd(input) fullURL(http://collect.gbtp.cion.co.kr/btrySrviveEvl/input/1/231)
+[2021.11.16 10:15:57.448] [Request] dev_id(1) key(232) uriCmd(input) fullURL(http://collect.gbtp.cion.co.kr/btrySrviveEvl/input/1/232)
+[2021.11.16 10:16:07.482] [Error] REST API Exceiption(input): 하나 이상의 오류가 발생했습니다.
+[2021.11.16 10:24:51.019] [Request] dev_id(1) key(252) uriCmd(input) fullURL(http://collect.gbtp.cion.co.kr/btrySrviveEvl/input/1/252)
+[2021.11.16 10:25:25.683] [Request] dev_id(1) key(253) uriCmd(input) fullURL(http://collect.gbtp.cion.co.kr/btrySrviveEvl/input/1/253)
+[2021.11.16 10:25:35.717] [Error] REST API Exceiption(input): 하나 이상의 오류가 발생했습니다.
+[2021.11.16 10:46:25.462] [Request] dev_id(1) key(300) uriCmd(input) fullURL(http://collect.gbtp.cion.co.kr/btrySrviveEvl/input/1/300)

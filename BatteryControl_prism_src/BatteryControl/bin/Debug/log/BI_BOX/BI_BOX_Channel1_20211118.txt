@@ -1,0 +1,7 @@
+[2021.11.18 10:12:38.611] BI_BOX was created
+[2021.11.18 10:47:21.209] BI_BOX was created
+[2021.11.18 11:27:37.892] BI_BOX was created
+[2021.11.18 11:43:09.056] BI_BOX was created
+[2021.11.18 11:52:05.395] BI_BOX was created
+[2021.11.18 13:28:20.887] BI_BOX was created
+[2021.11.18 13:32:29.004] BI_BOX was created

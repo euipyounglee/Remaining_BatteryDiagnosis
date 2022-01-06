@@ -1,0 +1,694 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AEF33CC6-4F1B-4B74-A234-2FFB42354024}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BatteryControl</RootNamespace>
+    <AssemblyName>BatteryControl</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\run\prism\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BatteryControl.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.5\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism, Version=8.0.0.1909, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.8.0.0.1909\lib\net47\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=8.0.0.1909, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.8.0.0.1909\lib\net47\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Data\Converter\CheckVoltageConverter.cs" />
+    <Compile Include="Data\Converter\GetRowIndexOfSampleBConverter.cs" />
+    <Compile Include="Data\VM\QuestionVM.cs" />
+    <Compile Include="Data\VM\SampleAVM.cs" />
+    <Compile Include="Defines\ProgramParameters.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChannelView2.xaml.cs">
+      <DependentUpon>ChannelView2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChannelView.xaml.cs">
+      <DependentUpon>ChannelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\AChannelBaseViewModel.cs" />
+    <Compile Include="View\Channel\CheckConnectionView.xaml.cs">
+      <DependentUpon>CheckConnectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\CheckConnectionViewModel.cs" />
+    <Compile Include="View\Channel\CloseInspectionView.xaml.cs">
+      <DependentUpon>CloseInspectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\ConnectBatteryView2.xaml.cs">
+      <DependentUpon>ConnectBatteryView2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\ConnectBatteryView.xaml.cs">
+      <DependentUpon>ConnectBatteryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\ConnectBatteryViewForModule2.xaml.cs">
+      <DependentUpon>ConnectBatteryViewForModule2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\ConnectBatteryViewForModule.xaml.cs">
+      <DependentUpon>ConnectBatteryViewForModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\ConnectBatteryViewForPack2.xaml.cs">
+      <DependentUpon>ConnectBatteryViewForPack2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\ConnectBatteryViewForPack.xaml.cs">
+      <DependentUpon>ConnectBatteryViewForPack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\ConnectBatteryViewModel.cs" />
+    <Compile Include="View\Channel\DeviceSettingView.xaml.cs">
+      <DependentUpon>DeviceSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\DisconnectBatteryView2.xaml.cs">
+      <DependentUpon>DisconnectBatteryView2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\DisconnectBatteryView.xaml.cs">
+      <DependentUpon>DisconnectBatteryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\DisconnectBatteryViewForModule2.xaml.cs">
+      <DependentUpon>DisconnectBatteryViewForModule2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\DisconnectBatteryViewForModule.xaml.cs">
+      <DependentUpon>DisconnectBatteryViewForModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\DisconnectBatteryViewForPack2.xaml.cs">
+      <DependentUpon>DisconnectBatteryViewForPack2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\DisconnectBatteryViewForPack.xaml.cs">
+      <DependentUpon>DisconnectBatteryViewForPack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\DisconnectBatteryViewModel.cs" />
+    <Compile Include="View\Channel\FinishView.xaml.cs">
+      <DependentUpon>FinishView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\FinishViewModel.cs" />
+    <Compile Include="View\Channel\InspectionResultView.xaml.cs">
+      <DependentUpon>InspectionResultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\InspectionResultViewModel.cs" />
+    <Compile Include="View\Channel\InspectionViewModel.cs" />
+    <Compile Include="View\Channel\NormalInspectionView.xaml.cs">
+      <DependentUpon>NormalInspectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\ProgressTemplate.xaml.cs">
+      <DependentUpon>ProgressTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\SelectBatteryView.xaml.cs">
+      <DependentUpon>SelectBatteryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\SelectBatteryViewModel.cs" />
+    <Compile Include="View\Channel\SelectInspectionView.xaml.cs">
+      <DependentUpon>SelectInspectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\SimpleInspectionView.xaml.cs">
+      <DependentUpon>SimpleInspectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\StartView.xaml.cs">
+      <DependentUpon>StartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Channel\StartViewModel.cs" />
+    <Compile Include="View\Custom\ConnectionStateButton.xaml.cs">
+      <DependentUpon>ConnectionStateButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Custom\ConnectionStateEllipse.xaml.cs">
+      <DependentUpon>ConnectionStateEllipse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Custom\SampleResultItem.xaml.cs">
+      <DependentUpon>SampleResultItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeviceSettingPopup.xaml.cs">
+      <DependentUpon>DeviceSettingPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WorkspaceView.xaml.cs">
+      <DependentUpon>WorkspaceView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Defines\WorkspaceTypes.cs" />
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\ChannelView2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChannelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\CheckConnectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\CloseInspectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\ConnectBatteryView2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Channel\ConnectBatteryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\ConnectBatteryViewForModule2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Channel\ConnectBatteryViewForModule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\ConnectBatteryViewForPack2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Channel\ConnectBatteryViewForPack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\DeviceSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\DisconnectBatteryView2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Channel\DisconnectBatteryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\DisconnectBatteryViewForModule2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Channel\DisconnectBatteryViewForModule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\DisconnectBatteryViewForPack2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Channel\DisconnectBatteryViewForPack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\FinishView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\InspectionResultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\NormalInspectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\ProgressTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\SelectBatteryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\SelectInspectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\SimpleInspectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Channel\StartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Custom\ConnectionStateButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Custom\ConnectionStateEllipse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Custom\SampleResultItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeviceSettingPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WorkspaceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseLib\BaseLib.csproj">
+      <Project>{3e3150bb-1fa2-46e9-8a65-0a91443f62e9}</Project>
+      <Name>BaseLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACIRLib\ACIRLib.csproj">
+      <Project>{932b967b-19be-48bd-b071-37424f1f1555}</Project>
+      <Name>ACIRLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIBoxLib\BIBoxLib.csproj">
+      <Project>{e5310653-4eba-4218-b87a-189112871b8a}</Project>
+      <Name>BIBoxLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\I7565H1Lib\I7565H1Lib.csproj">
+      <Project>{edcb15f0-7a5a-4049-8a39-8bc741811267}</Project>
+      <Name>I7565H1Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InspectEngineLib\InspectEngineLib.csproj">
+      <Project>{ad8772e9-e200-46a5-b00a-7ee7e0d6b5cc}</Project>
+      <Name>InspectEngineLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultimeterLib\MultimeterLib.csproj">
+      <Project>{10a49c82-9382-4f6f-9639-1764ae8e431b}</Project>
+      <Name>MultimeterLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PneCtsLib\PneCtsLib.csproj">
+      <Project>{aeaf69ff-974d-41d3-a0d8-bf8abadfd1b0}</Project>
+      <Name>PneCtsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RelayBoxLib\RelayBoxLib.csproj">
+      <Project>{e056d66d-f699-4c04-9716-9a4b19797444}</Project>
+      <Name>RelayBoxLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RestApiLib\RestApiLib.csproj">
+      <Project>{cea8d3e2-1edf-4cba-8cf2-8727969d1524}</Project>
+      <Name>RestApiLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SerialPortLib\SerialPortLib.csproj">
+      <Project>{2eeb2727-3ac0-43ef-a94a-973157b7f21c}</Project>
+      <Name>SerialPortLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharedLib\SharedLib.csproj">
+      <Project>{bc031061-2598-4696-a92b-355793135d4c}</Project>
+      <Name>SharedLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLManager\SQLManager.csproj">
+      <Project>{84aa21d2-70f4-4410-b62a-4d98dcc61dcd}</Project>
+      <Name>SQLManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ST5520Lib\ST5520Lib.csproj">
+      <Project>{446ae916-8e4a-4f21-86ef-a5d7e2b3cc02}</Project>
+      <Name>ST5520Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZebraScannerLib\ZebraScannerLib.csproj">
+      <Project>{28905996-1238-4004-a445-ef76eeb74145}</Project>
+      <Name>ZebraScannerLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bg_header.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chtltbg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_hist_active.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_hist_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_setting_active.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_setting_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_chtltbg_left.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_chtltbg_right.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\processbar_00.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\processbar_01.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\processbar_02.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\processbar_03.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\processbar_04.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\processbar_05.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\processbar_06.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_ch_innerbg_topdown.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_ch_innerbg_corner.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_ch_innerbg_leftright.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_start_active.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_start_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_loadbar_bg2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_loadbar_no.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_loadbar_ok.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_diagnosis01_active.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_diagnosis01_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_diagnosis02_active.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_diagnosis02_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_diagnosis03_active.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_diagnosis03_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_gradeA.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_gradeB.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_gradeC.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_gradeD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_spinner.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\title_popup_fault.png" />
+    <Resource Include="Resources\title_popup_nextstep.png" />
+    <Resource Include="Resources\title_popup_pause.png" />
+    <Resource Include="Resources\title_popup_seperate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_grade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\BuildDate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>FOR /f %25%25a IN ('WMIC OS GET LocalDateTime ^| FIND "+"') DO SET DTS=%25%25a  
+SET COMPILEDATETIME=%25DTS:~0,8%25.%25DTS:~8,6%25
+echo %25COMPILEDATETIME%25 &gt; "$(ProjectDir)\Resources\BuildDate.txt"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

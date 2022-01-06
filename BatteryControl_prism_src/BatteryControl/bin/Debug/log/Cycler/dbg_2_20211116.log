@@ -1,0 +1,131 @@
+[2021.11.16 10:18:12.652] channelNo = 2, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 10:18:12.654] channelNo = 2, DoRelayBoxInsulationCheck(), start
+[2021.11.16 10:18:12.656] channelNo = 2, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 10:18:12.659] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 10:18:12.660] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 10:18:12.661] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 10:18:13.045] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 10:18:16.054] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 10:18:17.062] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 10:18:17.065] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 10:18:17.066] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 10:18:20.065] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 10:18:21.088] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 10:18:21.089] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 10:18:21.090] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 10:18:23.070] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 10:18:23.070] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 10:18:23.071] channelNo = 2, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 10:23:22.537] channelNo = 2, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 10:23:22.538] channelNo = 2, DoRelayBoxInsulationCheck(), start
+[2021.11.16 10:23:22.539] channelNo = 2, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 10:23:22.540] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 10:23:22.541] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 10:23:22.541] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 10:23:23.213] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 10:23:26.212] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 10:23:27.215] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 10:23:27.216] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 10:23:27.237] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 10:23:30.234] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 10:23:31.236] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 10:23:31.236] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 10:23:31.251] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 10:23:33.228] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 10:23:33.229] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 10:23:33.230] channelNo = 2, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 11:05:37.731] channelNo = 2, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 11:05:37.733] channelNo = 2, DoRelayBoxInsulationCheck(), start
+[2021.11.16 11:05:37.735] channelNo = 2, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 11:05:37.737] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 11:05:37.738] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 11:05:37.738] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 11:05:38.222] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 11:05:41.225] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 11:05:42.231] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 11:05:42.233] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 11:05:42.235] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 11:05:45.226] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 11:05:46.232] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 11:05:46.233] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 11:05:48.235] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 11:05:48.236] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 11:05:48.237] channelNo = 2, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 15:39:25.816] channelNo = 2, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 15:39:25.819] channelNo = 2, DoRelayBoxInsulationCheck(), start
+[2021.11.16 15:39:31.933] channelNo = 2, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 15:39:31.935] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 15:39:31.936] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 15:39:31.937] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 15:39:33.226] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 15:39:36.962] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 15:39:37.970] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 15:39:37.973] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 15:39:37.976] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 15:39:48.988] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 15:39:49.991] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 15:39:49.992] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 15:39:49.994] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 15:39:54.984] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 15:39:54.986] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 15:39:54.992] channelNo = 2, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 16:03:53.703] channelNo = 2, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 16:03:53.706] channelNo = 2, DoRelayBoxInsulationCheck(), start
+[2021.11.16 16:03:54.580] channelNo = 2, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 16:03:54.582] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 16:03:54.584] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 16:03:54.585] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 16:03:55.713] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 16:03:58.726] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 16:03:59.733] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 16:03:59.736] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 16:03:59.753] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 16:04:03.725] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 16:04:04.728] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 16:04:04.729] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 16:04:04.732] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 16:04:06.725] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 16:04:06.728] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 16:04:06.729] channelNo = 2, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 16:09:33.449] channelNo = 2, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 16:09:33.451] channelNo = 2, DoRelayBoxInsulationCheck(), start
+[2021.11.16 16:09:35.949] channelNo = 2, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 16:09:35.952] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Error
+[2021.11.16 16:09:35.953] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Error
+[2021.11.16 16:09:35.954] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #1
+[2021.11.16 16:09:37.183] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 16:09:40.191] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 16:09:41.200] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 16:09:41.202] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 16:09:41.205] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 16:09:45.198] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 16:09:46.201] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 16:09:46.202] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 16:09:46.206] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 16:09:50.200] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 16:09:50.202] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 16:09:50.202] channelNo = 2, Devices.PNECTSInstance.ConnectionState = Disconnected
+[2021.11.16 19:13:04.378] channelNo = 2, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 19:13:04.380] channelNo = 2, DoRelayBoxInsulationCheck(), start
+[2021.11.16 19:13:06.357] channelNo = 2, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 19:13:06.360] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Off
+[2021.11.16 19:13:06.361] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Off
+[2021.11.16 19:13:06.362] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 19:13:19.986] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #4
+[2021.11.16 19:14:11.561] channelNo = 2, DoRelayBoxInsulationCheck(), #1
+[2021.11.16 19:14:11.562] channelNo = 2, DoRelayBoxInsulationCheck(), start
+[2021.11.16 19:14:13.598] channelNo = 2, DoRelayBoxInsulationCheck(), wait passed...
+[2021.11.16 19:14:13.601] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Off
+[2021.11.16 19:14:13.601] channelNo = 2, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Off
+[2021.11.16 19:14:13.602] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #3
+[2021.11.16 19:14:31.781] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #5
+[2021.11.16 19:14:32.786] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #6
+[2021.11.16 19:14:32.791] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #7
+[2021.11.16 19:14:32.811] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #8
+[2021.11.16 19:14:54.800] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #10
+[2021.11.16 19:14:55.803] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #11
+[2021.11.16 19:14:55.804] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #12
+[2021.11.16 19:14:55.806] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #13
+[2021.11.16 19:15:15.139] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #15
+[2021.11.16 19:15:15.141] channelNo = 2, DoRelayBoxInsulationCheck(), BBB #16
+[2021.11.16 19:15:15.142] channelNo = 2, Devices.PNECTSInstance.ConnectionState = Disconnected

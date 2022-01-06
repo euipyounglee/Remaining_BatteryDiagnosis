@@ -1,0 +1,20 @@
+[2021.11.12 09:33:16.918] BI_BOX was created
+[2021.11.12 09:49:04.502] [BI_BOX] opening CAN : COM13
+[2021.11.12 09:49:06.075] [BI_BOX] opening CAN : COM13
+[2021.11.12 09:49:06.075] [BI_BOX] OpenCAN failure DEV_PortNotExist_Err
+[2021.11.12 09:49:08.930] [BI_BOX] opening CAN : COM13
+[2021.11.12 09:49:08.930] [BI_BOX] OpenCAN failure DEV_PortNotExist_Err
+[2021.11.12 09:59:24.693] BI_BOX was created
+[2021.11.12 10:47:00.664] BI_BOX was created
+[2021.11.12 11:14:26.414] BI_BOX was created
+[2021.11.12 11:23:28.400] BI_BOX was created
+[2021.11.12 11:26:34.396] BI_BOX was created
+[2021.11.12 11:42:44.062] BI_BOX was created
+[2021.11.12 12:53:46.748] BI_BOX was created
+[2021.11.12 14:20:52.784] BI_BOX was created
+[2021.11.12 15:04:48.471] BI_BOX was created
+[2021.11.12 15:23:59.716] BI_BOX was created
+[2021.11.12 15:42:07.880] BI_BOX was created
+[2021.11.12 16:35:31.328] BI_BOX was created
+[2021.11.12 17:14:10.979] CheckOverVoltageStop() [-1]
+[2021.11.12 17:21:33.999] BI_BOX was created

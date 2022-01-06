@@ -1,0 +1,31 @@
+[2021.11.17 11:32:49.281] channelNo = 2, IsIsolationCheckRunning()
+[2021.11.17 11:32:49.282]  = 2, m_IsIsolationCheckRunning2 = False
+[2021.11.17 11:32:49.282]  = 1, SetIsolationCheckRunning()
+[2021.11.17 11:32:49.283]  = 1, m_IsIsolationCheckRunning1 = True
+[2021.11.17 11:33:05.529]  = 1, SetIsolationCheckRunning()
+[2021.11.17 11:33:05.530]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.17 11:34:13.069] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.17 11:34:13.070]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.17 11:34:13.071]  = 2, SetIsolationCheckRunning()
+[2021.11.17 11:34:13.071]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.17 11:34:31.841]  = 2, SetIsolationCheckRunning()
+[2021.11.17 11:34:31.842]  = 2, m_IsIsolationCheckRunning1 = False
+[2021.11.17 11:36:46.892] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.17 11:36:46.895]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.17 11:36:46.896]  = 2, SetIsolationCheckRunning()
+[2021.11.17 11:36:46.896]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.17 11:37:03.927]  = 2, SetIsolationCheckRunning()
+[2021.11.17 11:37:03.928]  = 2, m_IsIsolationCheckRunning1 = False
+[2021.11.17 11:37:15.259] InspectionResultViewModel::DoLoaded(), ch = 2, run_id = 20211117113623_2_95f58917-2d0e-4ca9-925f-8d919f3b5d82
+[2021.11.17 18:53:26.996] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.17 18:53:26.997]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.17 18:53:26.998]  = 2, SetIsolationCheckRunning()
+[2021.11.17 18:53:26.999]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.17 18:53:47.309]  = 2, SetIsolationCheckRunning()
+[2021.11.17 18:53:47.310]  = 2, m_IsIsolationCheckRunning1 = False
+[2021.11.17 20:51:38.364] channelNo = 1, IsIsolationCheckRunning()
+[2021.11.17 20:51:40.488]  = 1, m_IsIsolationCheckRunning1 = False
+[2021.11.17 20:51:42.444]  = 2, SetIsolationCheckRunning()
+[2021.11.17 20:51:42.444]  = 2, m_IsIsolationCheckRunning1 = True
+[2021.11.17 20:56:03.236]  = 2, SetIsolationCheckRunning()
+[2021.11.17 20:56:03.237]  = 2, m_IsIsolationCheckRunning1 = False

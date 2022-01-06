@@ -1,0 +1,101 @@
+[2022.01.06 17:09:30.780] [Cycler]  Module 1 is Connected
+[2022.01.06 17:13:16.747] channelNo = 1, DoRelayBoxInsulationCheck(), #1
+[2022.01.06 17:13:16.750] channelNo = 1, DoRelayBoxInsulationCheck(), start
+[2022.01.06 17:13:16.753] channelNo = 1, DoRelayBoxInsulationCheck(), wait passed...
+[2022.01.06 17:13:16.757] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[1] = Off
+[2022.01.06 17:13:16.758] channelNo = 1, DoRelayBoxInsulationCheck(), GetCurrentMode[2] = Off
+[2022.01.06 17:13:16.759] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #3
+[2022.01.06 17:13:27.633] channelNo = 1, DoRelayBoxInsulationCheck(), BBB #4
+[2022.01.06 17:13:27.635] channelNo = 1, Devices.PNECTSInstance.ConnectionState = Connected
+[2022.01.06 17:13:27.639] channelNo = 1, search sch file check
+[2022.01.06 17:13:27.640] channelNo = 1, #AAA
+[2022.01.06 17:13:33.044] channelNo = 1, #AAA-1
+[2022.01.06 17:13:33.045] channelNo = 1, #AAA-2
+[2022.01.06 17:13:38.440] channelNo = 1, #AAA-3
+[2022.01.06 17:13:38.440] channelNo = 1, #AAA-4
+[2022.01.06 17:13:38.440] channelNo = 1, #BBB
+[2022.01.06 17:13:38.451] SCENARIO, RunMainTask() #### START
+[2022.01.06 17:13:38.453] SCENARIO, RunMainTask() #### -1, -1
+[2022.01.06 17:13:38.454] SCENARIO, SelectSchedule(-1,-1), CurrentTask is null
+[2022.01.06 17:13:38.454] SCENARIO, SelectSchedule(-1,-1), RunnableSchedule.Count() = 45
+[2022.01.06 17:13:38.458] SCENARIO, RunTask(3,1,1), START, ------------------------------------------------------------
+[2022.01.06 17:13:38.459] SCENARIO, RunTask(3,1,1), CHECK, #1
+[2022.01.06 17:13:38.459] SCENARIO, RunTask(3,1,1), CHECK, #2
+[2022.01.06 17:13:38.459] SCENARIO, RunTask(3,1,1), RunTaskTimer, IsCanceled == false 
+[2022.01.06 17:13:38.660] SCENARIO, RunTask(3,1,1), CHECK, #3
+[2022.01.06 17:13:38.660] SCENARIO, RunTask(3,1,1), CHECK, #4
+[2022.01.06 17:13:38.661] SCENARIO, TaskTimer(3, 1, 300000)
+[2022.01.06 17:13:38.686] SCENARIO, RunTask(3,1,1), [Cycler] Measure, isCtsMeasureData1 = False
+[2022.01.06 17:13:38.687] SCENARIO, RunTask(3,1,1), [Cycler] Measure, isCtsMeasureData2 = False
+[2022.01.06 17:13:38.687] SCENARIO, RunTask(3,1,1), [Cycler] Measure, isCtsMeasureData2_before = False
+[2022.01.06 17:13:38.687] SCENARIO, RunTask(3,1,1), [Cycler] Measure, isCtsMeasureData2_after  = False
+[2022.01.06 17:13:38.687] SCENARIO, RunTask(3,1,1), [Cycler] Measure, isBMSMeasureDischarge2C  = False
+[2022.01.06 17:13:38.693] SCENARIO, RunTask(3,1,1), CHECK, #6, device_cd = Cycler, device_name = LOCAL, detail_name = Rest
+[2022.01.06 17:13:38.694] SCENARIO, RunTask(3,1,1), [Cycler] Measure, step_no 1,1, voltage 0, current 0
+[2022.01.06 17:13:38.694] SCENARIO, check ccc #4-1 
+[2022.01.06 17:13:38.696] SCENARIO, RunTask(3,1,1), voltage_first 0, currentFirst 0
+[2022.01.06 17:13:38.696] SCENARIO, RunTask(3,1,1), BIBox CheckOverVoltageStart()
+[2022.01.06 17:13:38.786] SCENARIO, RunTask(3,1,1), CHECK, #7
+[2022.01.06 17:13:38.786] SCENARIO, RunTask(3,1,1), CHECK, #8
+[2022.01.06 17:13:38.786] SCENARIO, RunTask(3,1,1), CHECK, #10
+[2022.01.06 17:13:38.786] SCENARIO, RunTask(3,1,1), Cycler #1
+[2022.01.06 17:13:38.787] SCENARIO, RunTask(3,1,1), Cycler #2
+[2022.01.06 17:13:38.787] SCENARIO, RunTask(3,1,1), [Rest] 
+[2022.01.06 17:13:38.788] SCENARIO, check ccc #1 
+[2022.01.06 17:13:38.788] SCENARIO, check ccc #2 
+[2022.01.06 17:13:38.797] SCENARIO, RunTask(3,1,1), wait 60 sec
+[2022.01.06 17:14:38.799] SCENARIO, RunTask(3,1,1), task is completed [Rest] 
+[2022.01.06 17:14:38.802] TaskCompletedCallback [1] #START
+[2022.01.06 17:14:38.802] TaskCompletedCallback [1] CheckOverVoltageStop()
+[2022.01.06 17:14:38.803] TaskCompletedCallback [1], TaskTimer Cancel()
+[2022.01.06 17:14:38.904] TaskCompletedCallback [1] (3,1,1), TaskCompleted(True,0,,1)
+[2022.01.06 17:14:38.904] TaskCompletedCallback [1] #1
+[2022.01.06 17:14:38.905] TaskCompletedCallback [1] #3
+[2022.01.06 17:14:38.905] TaskCompletedCallback [1] #4
+[2022.01.06 17:14:38.905] TaskCompletedCallback [1] #8
+[2022.01.06 17:14:38.912] TaskCompletedCallback [1] #9
+[2022.01.06 17:14:38.915] SendUpdateState, #1
+[2022.01.06 17:14:38.916] SendUpdateState, #2, 0, 0
+[2022.01.06 17:14:38.917] SendUpdateState, #3
+[2022.01.06 17:14:38.917] SendUpdateState, #4, ChannelNum = 1, Channel1, 9, 0
+[2022.01.06 17:14:38.939] SCENARIO, TaskTimer(3, 1), end
+[2022.01.06 17:14:48.975] SendUpdateState, #5
+[2022.01.06 17:14:48.975] TaskCompletedCallback [1] #10
+[2022.01.06 17:14:48.976] TaskCompletedCallback [1], RunTask(3,1,1), -> call NextJob()
+[2022.01.06 17:14:48.976] TaskCompletedCallback [1] #11
+[2022.01.06 17:14:48.977] TaskCompletedCallback [1] #END
+[2022.01.06 17:14:48.977] SCENARIO, RunTask(3,1,1), CHECK, #12
+[2022.01.06 17:14:48.977] SCENARIO, RunTask(3,1,1), StartNew result [true]
+[2022.01.06 17:14:48.977] SCENARIO, RunTask(3,1,1), CHECK, #13
+[2022.01.06 17:14:49.732] SCENARIO, RunMainTask() #### 1, 1
+[2022.01.06 17:14:49.732] SCENARIO, SelectSchedule(1,1), find next task, next idx [1]
+[2022.01.06 17:14:49.732] SCENARIO, RunTask(3,1,11), START, ------------------------------------------------------------
+[2022.01.06 17:14:49.733] SCENARIO, RunTask(3,1,11), CHECK, #1
+[2022.01.06 17:14:49.733] SCENARIO, RunTask(3,1,11), CHECK, #2
+[2022.01.06 17:14:49.733] SCENARIO, RunTask(3,1,11), RunTaskTimer, IsCanceled == false 
+[2022.01.06 17:14:49.934] SCENARIO, RunTask(3,1,11), RunTaskTimer => cancelTokenSource.Cancel() 
+[2022.01.06 17:14:49.934] SCENARIO, RunTask(3,1,11), CHECK, #3
+[2022.01.06 17:14:49.934] SCENARIO, RunTask(3,1,11), CHECK, #4
+[2022.01.06 17:14:49.935] SCENARIO, TaskTimer(3, 11, 300000)
+[2022.01.06 17:14:49.945] SCENARIO, RunTask(3,1,11), [Cycler] Measure, isCtsMeasureData1 = False
+[2022.01.06 17:14:49.946] SCENARIO, RunTask(3,1,11), [Cycler] Measure, isCtsMeasureData2 = False
+[2022.01.06 17:14:49.946] SCENARIO, RunTask(3,1,11), [Cycler] Measure, isCtsMeasureData2_before = False
+[2022.01.06 17:14:49.946] SCENARIO, RunTask(3,1,11), [Cycler] Measure, isCtsMeasureData2_after  = False
+[2022.01.06 17:14:49.946] SCENARIO, RunTask(3,1,11), [Cycler] Measure, isBMSMeasureDischarge2C  = False
+[2022.01.06 17:14:49.947] SCENARIO, RunTask(3,1,11), CHECK, #6, device_cd = BI_BOX, device_name = BI Box Controller, detail_name = Measure
+[2022.01.06 17:14:49.947] SCENARIO, RunTask(3,1,11), [Cycler] Measure, step_no 1,11, voltage 0, current 0
+[2022.01.06 17:14:49.947] SCENARIO, RunTask(3,1,11), CHECK, #7
+[2022.01.06 17:14:49.947] SCENARIO, RunTask(3,1,11), CHECK, #8
+[2022.01.06 17:14:49.948] SCENARIO, RunTask(3,1,11), CHECK, #10
+[2022.01.06 17:14:49.948] SCENARIO, RunTask(3,1,11), BI_BOX #1
+[2022.01.06 17:14:49.948] TaskCompletedCallback [11] #START
+[2022.01.06 17:14:49.948] TaskCompletedCallback [11] CheckOverVoltageStop()
+[2022.01.06 17:14:49.949] TaskCompletedCallback [11] (3,1,11), TaskCompleted(False,-1,BI 연결 해제됨,11)
+[2022.01.06 17:14:49.949] TaskCompletedCallback [11] #1
+[2022.01.06 17:14:49.950] TaskCompletedCallback [11] #3
+[2022.01.06 17:14:49.950] TaskCompletedCallback [11] #END 4
+[2022.01.06 17:14:49.950] SCENARIO, RunTask(3,1,11), BIBoxInstance disconnected
+[2022.01.06 17:14:49.951] SCENARIO, RunTask(3,1,11), CHECK, #12
+[2022.01.06 17:14:49.951] SCENARIO, RunTask(3,1,11), StartNew result [false] -> call SelectTask()
+[2022.01.06 17:14:49.951] SCENARIO, RunTask(3,1,11), CHECK, #13
+[2022.01.06 17:14:50.036] SCENARIO, TaskTimer(3, 11), end

@@ -1,0 +1,10 @@
+[2021.11.15 17:45:22.270] BI_BOX was created
+[2021.11.15 17:50:02.581] CheckOverVoltageStop() [-1]
+[2021.11.15 17:50:03.428] CheckOverVoltageStop() [-1]
+[2021.11.15 17:51:49.090] BI_BOX was created
+[2021.11.15 18:17:58.974] BI_BOX was created
+[2021.11.15 18:36:27.897] BI_BOX was created
+[2021.11.15 18:43:21.975] BI_BOX was created
+[2021.11.15 18:52:33.776] BI_BOX was created
+[2021.11.15 18:56:33.521] BI_BOX was created
+[2021.11.15 19:43:59.505] BI_BOX was created
