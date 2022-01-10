@@ -15,7 +15,7 @@ using System.Diagnostics;
 
 
 
-namespace BatteryGateway
+namespace BatteryGateway.Common
 {
     class CTrayIcon 
     {

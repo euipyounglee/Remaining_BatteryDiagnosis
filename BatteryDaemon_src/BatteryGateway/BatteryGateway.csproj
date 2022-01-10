@@ -118,16 +118,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CJsonParser.cs" />
-    <Compile Include="ClassCommand.cs" />
-    <Compile Include="ClassFirwallManager.cs" />
-    <Compile Include="ClassMultimeter.cs" />
-    <Compile Include="ClassPneCtsLib.cs" />
-    <Compile Include="ClassRESTful.cs" />
-    <Compile Include="ClassRS232C.cs" />
-    <Compile Include="ClassTCPClient.cs" />
-    <Compile Include="ClassUSB2CAN.cs" />
-    <Compile Include="CTrayIcon.cs" />
+    <Compile Include="Common\CJsonParser.cs" />
+    <Compile Include="Common\ClassCommand.cs" />
+    <Compile Include="Common\ClassFirwallManager.cs" />
+    <Compile Include="Multimeter\ClassMultimeter.cs" />
+    <Compile Include="PneCtsLib\ClassPneCtsLib.cs" />
+    <Compile Include="RestApi\ClassRESTful.cs" />
+    <Compile Include="UartPort\ClassRS232C.cs" />
+    <Compile Include="Multimeter\ClassTCPClient.cs" />
+    <Compile Include="RelayBox\ClassUSB2CAN.cs" />
+    <Compile Include="Common\CTrayIcon.cs" />
     <Compile Include="PneCtsLib\CTS_AUX_DATA.cs" />
     <Compile Include="PneCtsLib\CTS_CAN_DATA.cs" />
     <Compile Include="PneCtsLib\CTS_CAN_VALUE.cs" />
@@ -137,10 +137,10 @@
     <Compile Include="PneCtsLib\PSServerAPI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PythonClass.cs" />
-    <Compile Include="Utils.cs" />
-    <Compile Include="webSocketSharpClient.cs" />
-    <Compile Include="wSocketClient.cs" />
+    <Compile Include="Common\PythonClass.cs" />
+    <Compile Include="Common\Utils.cs" />
+    <Compile Include="WebSocket\webSocketSharpClient.cs" />
+    <Compile Include="WebSocket\wSocketClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -163,5 +163,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
