@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BatteryGateway
+namespace BatteryGateway.RestApi
 {
     class ClassRESTful
     {

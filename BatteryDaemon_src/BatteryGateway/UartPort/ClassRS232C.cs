@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using System.IO.Ports;  //시리얼통신을 위해 추가해줘야 함
 using System.Threading;
 using System.Windows.Forms;
+//using System.Seir
 
-namespace BatteryGateway
+namespace BatteryGateway.UartPort
 {
     class ClassRS232C
     {

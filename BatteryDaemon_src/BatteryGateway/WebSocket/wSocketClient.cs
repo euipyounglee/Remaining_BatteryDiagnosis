@@ -10,6 +10,7 @@ using System.Web.Script.Serialization;
 using System.Net.NetworkInformation;
 using System.Collections;
 using System.Windows.Forms;
+using BatteryGateway.Common;
 
 namespace BatteryGateway
 {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BatteryGateway.Common;
+using BatteryGateway.PneCtsLib;
+using System;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
