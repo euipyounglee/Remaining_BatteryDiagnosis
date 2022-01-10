@@ -17,63 +17,7 @@ using static BatteryGateway.Program;
 namespace BatteryGateway.PneCtsLib
 {
 
-
-  //  [StructLayout(LayoutKind.Explicit)]
-  //  struct WORDConverter
-  //  {
-  //      [FieldOffset(0)]
-  //      public uint Value;
-
-  //      [FieldOffset(0)]
-  //      public ushort LOWORD;
-
-  //      [FieldOffset(2)]
-  //      public ushort HIWORD;
-  //  }
-
  
-  //  enum PS_STEP
-  //  {
-  //      PS_STEP_NONE = 0, //Idle
-  //      PS_STEP_CHARGE,  //충전
-  //      PS_STEP_DISCHARGE,//방전
-  //      PS_STEP_REST,//휴지
-  //      PS_STEP_OCV, //OCV
-  //      PS_STEP_IMPEDANCE,//임피던스
-  //      PS_STEP_END,//완료
-  //      PS_STEP_ADV_CYCLE,//작업중
-  //      PS_STEP_LOOP,//작업중
-  //      PS_STEP_PATTERN//Pattern
-
-  //  }
-
-  //  enum PS_STATE
-  //  {
-  //      idle = 0, //0x00
-  //      standby = 1,//0x01
-  //      disconnected =32, //0x20
-		//connected=33, //0x21
-		//ready = 41, //0x29
-
-  //  }
-
-  //  enum rRET
-  //  {
-  //      CTS_NACK				=	0,	/*!< 오류 (Error) */
-  //      CTS_ACK					=	1,	/*!< 정상 (Normal) */
-  //      CTS_TIMEOUT				=	2,	/*!< 시간초과 (Time over) */
-  //      CTS_SIZE_MISMATCH		=	3,	/*!< Body Size 불일치 (Size mismatch) */
-  //      CTS_RX_BUFF_OVER_FLOW	=	4,	/*!< 수신 버퍼 오버플로우 (Receive buffer overflow) */
-  //      CTS_TX_BUFF_OVER_FLOW	=	5,	/*!< 송신 버퍼 오버플로우 (Transmit buffer overflow) */
-  //      CTS_CONNECTED			=	6,	/*!< 접속 성공 (Connection success) */
-  //      CTS_NOT_CONNECTED		=	7,	/*!< 접속 되어 있지 않음 (Not connected) */
-  //      CTS_FILE_NOT_EXIST		=	8,	/*!< 해당 경로에 파일이 없음 (Not exist file) */
-  //      CTS_FILE_OPENED			=	9,	/*!< 파일이 Open되어 있음 (File open fail) */
-  //      CTS_CAN_LIN_TYPE_INVALID	=10,/*!< CAN Rx/Tx, LIN File Type이 맞지 않음 (Type mismatch) */
-  //      CTS_CHANNEL_RUN			=	11,	/*!< 현재 동작중인 채널임 (Channel is running) */
-  //      CTS_FAIL				= CTS_CHANNEL_RUN +1 // 0xFFFFFFFF	/*!< 실패 (Failure) */
-  //  }
-
     
 
     //======================================================================

@@ -102,10 +102,21 @@ namespace BatteryGateway.Common
 
                     string name = item.Key;
                     string nameValue = (string) item.Value;
-                    if ("RleayCOM" == nameValue)//item.Key)
+                    if ("RleayCOM" == nameValue)
                     {
-
-                        dynamic port = "COM3";// 3456;// dict["port"]; // result is Dictio
+#if false
+                        dynamic port = "COM3";//  // result is Dictio
+#else
+                        dynamic port = null;
+                        if (data.ContainsKey("port"))
+                        {
+                              port = data["port"];
+                        }
+                        if ( null == port)
+                        {
+                            return 0;
+                        }
+#endif
 
                         Console.WriteLine("port", port);
                         PythonClass.ConnectFuncCallUSB2CAN(port);// "COM7");
@@ -113,9 +124,27 @@ namespace BatteryGateway.Common
                     }
                     else if ("Multimeter" == nameValue)
                     {
+#if false
                         dynamic ipadress = "169.254.4.61"; // 장비 고정 IP
 
                         dynamic port = 5025; //장비의 고정 포트
+#else
+                        dynamic ipadress = null;// "";
+                        dynamic port = null;// 0;
+                        if (data.ContainsKey("ip")){
+
+                             ipadress = data["ip"];
+                        }
+                        if (data.ContainsKey("port"))
+                        {
+                            port = data["port"];
+                        }
+                            //nameValue
+                        if(null == ipadress || null == port)
+                        {
+                            return 0;
+                        }
+#endif
 
 
                         string vIpadress = string.Format("{0}:{1}", ipadress, port);
@@ -126,13 +155,23 @@ namespace BatteryGateway.Common
                         Value = strBuffer.Replace("\n", "");
 
                         string JsonString = "{";
-                        JsonString += string.Format("\"name\" : \"{0}\"", name);
+                        JsonString += string.Format("\"name\" : \"{0}\"", nameValue);
                         JsonString += string.Format(",\"value\" : \"{0}\"", Value);
                         JsonString += "}";
 
 
                         SendData(JsonString);
                         break;
+                    }else if ("PNECTS" == nameValue)
+                    {
+                        dynamic port = null;// 0;
+                        if (data.ContainsKey("port"))
+                        {
+                            port = data["port"];
+                        }
+
+                        // PNE
+                        PythonClass.ConnectFuncPNEConnect();
                     }
 
                 }
