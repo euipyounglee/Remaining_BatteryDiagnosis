@@ -335,34 +335,16 @@ namespace BatteryGateway
             MessageBox.Show(string.Format("code ={0}", rtn.ToString()), "OK");
         }
 
-        //ksj 20200728 : delegate 호출 메소드 선언 (접속 이벤트)
         public int HandleCallbackConnected(int nModuleID, ref CTS_MD_SYSTEM_DATA data)
         {
-#if false
 
-            string str;
-            string strModelName = Encoding.Default.GetString(sysinfo.szModelName);
 
-            str = string.Format("HandleCallbackConnected!! {0},{1},{2}",
-                                        sysinfo.nModuleID,
-                                        sysinfo.nProtocolVersion,
-                                        strModelName
-                                        );
-
-            int rtn = 0;
-
-          if ("" != str)
-            {
-                getPythonCallFunc(str);
-
-                asyncSchedule();
-            }
-
-            Console.Write(str + "\n"); // 통신 연결됨---- OK
-#else
             ////////////////////////////////////////////////////////////////////////////////
             string str;
             string strModelName = Encoding.Default.GetString(data.szModelName);
+
+
+            Console.WriteLine("통신 연결 준비됨!!!!"); // 통신 연결됨---- OK
 
             str = string.Format("HandleCallbackConnected!! {0},{1},{2}",
                                         data.nModuleID,
@@ -419,22 +401,24 @@ namespace BatteryGateway
             //Reserved = new uint[data.reserved.Length];
             //Array.Copy(data.reserved, 0, Reserved, 0, data.reserved.Length);
 
-            //조건에 맞으면 실행 시키기
-            //if (1)
-            //{
-            //    asyncSchedule();
-            //}
 
-
+#if true
+            //임시- 외부에서 보내는것을 확인 하기 위함에 추가 시킴
+            // 외부 에서 보낼때 확인함
             if ("" != str)
             {
                 getPythonCallFunc(str);
 
                 asyncSchedule();
             }
-
+#else
+            //스케쥴 보낼수 있는 시뮬레이터가 준비가 되었음
+            //1. 파이썬 버튼 활성화 시키기, PNE-충방전기Test
+            //2. Control에 준비 되었다는 ACK 를 보내준다.
+            //3. BatteyControl 에서 스케쥴를 받을 준비가 됨.
 
 #endif
+
 
 
             return 0;
