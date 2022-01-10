@@ -65,9 +65,14 @@ namespace RestApiLib.Data
 
 		private void Init()
 		{
+#if false
 			//PortBaseUri = "http://192.168.0.22:8080/jtp-battery-collection/btrySrviveEvl/";
-            PortBaseUri = "http://collect.gbtp.cion.co.kr/btrySrviveEvl/";
-            DeviceType = "P";
+			PortBaseUri = "http://collect.gbtp.cion.co.kr/btrySrviveEvl/";
+#else
+			//22.01.10 : L.E.P
+			PortBaseUri = "";
+#endif
+			DeviceType = "P";
 			DeviceNo = "1";
 		}
 

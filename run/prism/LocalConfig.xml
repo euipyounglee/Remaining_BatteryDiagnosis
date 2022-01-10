@@ -4,13 +4,12 @@
   <BatteryTestType>MODULE</BatteryTestType>
   <DatabaseConfig>
     <Server>localhost</Server>
-    <Port>3306</Port>
     <Database>btry_eval</Database>
     <UserId>root</UserId>
     <Password>1234</Password>
   </DatabaseConfig>
   <RestApiConfig>
-    <PortBaseUri>http://collect.gbtp.cion.co.kr/btrySrviveEvl/</PortBaseUri>
+    <PortBaseUri />
     <DeviceType>P</DeviceType>
     <DeviceNo>1</DeviceNo>
   </RestApiConfig>
@@ -31,11 +30,11 @@
   </EngineConfig>
   <Channel1>
     <MultimeterHostInfo>
-      <Host>192.168.4.61</Host>
+      <Host>192.168.0.110</Host>
       <Port>5025</Port>
     </MultimeterHostInfo>
-    <ST5520ComPort>COM8</ST5520ComPort>
-    <RelayControllerComPort>COM3</RelayControllerComPort>
+    <ST5520ComPort>COM10</ST5520ComPort>
+    <RelayControllerComPort>COM11</RelayControllerComPort>
     <BarcodeScannerComPort>COM12</BarcodeScannerComPort>
     <BIBoxComPort>COM13</BIBoxComPort>
     <ACIRHostInfo>

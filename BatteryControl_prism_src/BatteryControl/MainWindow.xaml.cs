@@ -51,7 +51,8 @@ namespace BatteryControl
 			DbConnect();
 
 		}
-
+		#region websocket_Server
+		
 		private void ws_Loaded()
 		{
 
@@ -81,8 +82,8 @@ namespace BatteryControl
 			return _connect;
 		}
 
+        #endregion
 
 
-
-	}
+    }
 }
