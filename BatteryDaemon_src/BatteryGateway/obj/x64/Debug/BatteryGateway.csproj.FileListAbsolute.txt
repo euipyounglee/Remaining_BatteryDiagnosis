@@ -1,0 +1,8 @@
+d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDaemon_src\BatteryGateway\obj\x64\Debug\Interop.NetFwTypeLib.dll
+d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDaemon_src\BatteryGateway\obj\x64\Debug\BatteryGateway.csproj.ResolveComReference.cache
+d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDaemon_src\BatteryGateway\obj\x64\Debug\BatteryGateway.csproj.CoreCompileInputs.cache
+d:\pmgrow\project\Remaining_BatteryDiagnosis\run\Debug\BatteryGateway.exe.config
+d:\pmgrow\project\Remaining_BatteryDiagnosis\run\Debug\BatteryGateway.exe
+d:\pmgrow\project\Remaining_BatteryDiagnosis\run\Debug\BatteryGateway.pdb
+d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDaemon_src\BatteryGateway\obj\x64\Debug\BatteryGateway.exe
+d:\pmgrow\project\Remaining_BatteryDiagnosis\BatteryDaemon_src\BatteryGateway\obj\x64\Debug\BatteryGateway.pdb
