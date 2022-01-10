@@ -1,4 +1,5 @@
-﻿using RestApiLib.Defines;
+﻿using BatteryControl.WebSocket;
+using RestApiLib.Defines;
 using SQLManager.Data.DTO;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,9 @@ namespace BatteryControl
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+
+		private static ConnectionManager _connect = null;
+
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -38,5 +42,47 @@ namespace BatteryControl
 				DragMove();
 			}
 		}
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+			ws_Loaded();
+
+			DbConnect();
+
+		}
+
+		private void ws_Loaded()
+		{
+
+			// _wport = 0;// wport;
+			//=========================================================================
+			//    webServer.getInstance().ThreadStart(wport);
+			//=========================================================================
+			getConnect_Instance();
+
+		}
+
+		private void DbConnect()
+		{
+			string currentPath = System.IO.Directory.GetCurrentDirectory();
+
+			ClassSqlite db = new ClassSqlite();
+			db.CreateDataSqlite(currentPath);
+		}
+
+
+		public static ConnectionManager getConnect_Instance()
+		{
+			if (null == _connect) {
+				_connect = ConnectionManager.getInstance();
+			}
+
+			return _connect;
+		}
+
+
+
+
 	}
 }

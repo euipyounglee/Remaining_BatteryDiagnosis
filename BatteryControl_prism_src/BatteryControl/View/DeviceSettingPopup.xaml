@@ -60,9 +60,9 @@
 						<ColumnDefinition Width="80"/>
 					</Grid.ColumnDefinitions>
 
-					<custom:ConnectionStateEllipse IsOpened="{Binding Path=IsACIROpened}"/>
-					<TextBlock Grid.Column="1" Style="{StaticResource DeviceSettingPopupTextStyle}" Text="ACIR"/>
-					<TextBox Grid.Column="3" Text="{Binding Path=ChannelConfig.ACIRHostInfo.Host}">
+					<!--<custom:ConnectionStateEllipse IsOpened="{Binding Path=IsACIROpened}"/>
+					<TextBlock Grid.Column="1" Style="{StaticResource DeviceSettingPopupTextStyle}" Text="ACIR"/>-->
+					<!--<TextBox Grid.Column="3" Text="{Binding Path=ChannelConfig.ACIRHostInfo.Host}">
 						<TextBox.Style>
 							<Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource DeviceSettingPopupTextBoxStyle}">
 								<Setter Property="IsEnabled" Value="False"/>
@@ -76,8 +76,8 @@
 								</Style.Triggers>
 							</Style>
 						</TextBox.Style>
-					</TextBox>
-					<TextBox Grid.Column="5" Text="{Binding Path=ChannelConfig.ACIRHostInfo.Port}" PreviewTextInput="TextBox_PreviewTextInput">
+					</TextBox>-->
+					<!--<TextBox Grid.Column="5" Text="{Binding Path=ChannelConfig.ACIRHostInfo.Port}" PreviewTextInput="TextBox_PreviewTextInput">
 						<TextBox.Style>
 							<Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource DeviceSettingPopupTextBoxStyle}">
 								<Setter Property="IsEnabled" Value="False"/>
@@ -91,12 +91,12 @@
 								</Style.Triggers>
 							</Style>
 						</TextBox.Style>
-					</TextBox>
-					<custom:ConnectionStateButton Grid.Column="7" IsOpened="{Binding Path=IsACIROpened}">
+					</TextBox>-->
+					<!--<custom:ConnectionStateButton Grid.Column="7" IsOpened="{Binding Path=IsACIROpened}">
 						<custom:ConnectionStateButton.InputBindings>
 							<MouseBinding MouseAction="LeftClick" Command="{Binding Path=ACIROpenCommand}"/>
 						</custom:ConnectionStateButton.InputBindings>
-					</custom:ConnectionStateButton>
+					</custom:ConnectionStateButton>-->
 				</Grid>
 
 				<!-- pne cts -->

@@ -98,8 +98,6 @@ namespace BatteryControl
 		#endregion
 
 
-
-
 		#region command
 
 		/// <summary>
@@ -122,7 +120,6 @@ namespace BatteryControl
 							if (count <= 0)
 							{
 								count = HEARTBIT_DELAY;
-
 								RestApi.SendHealthCheck(RestApiConfig.Instance.DeviceNo);
 							}
 							else
